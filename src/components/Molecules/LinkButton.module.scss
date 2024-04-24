@@ -1,0 +1,32 @@
+.button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.borderPseudo {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  border-bottom: 1.5px solid var(--text);
+  transition: width 0.2s;
+}
+
+.button:hover .borderPseudo {
+  width: 100%;
+}
+
+.button:hover {
+  animation: fillBorder 0.2s forwards;
+}
+
+.arrow {
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.button:hover .arrow {
+  transform: rotate(0deg);
+}

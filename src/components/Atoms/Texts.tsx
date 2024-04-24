@@ -1,3 +1,4 @@
+"use client";
 import React, { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react';
 
 type TextsProps = HTMLAttributes<HTMLSpanElement> & {

@@ -1,4 +1,6 @@
+"use client";
 import Texts from "../Atoms/Texts";
+import LinkButton from "../Molecules/LinkButton";
 import styles from "./Homepage.module.scss";
 
 const Homepage = () => {
@@ -18,6 +20,15 @@ const Homepage = () => {
             }}>{char}</Texts>
           ))}
         </span>
+      </section>
+      <section style={{
+        width: '10%',
+        display: 'flex',
+        flexDirection: 'column',
+      }}>
+      <LinkButton href="#">
+          Test Button
+      </LinkButton>
       </section>
     </section>
   );
