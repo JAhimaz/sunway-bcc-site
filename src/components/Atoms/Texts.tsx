@@ -7,9 +7,10 @@ type TextsProps = HTMLAttributes<HTMLSpanElement> & {
   fontSize?: "xs" | "sm" | "md" | "lg" | "xl" | "headline";
   className?: string;
   style?: CSSProperties;
+  weight?: "normal" | "bold";
 }
 
-const Texts: FC<TextsProps> = ({ children, color, fontSize, className, style }) => {
+const Texts: FC<TextsProps> = ({ children, color, fontSize, className, style, weight }) => {
   return (
     <span 
     className={className}
@@ -21,6 +22,7 @@ const Texts: FC<TextsProps> = ({ children, color, fontSize, className, style }) 
                 fontSize === "lg" ? "2rem" : // 32px
                 fontSize === "xl" ? "4rem" : // 64px
                 fontSize === "headline" ? "6rem" : "1rem", // 96px
+      fontWeight: weight,
       ...style,
     }}
     >{children}</span>

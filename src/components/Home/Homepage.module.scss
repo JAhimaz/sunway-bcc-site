@@ -22,8 +22,6 @@
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: -4.8px;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--foreground);
 }
 
 .headlineChar {
@@ -44,3 +42,12 @@
   }
 }
 
+.underlineHover {
+  box-sizing: border-box;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.15s;
+}
+
+.underlineHover:hover {
+  border-bottom: 1px solid var(--text);
+}

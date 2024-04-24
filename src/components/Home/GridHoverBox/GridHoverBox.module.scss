@@ -1,0 +1,71 @@
+
+.container {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.featheredEdge {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  // passthrough pointer events to the box
+  pointer-events: none;
+  // all edges will have a feathered edge
+  box-shadow: inset 0 0 100px 100px var(--background);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.box {
+  box-sizing: border-box;
+  border: 1px solid var(--foreground);
+  transition: all 2s;
+  transition-timing-function: cubic-bezier(.55, 0, .52, .76);
+  min-width: 100px;
+  height: 100px;
+}
+
+.box:hover {
+  transition-duration: 0.1s;
+  border-color: var(--text-light);
+}
+
+.box:hover .line {
+  transition-duration: 0.1s;
+  background-color: var(--text-light);
+  width: 1px;
+}
+
+
+.lineContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 0.6rem 0;
+}
+
+.line {
+  height: 100%;
+  width: 1px;
+  background-color: var(--foreground);
+  transition: all 2s;
+  transition-timing-function: cubic-bezier(.55, 0, .52, .76);
+}
