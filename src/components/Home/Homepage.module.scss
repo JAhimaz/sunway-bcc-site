@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media (min-width: 1440px) {
+  .main {
+    width: calc(1440px - 72px);
+    margin: 0 auto;
+  }
+}
+
+.header {
+  word-spacing: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headline {
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -4.8px;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--foreground);
+}
+
+.headlineChar {
+  opacity: 0;
+  animation: transitionIn 0.15s step-end forwards;
+}
+
+@keyframes transitionIn {
+// the text will have an opacity of 0 at the start of the animation
+  0% {
+    background-color: var(--text);
+    opacity: 1;
+  }
+// the text will have an opacity of 1 at the end of the animation
+  100% {
+    opacity: 1;
+    background-color: transparent;
+  }
+}
+
