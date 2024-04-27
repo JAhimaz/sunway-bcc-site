@@ -1,5 +1,4 @@
 "use client";
-
 import styles from "./Partners.module.scss";
 
 const Partners = () => {
