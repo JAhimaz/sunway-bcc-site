@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  padding-top: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.partner {
+  display: flex;
+  animation: swipe 15s linear infinite;
+  gap: 6rem;
+  padding-left: 6rem;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  width: 105px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: 70px;
+    height: 30px;
+  }
+}
+
+@keyframes swipe {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

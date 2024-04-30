@@ -1,21 +1,28 @@
 "use client";
+import { useTranslations } from 'next-intl'
+import About from "../About/About";
 import Texts from "../Atoms/Texts";
-import LinkButton from "../Molecules/LinkButton/LinkButton";
+// import LinkButton from "../Molecules/LinkButton/LinkButton";
 import Seperator from "../Molecules/Seperator/Seperator";
-import Partners from "../Partners/Partners";
+import Partners from "@/components/Home/Partners/Partners";
 import GridHoverBox from "./GridHoverBox/GridHoverBox";
 import styles from "./Homepage.module.scss";
+import HomeGallery from '@/components/Home/HomeGallery/HomeGallery';
+import HomeGalleryMobile from '@/components/Home/HomeGallery/HomeGalleryMobile/HomeGalleryMobile';
+import SocialBox from '@/components/Home/SocialBox/SocialBox';
 
 const Homepage = () => {
 
-  const headline = "Sunway Blockchain Club _";
+  const t = useTranslations("Main")
+
+  const headline = t("title");
 
   return (
     <section className={styles.main}>
       <section className={styles.header}>
         <GridHoverBox />
-        <Texts color="var(--text-light)" fontSize="xs">
-          &#47;&#47;&nbsp;&nbsp;<Texts color="var(--text)" fontSize="xs" className={styles.underlineHover}>NURTURING</Texts> THE NEXT GENERATION INTO BLOCKCHAIN
+        <Texts color="var(--text-light)" fontSize="xs" className={styles.subheader}>
+          &#47;&#47;&nbsp;&nbsp;<Texts color="var(--text)" fontSize="xs" className={styles.underlineHover}>{t("headline-1")}</Texts>{t("headline-2")}
         </Texts>
         <span className={styles.headline}>
           {headline.split("").map((char, index) => {
@@ -28,9 +35,15 @@ const Homepage = () => {
             )
           })}
         </span>
-        <Seperator text="[ ABOUT SBCC ]" />
+        <Seperator text={t("about-sep")} />
+        <About />
+        <Seperator text={t("workwith-sep")} />
         <Partners />
-        <Seperator text="[ WE WORKED WITH ]" />
+        <Seperator/>
+        <HomeGallery />
+        <HomeGalleryMobile />
+        <Seperator text={t("socials-sep")} />
+        <SocialBox />
       </section>
     </section>
   );

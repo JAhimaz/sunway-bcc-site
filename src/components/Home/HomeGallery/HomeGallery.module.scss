@@ -1,0 +1,37 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    display: none;
+  }
+}
+
+.imageCont {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 1rem;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.img {
+  object-fit: cover;
+  opacity: 0.5;
+  // black and white and blur
+  filter: grayscale(100%) blur(1.5px);
+  transition: all 0.5s;
+  // blur
+}
+
+.img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}

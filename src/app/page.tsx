@@ -1,12 +1,6 @@
-import Navigation from "@/components/Navigation/Navigation";
-import styles from "./page.module.scss";
-import Homepage from "@/components/Home/Homepage";
+import {redirect} from 'next/navigation';
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <Navigation />
-      <Homepage />
-    </main>
-  );
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect('/en');
 }

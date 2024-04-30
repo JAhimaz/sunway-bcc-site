@@ -13,10 +13,15 @@
 }
 
 @media (max-width: 768px) {
-  .headline, .subheader {
+  .headline,
+  .subheader {
     padding: 0 2rem;
     box-sizing: border-box;
   }
+}
+
+.subheader {
+  user-select: none;
 }
 
 .header {
@@ -31,6 +36,7 @@
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: -4.8px;
+  user-select: none;
 }
 
 .headlineChar {
@@ -39,12 +45,14 @@
 }
 
 @keyframes transitionIn {
-// the text will have an opacity of 0 at the start of the animation
+
+  // the text will have an opacity of 0 at the start of the animation
   0% {
     background-color: var(--text);
     opacity: 1;
   }
-// the text will have an opacity of 1 at the end of the animation
+
+  // the text will have an opacity of 1 at the end of the animation
   100% {
     opacity: 1;
     background-color: transparent;

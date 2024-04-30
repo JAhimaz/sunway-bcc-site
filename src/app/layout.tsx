@@ -1,22 +1,12 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { ReactNode } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+export default function RootLayout({ children }: { children: ReactNode }) {
 
-export const metadata: Metadata = {
-  title: "Sunway Blockchain Club",
-  description: "The Sunway Blockchain Club is a student-led organization that aims to educate and nurture the next generation into blockchain.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
-  );
+  )
 }

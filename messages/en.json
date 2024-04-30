@@ -1,0 +1,24 @@
+{
+  "Navigation": {
+    "team": "The Team",
+    "events": "Events",
+    "join": "Join the Club"
+  },
+  "Main": {
+    "title": "Sunway Blockchain Club _",
+    "headline-1": "NUTURING",
+    "headline-2": " THE NEXT GENERATION INTO BLOCKCHAIN",
+    "about-sep": "[ ABOUT SBCC ]",
+    "workwith-sep": "[ WE WORKED WITH ]",
+    "socials-sep": "[ OUR SOCIALS ]"
+  },
+  "About": {
+    "about-1": "The Sunway Blockchain Club is your gateway to exploring the world of blockchain technology. From workshops and seminars to hackathons and social events, we offer a range of opportunities for members to learn, network, and innovate in the crypto space.",
+    "about-2": "Anyone with an interest in blockchain technology is welcome to join the Sunway Blockchain Club! Whether you're a student eager to explore job opportunities or a curious individual looking to expand your knowledge, there's a place for you in our community. While our club is based at Sunway University, we welcome members from all backgrounds and institutions. Whether you're a student from another university or a non-student interested in blockchain, you're invited to join our community and participate in our activities."
+  },
+  "Team": {
+    "title": "Meet the Team",
+    "headline-1": "BUILDING",
+    "headline-2": " THE CLUB WE LOVE"
+  }
+}

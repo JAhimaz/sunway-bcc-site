@@ -1,0 +1,105 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  gap: 1rem;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialBox {
+  position: relative;
+  width: calc(25% - 1rem);
+  padding: 2rem;
+  border: 1px solid var(--foreground);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.socialIcon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.socialBox > span {
+  transition: all 0.3s ease-in-out;
+}
+
+.socialBox:hover {
+  color: var(--text) !important;
+  // // background gradient from bottom to top, var(--foreground) to transparent
+  // background: linear-gradient(to top, var(--foreground), transparent);
+}
+
+.socialBox:hover > span {
+  color: var(--text) !important;
+}
+
+
+.fakeBorderLeft, .fakeBorderRight, .fakeBorderTop, .fakeBorderBottom {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.pseudoGradient {
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  background: linear-gradient(to top, var(--foreground), transparent);
+}
+
+.socialBox:hover .pseudoGradient {
+  height: 100%;
+  opacity: 0.5;
+}
+.fakeBorderLeft {
+  top: 0;
+  left: 0;
+  border-left: 1px solid var(--text)
+}
+
+.fakeBorderRight {
+  bottom: 0;
+  right: 0;
+  border-right: 1px solid var(--text)
+}
+
+.fakeBorderTop {
+  top: 0;
+  left: 0;
+  border-top: 1px solid var(--text)
+}
+
+.fakeBorderBottom {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid var(--text)
+}
+
+.socialBox:hover .fakeBorderTop, .socialBox:hover .fakeBorderBottom {
+  width: 100%;
+}
+
+.socialBox:hover .fakeBorderRight, .socialBox:hover .fakeBorderLeft  {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .socialBox {
+    width: calc(50% - 1rem);
+  }
+}

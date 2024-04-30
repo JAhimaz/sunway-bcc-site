@@ -1,4 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import { IoLogoDiscord } from "react-icons/io5";
 
 import { CSSProperties, FC } from "react";
 
@@ -6,8 +9,16 @@ const IconsIndex = {
   arrowRight: FaArrowRight
 };
 
+const SocialsIndex = {
+  instagram: AiFillInstagram,
+  twitter: FaTwitter,
+  linkedin: FaLinkedin,
+  discord: IoLogoDiscord
+}
+
 const Index = {
   ...IconsIndex,
+  ...SocialsIndex
 }
 
 export type IconName = keyof typeof Index | "none";
