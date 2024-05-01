@@ -1,3 +1,5 @@
+"use client";
+
 import {
   createLocalizedPathnamesNavigation,
   Pathnames,
@@ -11,7 +13,8 @@ export const pathnames = {
   "/": "/",
 } satisfies Pathnames<typeof locales>;
 
-export const { redirect, usePathname } = createLocalizedPathnamesNavigation({
-  locales,
-  pathnames,
-});
+export const {Link, getPathname, redirect, usePathname, useRouter} =
+  createLocalizedPathnamesNavigation({
+    locales,
+    pathnames
+  });

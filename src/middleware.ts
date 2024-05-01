@@ -1,12 +1,12 @@
 import createMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
-import { locales } from "@/app/navigation";
+import { locales } from "@/components/navigation";
 
 export default async function middleware(request: NextRequest) {
   const handleI18nRouting = createMiddleware({
     locales,
     defaultLocale: "en",
-    localePrefix: 'never'
+    localePrefix: 'always'
   });
 
   return handleI18nRouting(request);

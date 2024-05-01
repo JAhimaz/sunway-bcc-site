@@ -14,8 +14,7 @@ const SocialBox = () => {
             <div className={styles.fakeBorderRight} />
             <div className={styles.fakeBorderTop} />
             <div className={styles.fakeBorderBottom} />
-            <div className={styles.pseudoGradient} />
-            <Texts fontSize="lg" color="var(--text-light)">
+            <Texts fontSize="sm" color="var(--text-light)">
               {social.socialName}
             </Texts>
             <Icon icon={social.id as IconName} className={styles.socialIcon} />

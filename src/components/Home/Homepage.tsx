@@ -2,7 +2,6 @@
 import { useTranslations } from 'next-intl'
 import About from "../About/About";
 import Texts from "../Atoms/Texts";
-// import LinkButton from "../Molecules/LinkButton/LinkButton";
 import Seperator from "../Molecules/Seperator/Seperator";
 import Partners from "@/components/Home/Partners/Partners";
 import GridHoverBox from "./GridHoverBox/GridHoverBox";
@@ -10,6 +9,8 @@ import styles from "./Homepage.module.scss";
 import HomeGallery from '@/components/Home/HomeGallery/HomeGallery';
 import HomeGalleryMobile from '@/components/Home/HomeGallery/HomeGalleryMobile/HomeGalleryMobile';
 import SocialBox from '@/components/Home/SocialBox/SocialBox';
+import Numbers from './Numbers/Numbers';
+import Ethos from './Ethos/Ethos';
 
 const Homepage = () => {
 
@@ -37,6 +38,10 @@ const Homepage = () => {
         </span>
         <Seperator text={t("about-sep")} />
         <About />
+        <Seperator text={t("numbers-sep")} />
+        <Numbers />
+        <Seperator text={t("ethos-sep")} />
+        <Ethos />
         <Seperator text={t("workwith-sep")} />
         <Partners />
         <Seperator/>

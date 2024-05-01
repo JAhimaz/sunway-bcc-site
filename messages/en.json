@@ -9,6 +9,8 @@
     "headline-1": "NUTURING",
     "headline-2": " THE NEXT GENERATION INTO BLOCKCHAIN",
     "about-sep": "[ ABOUT SBCC ]",
+    "numbers-sep": "[ NUMBERS ]",
+    "ethos-sep": "[ OUR ETHOS ]",
     "workwith-sep": "[ WE WORKED WITH ]",
     "socials-sep": "[ OUR SOCIALS ]"
   },
@@ -16,9 +18,54 @@
     "about-1": "The Sunway Blockchain Club is your gateway to exploring the world of blockchain technology. From workshops and seminars to hackathons and social events, we offer a range of opportunities for members to learn, network, and innovate in the crypto space.",
     "about-2": "Anyone with an interest in blockchain technology is welcome to join the Sunway Blockchain Club! Whether you're a student eager to explore job opportunities or a curious individual looking to expand your knowledge, there's a place for you in our community. While our club is based at Sunway University, we welcome members from all backgrounds and institutions. Whether you're a student from another university or a non-student interested in blockchain, you're invited to join our community and participate in our activities."
   },
+  "Numbers": {
+    "members": "Members",
+    "events": "Events",
+    "cohost": "Co-Hosts / Partners / Sponsors",
+    "estabDate": "11/2023",
+    "established": "Established"
+  },
+  "Ethos": {
+    "ignite": {
+      "title": "IGNITE",
+      "content": "To ignite the curiosity of the university community, comprising students, researchers, and staff members, about the potential of blockchain technology. The clubs aim to pique interest through engaging discussions, workshops, and interactive sessions."
+    },
+    "nurture": {
+      "title": "NURTURE",
+      "content": "To nurture collaborative learning and co-Creation: the club aspires to provide a platform where members can learn from each other, exchange ideas, share knowledge, and jointly explore the multifaceted aspects of blockchain technology."
+    },
+    "empower": {
+      "title": "EMPOWER",
+      "content": "To empower their members with the essential skills and knowledge required to embark on blockchain and cryptocurrency-related careers. By offering educational resources, workshops, and practical experiences, the clubs aim to present blockchain as a viable alternative career path."
+    },
+    "foster": {
+      "title": "FOSTER",
+      "content": "To foster industry relationship with the University community: build connections with key industry leaders to facilitate networking events, seminars, and meetups. Through these interactions, club members can gain firsthand insights into industry trends and potential career avenues."
+    }
+  },
   "Team": {
     "title": "Meet the Team",
     "headline-1": "BUILDING",
     "headline-2": " THE CLUB WE LOVE"
+  },
+  "Roles": {
+    "president": "President",
+    "vp": "Vice President",
+    "secretary": "Secretary",
+    "vice-secretary": "Vice Secretary",
+    "treasurer": "Treasurer",
+    "media": "Media",
+    "media-marketing": "Media & Marketing",
+    "public-relations": "Public Relations",
+    "gava": "Grants / Analysis / VC / Airdrops",
+    "subcom": "Subcommittee",
+    "events": "Events"
+  },
+  "Redirect": {
+    "title": "Redirecting..."
+  },
+  "Developing": {
+    "title": "THIS PAGE IS UNDER",
+    "title-2": "DEVELOPMENT"
   }
 }

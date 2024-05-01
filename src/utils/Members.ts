@@ -8,139 +8,139 @@ export type MemberProp = {
 export const Members = [
   {
     name: "Joshua Ahimaz",
-    role: "President",
+    role: "president",
     image: "joshua-1.jpg",
     imageAlt: "joshua-2.jpg"
   },
   {
     name: "Asilbek Abdullaev",
-    role: "Vice President",
+    role: "vp",
     image: "asilbek-1.jpg",
     imageAlt: "asilbek-2.jpg"
   },
   {
     name: "Chang Wei Sheng",
-    role: "Secretary",
+    role: "secretary",
     image: "wilson-1.jpg",
     imageAlt: "wilson-2.jpg"
   },
   {
     name: "Renald Rafliz",
-    role: "Vice Secretary",
+    role: "vice-secretary",
     image: "renald-1.jpg",
     imageAlt: "renald-2.jpg"
   },
   {
     name: "Lai Jun Hao",
-    role: "Media",
+    role: "media",
     image: "junhao-1.jpg",
     imageAlt: "junhao-2.jpg"
   },
   {
     name: "Manmeet Kaur",
-    role: "Media",
+    role: "media",
     image: "manmeet-1.jpg",
     imageAlt: "manmeet-2.jpg"
   },
   {
     name: "Raveena Sivakumaran",
-    role: "Media",
+    role: "media",
     image: "raveena-1.jpg",
     imageAlt: "raveena-2.jpg"
   },
   {
     name: "Roghan Keerbananthan",
-    role: "Media",
+    role: "media",
     image: "roghan-1.jpg",
     imageAlt: "roghan-2.jpg"
   },
   {
-    name: "Emmanuel",
-    role: "Media",
-    image: "",
-    imageAlt: ""
-  },
-  {
-    name: "Hassanal Daniel",
-    role: "Media",
-    image: "",
-    imageAlt: ""
-  },
-  {
-    name: "Budoor Mohammed",
-    role: "Media Marketing",
-    image: "",
-    imageAlt: ""
-  },
-  {
-    name: "Gan Ming Xian",
-    role: "Treasurer",
-    image: "",
-    imageAlt: ""
-  },
-  {
     name: "Lee Richeer",
-    role: "Public Relations",
+    role: "public-relations",
     image: "richeer-1.jpg",
     imageAlt: "richeer-2.jpg"
   },
   {
     name: "Giselle Tan",
-    role: "Public Relations",
+    role: "public-relations",
     image: "giselle-1.jpg",
     imageAlt: "giselle-2.jpg"
   },
   {
     name: "Mohammed Moatasem Faisal",
-    role: "Public Relations",
+    role: "public-relations",
     image: "mo-1.jpg",
     imageAlt: "mo-2.jpg"
   },
   {
-    name: "Tee Jin Fern",
-    role: "Public Relations",
-    image: "",
-    imageAlt: ""
-  },
-  {
-    name: "Karthikean Pathmanathan",
-    role: "Public Relations",
-    image: "",
-    imageAlt: ""
-  },
-  {
     name: "Mathangi A/P S Chandran",
-    role: "Grants / Analysis / VC / Airdrops",
+    role: "gava",
     image: "mathangi-1.jpg",
     imageAlt: "mathangi-2.jpg"
   },
   {
     name: "Loh Kah Shun",
-    role: "Grants / Analysis / VC / Airdrops",
+    role: "gava",
     image: "kahshun-1.jpg",
     imageAlt: "kahshun-2.jpg"
   },
   {
+    name: "Emmanuel",
+    role: "media",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Hassanal Daniel",
+    role: "media",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Budoor Mohammed",
+    role: "media-marketing",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Gan Ming Xian",
+    role: "treasurer",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Tee Jin Fern",
+    role: "public-relations",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Karthikean Pathmanathan",
+    role: "public-relations",
+    image: "",
+    imageAlt: ""
+  },
+  {
     name: "Joshua",
-    role: "Grants / Analysis / VC / Airdrops",
+    role: "gava",
     image: "",
     imageAlt: ""
   },
   {
     name: "Pei Yuan",
-    role: "Events",
+    role: "events",
     image: "",
     imageAlt: ""
   },
   {
     name: "Tan Jia Xun",
-    role: "Events",
+    role: "events",
     image: "",
     imageAlt: ""
   },
   {
     name: "Alex",
-    role: "Sub Committee",
+    role: "subcom",
     image: "",
     imageAlt: ""
   }

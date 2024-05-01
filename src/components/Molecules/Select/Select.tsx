@@ -2,7 +2,7 @@
 import { FC } from "react"
 import styles from "./Select.module.scss"
 import Texts from "@/components/Atoms/Texts"
-import { usePathname } from "@/app/navigation";
+import { usePathname } from "@/components/navigation";
 import { useRouter } from "next/navigation";
 
 type SelectProps = {

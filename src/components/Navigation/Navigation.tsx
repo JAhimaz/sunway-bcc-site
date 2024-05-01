@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useTransition } from 'react';
 import styles from "./Navigation.module.scss";
 import { NavigationItems } from './NavigationItems';
 import Texts from '../Atoms/Texts';
@@ -7,9 +7,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Select from '../Molecules/Select/Select';
-import { usePathname } from "@/app/navigation";
-import { useRouter } from "next/navigation";
+import { usePathname } from "@/components/navigation";
+import { useParams } from "next/navigation";
+import { useRouter } from '@/components/navigation';
 import { useCookies } from 'next-client-cookies';
+import { useLocale } from 'next-intl';
 
 const locales = [
   {
@@ -26,14 +28,27 @@ const Navigation: FC = () => {
 
   const t = useTranslations("Navigation");
 
+  const { set } = useCookies();
+  const params = useParams();
+  const [isPending, startTransition] = useTransition();
+
   const router = useRouter();
   const pathname = usePathname();
+  const locale = useLocale();
+
   const handleChange = (locale: string) => {
-    router.push(`/${locale}/${pathname}`);
+    startTransition(() => {
+      set("NEXT_LOCALE", locale);
+
+      router.push(
+        // @ts-expect-error -- TypeScript will validate that only known `params`
+        {pathname, params},
+        {locale: locale}
+      );
+    });
+
   }
-
-  const locale = useCookies().get("NEXT_LOCALE") || "en";
-
+  
   const [ selected, setSelected ] = useState<string>("home");
 
   return (

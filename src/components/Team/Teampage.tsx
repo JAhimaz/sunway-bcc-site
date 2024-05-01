@@ -30,11 +30,13 @@ const Teampage = () => {
         })}
       </span>
       <Seperator />
+      <section className={styles.memberGrid}>
       { Members.map((member, index) => {
         return (
           <MemberImage key={index} {...member} />          
         )
       })}
+      </section>
     </section>
   )
 }

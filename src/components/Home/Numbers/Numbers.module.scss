@@ -1,0 +1,25 @@
+.numbers {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .numbers {
+    flex-direction: column;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  flex: 25%;
+}
+
+.countup {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--highlight);
+}
