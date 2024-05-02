@@ -1,6 +1,7 @@
 "use client";
 import { FC } from "react";
 import Navigation from "./Navigation/Navigation"
+import NavigationMobile from "./Navigation/NavigationMobile/NavigationMobile";
 
 type PageProps = {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ const Page: FC<PageProps> = ({ children }) => {
     marginBottom: '2rem'
   }}>
       <Navigation />
+      <NavigationMobile />
       { children }
   </main>
   )

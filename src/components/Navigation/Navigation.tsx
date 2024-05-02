@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useState, useTransition } from 'react';
 import styles from "./Navigation.module.scss";
-import { NavigationItems } from './NavigationItems';
+import { NavigationItems, locales } from './NavigationItems';
 import Texts from '../Atoms/Texts';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,17 +12,6 @@ import { useParams } from "next/navigation";
 import { useRouter } from '@/components/navigation';
 import { useCookies } from 'next-client-cookies';
 import { useLocale } from 'next-intl';
-
-const locales = [
-  {
-    id: "en",
-    name: "EN"
-  },
-  {
-    id: "zh",
-    name: "中文"
-  }
-]
 
 const Navigation: FC = () => {
 
@@ -46,11 +35,8 @@ const Navigation: FC = () => {
         {locale: locale}
       );
     });
-
   }
   
-  const [ selected, setSelected ] = useState<string>("home");
-
   return (
     <section className={styles.navigationBar}>
       <section className={styles.navItems}>
@@ -69,7 +55,7 @@ const Navigation: FC = () => {
           return (
             <Link key={item.id} href={item.link} className={styles.navItem}>
               <div className={styles.pseudoNavItem} />
-              <Texts color={selected === item.id ? "var(--text)" : "var(--text-light)"} fontSize="sm" className={styles.navItemText}>
+              <Texts color={"var(--text-light)"} fontSize="sm" className={styles.navItemText}>
                 <Texts color="var(--foreground)" fontSize="sm" className={styles.navItemText}>&#47;&#47;&nbsp;&nbsp;</Texts>{t(item.id)}
               </Texts>
             </Link>

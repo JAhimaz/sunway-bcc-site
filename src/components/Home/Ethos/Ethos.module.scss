@@ -89,5 +89,26 @@
     flex-direction: column;
     height: auto;
   }
+
+
+
+  .sidebarItem:hover .sidebarItemInner {
+    width: 100%;
+  }
+
+  .sidebarItem:hover .sidebarItemInnerSide {
+    height: 0%;
+  }
+
+  .sidebarItemSelected {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--text);
+    border-right: 1px solid transparent;
+    cursor: pointer;
+  }
   
 }

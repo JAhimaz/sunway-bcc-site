@@ -5,7 +5,7 @@ type NavigationItem = {
   icon?: string,
 }
 
-export const NavigationItems = [
+export const NavigationItems: NavigationItem[] = [
   {
     id: "home",
     link: "/",
@@ -25,4 +25,15 @@ export const NavigationItems = [
     link: "/register",
     icon: "register",
   },
+]
+
+export const locales = [
+  {
+    id: "en",
+    name: "EN"
+  },
+  {
+    id: "zh",
+    name: "中文"
+  }
 ]

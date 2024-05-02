@@ -1,0 +1,62 @@
+.navigationBar {
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  z-index: 100;
+  width: 100%;
+  height: 60px;
+  // frosty glass effect
+  backdrop-filter: blur(7px);
+  background-color: rgba(10, 10, 10, 0.5);
+  border-bottom: 1px solid var(--foreground);
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.menuIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.menuIconContainer {
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigationMenu {
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  backdrop-filter: blur(7px);
+  background-color: rgba(10, 10, 10, 0.5);
+  border-bottom: 1px solid var(--foreground);
+}
+
+.navMenuItem {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .navigationBar, .navigationMenu {
+    display: none;
+    position: relative;
+  }
+}

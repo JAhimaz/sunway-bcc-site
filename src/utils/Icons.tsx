@@ -2,12 +2,14 @@ import { FaArrowRight } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { IoLogoDiscord, IoPerson } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import { CSSProperties, FC } from "react";
 
 const IconsIndex = {
   arrowRight: FaArrowRight,
-  person: IoPerson
+  person: IoPerson,
+  menu: GiHamburgerMenu
 };
 
 const SocialsIndex = {
