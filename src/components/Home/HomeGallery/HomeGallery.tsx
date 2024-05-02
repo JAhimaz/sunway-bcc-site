@@ -39,8 +39,10 @@ const HomeGallery = () => {
           onMouseLeave={(e) => {
             const card = e.currentTarget;
             card.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            // @ts-ignore
             clearTimeout(card.transitionTimeoutId)
             card.style.transition = `transform 3000ms cubic-bezier(.03,.98,.52,.99)`;
+            // @ts-ignore
             card.transitionTimeoutId = setTimeout(() => {
               card.style.transition = "";
             }, 3000);
@@ -48,8 +50,10 @@ const HomeGallery = () => {
 
           onMouseEnter={(e) => {
             const card = e.currentTarget;
+            // @ts-ignore
             clearTimeout(card.transitionTimeoutId)
             card.style.transition = `transform 3000ms cubic-bezier(.03,.98,.52,.99)`;
+            // @ts-ignore
             card.transitionTimeoutId = setTimeout(() => {
               card.style.transition = "";
             }, 3000);

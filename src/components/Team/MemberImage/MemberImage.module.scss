@@ -8,6 +8,7 @@
   border: 1px solid var(--foreground);
   border-radius: 0.25rem;
 }
+
 .img {
   z-index: 0;
   object-fit: cover;
@@ -26,11 +27,11 @@
 }
 
 .imgAlt {
-    z-index: 0;
-    object-fit: cover;
-    top: 50%;
-    object-position: center 30%;
-    animation: fadeIn 0.15s forwards;
+  z-index: 0;
+  object-fit: cover;
+  top: 50%;
+  object-position: center 30%;
+  animation: fadeIn 0.15s forwards;
 }
 
 .gradient {
@@ -61,4 +62,22 @@
   width: 100%;
   height: 100%;
   fill: var(--text-light);
+}
+
+.desktopImg {
+  display: block;
+}
+
+.mobileImg {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktopImg {
+    display: none;
+  }
+
+  .mobileImg {
+    display: block;
+  }
 }
