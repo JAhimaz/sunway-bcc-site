@@ -9,7 +9,7 @@ const HomeGalleryMobile = () => {
       { images.map((image) => {
         return (
           <div className={styles.imageCont} key={image.id}>
-            <Image src={`/images/homepage/gallery/${image.id}.webp`} alt="Gallery" fill className={styles.img} />
+            <Image src={`/images/homepage/gallery/${image.id}.webp`} alt="Gallery" fill className={styles.img} loading="eager" />
           </div>
         )
       })}

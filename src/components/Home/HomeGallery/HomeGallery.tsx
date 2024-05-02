@@ -62,7 +62,7 @@ const HomeGallery = () => {
           style={{
             flex: image.flex
           }}>
-            <Image src={`/images/homepage/gallery/${image.id}.webp`} alt="Gallery" fill className={styles.img} />
+            <Image src={`/images/homepage/gallery/${image.id}.webp`} alt="Gallery" fill className={styles.img} loading="eager" />
           </div>
         )
       })}

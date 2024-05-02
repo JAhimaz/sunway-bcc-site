@@ -12,7 +12,7 @@ const Partners = () => {
           { partners.map((partner: PartnerType) => {
             return (
               <div className={styles.item} key={partner.id}>
-                <Image src={`/images/partners/${partner.logo}`} fill alt={`${partner.name}_logo`}/>
+                <Image src={`/images/partners/${partner.logo}`} fill alt={`${partner.name}_logo`} loading="eager" />
               </div>
             )
           })}
@@ -21,7 +21,7 @@ const Partners = () => {
           { partners.map((partner: PartnerType) => {
             return (
               <div className={styles.item} key={partner.id}>
-                <Image src={`/images/partners/${partner.logo}`} fill alt={`${partner.name}_logo`}/>
+                <Image src={`/images/partners/${partner.logo}`} fill alt={`${partner.name}_logo`} loading="eager" />
               </div>
             )
           })}
