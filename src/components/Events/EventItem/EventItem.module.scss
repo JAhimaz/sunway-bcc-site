@@ -1,0 +1,28 @@
+.eventItem,
+.eventItemPinned {
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--foreground);
+  flex-direction: row;
+  position: relative;
+  padding: 1rem;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.eventItemDetails {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  width: 100%;
+  flex: 2;
+  gap: 0.25rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}

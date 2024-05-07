@@ -16,6 +16,17 @@ const nextConfig = {
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        // https://via.placeholder.com/150
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+        port: '',
+        pathname: '/**',
+      }
+    ]
+  }
   // sentry: {
   //   // Use `hidden-source-map` rather than `source-map` as the Webpack `devtool`
   //   // for client-side builds. (This will be the default starting in

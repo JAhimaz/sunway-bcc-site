@@ -7,7 +7,7 @@ type TextsProps = HTMLAttributes<HTMLSpanElement> & {
   fontSize?: "xs" | "sm" | "md" | "lg" | "xl" | "headline";
   className?: string;
   style?: CSSProperties;
-  weight?: "normal" | "bold";
+  weight?: "normal" | "bold" | "semi-bold" | "light";
   italics?: boolean;
 }
 

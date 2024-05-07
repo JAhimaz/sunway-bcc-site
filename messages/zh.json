@@ -67,5 +67,10 @@
   "Developing": {
     "title": "该页面位于",
     "title-2": "发展"
+  },
+  "Events": {
+    "title": "大事",
+    "headline-1": "加入我们", 
+    "headline-2": "在我们的下一次活动中"
   }
 }
