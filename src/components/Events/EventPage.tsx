@@ -100,10 +100,10 @@ const EventPage = () => {
       <div className={styles.eventsArea} style={{
 
       }}>
-        <Texts color="var(--text)" fontSize="md" className={styles.subheader}>
-          Upcoming Events
-        </Texts>
         <section className={styles.eventsCont}>
+          <Texts className={styles.contText}>
+            UPCOMING
+          </Texts>
           {
             // filter events that are after the current date
             filteredEvents.filter(event => new Date(event.startDate) > new Date()).map(event => {
