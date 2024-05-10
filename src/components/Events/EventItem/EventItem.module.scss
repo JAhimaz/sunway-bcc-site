@@ -26,3 +26,20 @@
   overflow: hidden;
   border-radius: 0.25rem;
 }
+
+@media (max-width: 768px) {
+  .eventItem,
+  .eventItemPinned {
+    display: flex;
+    width: 100%;
+    border: 1px solid var(--foreground);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    padding: 1rem;
+    gap: 1rem;
+    box-sizing: border-box;
+  }
+}

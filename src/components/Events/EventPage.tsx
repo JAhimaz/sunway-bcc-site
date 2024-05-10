@@ -97,9 +97,7 @@ const EventPage = () => {
         })}
       </span>
       <Seperator />
-      <div className={styles.eventsArea} style={{
-
-      }}>
+      <div className={styles.eventsArea}>
         <section className={styles.eventsCont}>
           <Texts className={styles.contText}>
             UPCOMING
@@ -113,10 +111,10 @@ const EventPage = () => {
             })
           }
         </section>
-        <Texts color="var(--text)" fontSize="md" className={styles.subheader}>
-          Past Events
-        </Texts>
         <section className={styles.eventsCont}>
+          <Texts className={styles.contText}>
+            PAST EVENTS
+          </Texts>
           {
             // filter events that are before the current date
             filteredEvents.filter(event => new Date(event.startDate) < new Date()).map(event => {
