@@ -37,10 +37,13 @@
     opacity: 1;
   }
 
+  90% {
+    background-color: transparent;
+  }
+
   // the text will have an opacity of 1 at the end of the animation
   100% {
     opacity: 1;
-    background-color: transparent;
   }
 }
 

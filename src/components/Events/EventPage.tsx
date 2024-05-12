@@ -5,6 +5,8 @@ import GridHoverBox from "../Home/GridHoverBox/GridHoverBox";
 import styles from "./EventPage.module.scss";
 import EventItem from "./EventItem/EventItem";
 import Seperator from "@/components/Molecules/Seperator/Seperator";
+import { useEffect, useState } from "react";
+import FetchEvents from "@/libs/events/FetchEvents";
 
 // Event Template
 // https://calendar.google.com/calendar/u/0/r/eventedit?dates=20240520T101500/20240520T174500&ctz=Asia/Kuala_Lumpur&text=TestName&location=Thisisatest+location&details=TestDescription
@@ -20,56 +22,21 @@ export type EventItem = {
   pinned?: boolean;
 }
 
-const testEventData: EventItem[] = [
-  {
-    id: "1",
-    title: "Test Event 1",
-    description: "This is a test event description",
-    location: "This is a test location",
-    startDate: "2024-05-20T10:15:00",
-    image: "https://via.placeholder.com/200",
-    url: "htts://www.google.com",
-    pinned: true
-  },
-  {
-    id: "2",
-    title: "Test Event 2",
-    description: "This is a test event description",
-    location: "This is a test location",
-    startDate: "2024-05-20T10:15:00",
-    image: "https://via.placeholder.com/200",
-    url: "htts://www.google.com",
-    pinned: false
-  },
-  {
-    id: "3",
-    title: "Test Event 3",
-    description: "This is a test event description",
-    location: "This is a test location",
-    startDate: "2024-05-20T10:15:00",
-    image: "https://via.placeholder.com/200",
-    url: "htts://www.google.com",
-    pinned: false
-  },
-  {
-    id: "4",
-    title: "Test Event 4",
-    description: "This is a test event description",
-    location: "This is a test location",
-    startDate: "2023-05-01T10:15:00",
-    image: "https://via.placeholder.com/200",
-    url: "htts://www.google.com",
-    pinned: false
-  }
-]
-
 const EventPage = () => {
+
+  const [events, setEvents] = useState<EventItem[]>([]);
 
   const t = useTranslations("Events");
   const headline = t("title");
 
+  useEffect(() => {
+    FetchEvents().then((events) => {
+      setEvents(events);
+    });
+  }, [])
+
   // filter the events by putting pinned events first by date, followed by the rest of the events by date
-  const filteredEvents = testEventData.sort((a, b) => {
+  const filteredEvents = events.sort((a, b) => {
     if (a.pinned && !b.pinned) {
       return -1;
     } else if (!a.pinned && b.pinned) {
@@ -98,9 +65,16 @@ const EventPage = () => {
       </span>
       <Seperator />
       <div className={styles.eventsArea}>
+        { events.length === 0 ? 
+          <Texts className={styles.contText} style={{
+            position: "relative"
+          }}>
+            {t("loading")}
+          </Texts> : 
+        (<>
         <section className={styles.eventsCont}>
           <Texts className={styles.contText}>
-            UPCOMING
+            {t("upcoming")}
           </Texts>
           {
             // filter events that are after the current date
@@ -111,9 +85,10 @@ const EventPage = () => {
             })
           }
         </section>
+        { filteredEvents.filter(event => new Date(event.startDate) < new Date()).length > 0 &&
         <section className={styles.eventsCont}>
           <Texts className={styles.contText}>
-            PAST EVENTS
+            {t("pastEvents")}
           </Texts>
           {
             // filter events that are before the current date
@@ -123,7 +98,8 @@ const EventPage = () => {
               )
             })
           }
-        </section>
+        </section>}
+        </>)}
       </div>
     </section>
   )

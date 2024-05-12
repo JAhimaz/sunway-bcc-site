@@ -2,7 +2,8 @@
   "Navigation": {
     "team": "The Team",
     "events": "Events",
-    "join": "Join the Club"
+    "join": "Join the Club",
+    "collaborate": "Collaborate"
   },
   "Main": {
     "title": "Sunway Blockchain Club _",
@@ -71,6 +72,10 @@
   "Events": {
     "title": "Events",
     "headline-1": "JOIN US",
-    "headline-2": " AT OUR NEXT EVENT"
+    "headline-2": " AT OUR NEXT EVENT",
+    "joinEvent": "Register",
+    "upcoming": "UPCOMING",
+    "pastEvents": "PAST EVENTS",
+    "loading": "LOADING..."
   }
 }

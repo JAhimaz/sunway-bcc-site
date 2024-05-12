@@ -24,6 +24,13 @@ const nextConfig = {
         hostname: 'via.placeholder.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        // https://baserow-media.ams3.digitaloceanspaces.com/user_files/oHlxZ2dDLYkxMSv5Nm7FY1Orqx2xzFKH_7174d1c95e8161a634207444ef238bdec3699fb2dd423cb23a000022a92c0cc6.png
+        protocol: 'https',
+        hostname: 'baserow-media.ams3.digitaloceanspaces.com',
+        port: '',
+        pathname: '/**',
       }
     ]
   }

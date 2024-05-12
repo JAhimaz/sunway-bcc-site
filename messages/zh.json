@@ -2,7 +2,8 @@
   "Navigation": {
     "team": "团队",
     "events": "大事",
-    "join": "加入俱乐部"
+    "join": "加入俱乐部",
+    "collaborate": "合作"
   },
   "Main": {
     "title": "Sunway Blockchain 社 _",
@@ -71,6 +72,11 @@
   "Events": {
     "title": "大事",
     "headline-1": "加入我们", 
-    "headline-2": "在我们的下一次活动中"
+    "headline-2": "在我们的下一次活动中",
+    "joinEvent": "注册",
+    "upcoming": "即将到来",
+    "pastEvents": "过去的活动",
+    "loading": "加载中。。。"
   }
+
 }

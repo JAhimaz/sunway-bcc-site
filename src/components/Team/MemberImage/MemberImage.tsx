@@ -36,7 +36,11 @@ const MemberImage: FC<MemberProp> = ({
         )}
       </div>
       <div className={styles.mobileImg}>
-        <Image src={`/images/team/${imageAlt}`} fill alt={`${name} user profile`} className={styles.imgAlt} loading="eager" />
+        { (image && imageAlt) ? (
+          <Image src={`/images/team/${imageAlt}`} fill alt={`${name} user profile`} className={styles.imgAlt} loading="eager" />
+        ) : (
+          <Icon icon="person" className={styles.avatar} />
+        )}
       </div>
     </div>
   )

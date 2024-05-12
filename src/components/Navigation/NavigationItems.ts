@@ -21,6 +21,11 @@ export const NavigationItems: NavigationItem[] = [
     icon: "calendar",
   },
   {
+    id: "collaborate",
+    link: "/collaborate",
+    icon: "collaborate",
+  },
+  {
     id: "join",
     link: "/register",
     icon: "register",

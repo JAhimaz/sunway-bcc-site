@@ -45,10 +45,13 @@
     opacity: 1;
   }
 
+  90% {
+    background-color: transparent;
+  }
+
   // the text will have an opacity of 1 at the end of the animation
   100% {
     opacity: 1;
-    background-color: transparent;
   }
 }
 
@@ -87,11 +90,16 @@
   font-size: 10rem;
   opacity: 0.05;
   font-size: 128px !important;
+  user-select: none;
 }
 
 @media (max-width: 768px) {
   .eventsArea {
     padding: 0 1rem;
+  }
+
+  .headline, .subheader {
+    padding: 0 2rem;
   }
 
   .eventsCont {
@@ -107,7 +115,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
-    gap: 2rem;
+    gap: 4rem;
   }
 
   .contText {
@@ -116,9 +124,10 @@
     left: 0;
     // outline the text, make it transparent fill
     -webkit-text-stroke: transparent;
-    color: var(--text);
+    color: var(--text-light);
     font-size: 10rem;
     opacity: 1;
     font-size: 24px !important;
+    font-weight: 600;
   }
 }
