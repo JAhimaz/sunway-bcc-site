@@ -76,7 +76,8 @@
     "joinEvent": "注册",
     "upcoming": "即将到来",
     "pastEvents": "过去的活动",
-    "loading": "加载中。。。"
+    "loading": "加载中。。。",
+    "eventDetails": "活动详情"
   }
 
 }

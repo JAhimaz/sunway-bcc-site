@@ -76,6 +76,7 @@
     "joinEvent": "Register",
     "upcoming": "UPCOMING",
     "pastEvents": "PAST EVENTS",
-    "loading": "LOADING..."
+    "loading": "LOADING...",
+    "eventDetails": "Event Details"
   }
 }

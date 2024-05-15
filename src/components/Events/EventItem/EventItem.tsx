@@ -40,7 +40,7 @@ const EventItem: FC<EventItemProps & {
           {new Date(startDate).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true })}
         </Texts>
        <Button href={url}>
-          {t("joinEvent")}
+          {!past ? t("joinEvent") : t("eventDetails")}
        </Button>
       </div>
     </section>
