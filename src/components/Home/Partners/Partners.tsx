@@ -11,7 +11,13 @@ const Partners = () => {
         <section className={styles.partner}>
           { partners.map((partner: PartnerType) => {
             return (
-              <div className={styles.item} key={partner.id}>
+              <div className={styles.item} key={partner.id} onClick={
+                () => {
+                  if (partner.url) {
+                    window.open(partner.url, "_blank");
+                  }     
+                }
+              }>
                 <Image src={`/images/partners/${partner.logo}`} fill alt={`${partner.name}_logo`} loading="eager" />
               </div>
             )
@@ -20,7 +26,13 @@ const Partners = () => {
         <section className={styles.partner}>
           { partners.map((partner: PartnerType) => {
             return (
-              <div className={styles.item} key={partner.id}>
+              <div className={styles.item} key={partner.id} onClick={
+                                () => {
+                  if (partner.url) {
+                    window.open(partner.url, "_blank");
+                  }     
+                }
+              }>
                 <Image src={`/images/partners/${partner.logo}`} fill alt={`${partner.name}_logo`} loading="eager" />
               </div>
             )

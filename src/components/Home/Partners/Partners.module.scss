@@ -1,8 +1,12 @@
 .container {
   width: 100%;
   overflow: hidden;
-  user-select: none;
+  // user-select: none;
   padding-top: 2rem;
+}
+
+.container:hover .partner {
+  animation-play-state: paused;
 }
 
 .wrapper {
@@ -25,6 +29,12 @@
   justify-content: center;
   align-items: center;
   object-fit: contain;
+  transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.item:hover {
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
