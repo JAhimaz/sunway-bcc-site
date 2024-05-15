@@ -9,12 +9,16 @@ import LinkButton from "@/components/Molecules/LinkButton/LinkButton";
 import Button from "@/components/Molecules/Buttons/Button";
 
 
-const EventItem: FC<EventItemProps> = ({ title, description, location, startDate, image, url, pinned }) => {
+const EventItem: FC<EventItemProps & {
+  past?: boolean
+}> = ({ title, description, location, startDate, image, url, pinned, past = false }) => {
 
   const t = useTranslations('Events');
 
   return (
-    <section className={pinned ? styles.eventItemPinned : styles.eventItem }>
+    <section className={pinned ? styles.eventItemPinned : styles.eventItem } style={{
+      opacity: past ? '0.5' : 1
+    }}>
       <div className={styles.imageContainer}>
         <Image src={image} alt={title}
         fill

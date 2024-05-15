@@ -94,7 +94,7 @@ const EventPage = () => {
             // filter events that are before the current date
             filteredEvents.filter(event => new Date(event.startDate) < new Date()).map(event => {
               return (
-                <EventItem key={event.id} {...event} />
+                <EventItem key={event.id} {...event} past />
               )
             })
           }
