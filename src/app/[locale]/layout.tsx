@@ -23,7 +23,7 @@ async function getMessages(locale: string) {
 }
 
 export async function generateStaticParams() {
-  return ["en", "zh"].map((locale) => ({ locale }));
+  return ["en", "zh", "bm"].map((locale) => ({ locale }));
 }
 
 export default async function PageLayout({

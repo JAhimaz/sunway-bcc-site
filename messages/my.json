@@ -1,0 +1,82 @@
+{
+  "Navigation": {
+    "team": "Pasukan",
+    "events": "Peristiwa",
+    "join": "Sertai Kelab",
+    "collaborate": "Bekerjasama"
+  },
+  "Main": {
+    "title": "Sunway Blockchain Kelab _",
+    "headline-1": "MEMUPUK",
+    "headline-2": " GENERASI SETERUSNYA MENJADI BLOCKCHAIN",
+    "about-sep": "[ TENTANG SBCC ]",
+    "numbers-sep": "[ STATISTIK ]",
+    "ethos-sep": "[ ETHOS KAMI ]",
+    "workwith-sep": "[ KAMI BEKERJA DENGAN ]",
+    "socials-sep": "[ SOSIAL KITA ]"
+  },
+  "About": {
+    "about-1": "Sunway Blockchain Club ialah pintu masuk anda untuk menerokai dunia teknologi blockchain. Daripada bengkel dan seminar kepada hackathon dan acara sosial, kami menawarkan pelbagai peluang untuk ahli belajar, rangkaian dan berinovasi dalam ruang crypto.",
+    "about-2": "Sesiapa yang berminat dalam teknologi blockchain dialu-alukan untuk menyertai Sunway Blockchain Club! Sama ada anda seorang pelajar yang tidak sabar-sabar untuk meneroka peluang pekerjaan atau individu yang ingin tahu yang ingin mengembangkan pengetahuan anda, terdapat tempat untuk anda dalam komuniti kami. Walaupun kelab kami berpusat di Universiti Sunway, kami mengalu-alukan ahli dari semua latar belakang dan institusi. Sama ada anda seorang pelajar dari universiti lain atau bukan pelajar yang berminat dengan blockchain, anda dijemput untuk menyertai komuniti kami dan mengambil bahagian dalam aktiviti kami."
+  },
+  "Numbers": {
+    "members": "Ahli",
+    "events": "Peristiwa",
+    "cohost": "Hos Bersama / Rakan Kongsi / Penaja",
+    "estabDate": "11/2023",
+    "established": "Ditubuhkan"
+  },
+  "Ethos": {
+    "ignite": {
+      "title": "NYALAKAN",
+      "content": "Untuk mencetuskan rasa ingin tahu komuniti universiti, yang terdiri daripada pelajar, penyelidik dan ahli kakitangan, tentang potensi teknologi blockchain. Kelab-kelab ini bertujuan untuk menarik minat melalui perbincangan, bengkel dan sesi interaktif yang menarik."
+    },
+    "nurture": {
+      "title": "ASUHAN",
+      "content": "Untuk memupuk pembelajaran kolaboratif dan Penciptaan bersama: kelab berhasrat untuk menyediakan platform di mana ahli boleh belajar antara satu sama lain, bertukar idea, berkongsi pengetahuan, dan bersama-sama meneroka aspek pelbagai aspek teknologi blockchain."
+    },
+    "empower": {
+      "title": "MEMPERKASA",
+      "content": "Untuk memperkasakan ahli mereka dengan kemahiran dan pengetahuan penting yang diperlukan untuk memulakan kerjaya berkaitan blockchain dan mata wang kripto. Dengan menawarkan sumber pendidikan, bengkel dan pengalaman praktikal, kelab berhasrat untuk mempersembahkan blockchain sebagai laluan kerjaya alternatif yang berdaya maju."
+    },
+    "foster": {
+      "title": "FOSTER",
+      "content": "To foster industry relationship with the University community: build connections with key industry leaders to facilitate networking events, seminars, and meetups. Through these interactions, club members can gain firsthand insights into industry trends and potential career avenues."
+    }
+  },
+  "Team": {
+    "title": "Jumpa pasukan",
+    "headline-1": "BANGUNAN",
+    "headline-2": " KELAB YANG KAMI SUKA"
+  },
+  "Roles": {
+    "president": "Presiden",
+    "vp": "Naib Presiden",
+    "secretary": "Setiausaha",
+    "vice-secretary": "Naib Setiausaha",
+    "treasurer": "Bendahari",
+    "media": "Media",
+    "media-marketing": "Media & Pemasaran",
+    "public-relations": "Perhubungan Awam",
+    "gava": "Geran / Analisis / VC / Airdrops",
+    "subcom": "jawatankuasa kecil",
+    "events": "Peristiwa"
+  },
+  "Redirect": {
+    "title": "Mengubah hala..."
+  },
+  "Developing": {
+    "title": "HALAMAN INI DIBAWAH",
+    "title-2": "PEMBANGUNAN"
+  },
+  "Events": {
+    "title": "Peristiwa",
+    "headline-1": "SERTAI KAMI",
+    "headline-2": " DI ACARA KAMI SETERUSNYA",
+    "joinEvent": "Daftar",
+    "upcoming": "AKAN DATANG",
+    "pastEvents": "PERISTIWA LEPAS",
+    "loading": "MEMMUAT...",
+    "eventDetails": "Butiran Acara"
+  }
+}

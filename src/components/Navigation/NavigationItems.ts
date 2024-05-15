@@ -40,5 +40,9 @@ export const locales = [
   {
     id: "zh",
     name: "中文"
+  },
+  {
+    id: "bm",
+    name: "BM"
   }
 ]

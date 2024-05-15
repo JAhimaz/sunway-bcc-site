@@ -2,7 +2,7 @@ import fs from "fs";
 import baseData from "../messages/en.json";
 
 // INSERT THE FILE NAME HERE
-const newfileName = "zh"; // For example: "fr" or "de"
+const newfileName = "es"; // For example: "fr" or "de"
 
 const main = async (newFile: string) => {
   if (!newFile) {
@@ -36,7 +36,7 @@ const main = async (newFile: string) => {
   // write to file
   const json = JSON.stringify(emptyData, null, 2);
   // create and write to file
-  fs.writeFile(`./src/messages/${newFile}.json`, json, (err) => {
+  fs.writeFile(`./messages/${newFile}.json`, json, (err) => {
     if (err) {
       console.error(err);
       return;
