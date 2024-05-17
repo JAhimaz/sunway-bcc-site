@@ -3,7 +3,7 @@ import { EventItem } from "@/components/Events/EventPage"
 
 const FetchEvents = async () => {
     try {
-      const response = await fetch(`https://api.baserow.io/api/database/rows/table/296735/?user_field_names=true&size=10`, {
+      const response = await fetch(`https://api.baserow.io/api/database/rows/table/296735/?user_field_names=true&size=10&order_by=-startDate`, {
         method: 'GET',
         headers: {
           Authorization: `Token rK3SVomxuHfqBl5mKMDONQhkA7wymwR6`,
