@@ -87,14 +87,14 @@ export const Members = [
   {
     name: "Emmanuel",
     role: "media",
-    image: "",
-    imageAlt: ""
+    image: "em-1.JPEG",
+    imageAlt: "em-2.JPEG"
   },
   {
     name: "Hassanal Daniel",
     role: "media",
-    image: "",
-    imageAlt: ""
+    image: "daniel-1.JPEG",
+    imageAlt: "daniel-2.JPEG"
   },
   {
     name: "Budoor Mohammed",
@@ -109,12 +109,6 @@ export const Members = [
     imageAlt: ""
   },
   {
-    name: "Tee Jin Fern",
-    role: "public-relations",
-    image: "",
-    imageAlt: ""
-  },
-  {
     name: "Karthikean Pathmanathan",
     role: "public-relations",
     image: "",
@@ -125,6 +119,12 @@ export const Members = [
     role: "gava",
     image: "",
     imageAlt: ""
+  },
+  {
+    name: "Tee Jin Fern",
+    role: "events",
+    image: "jinfern-1.JPEG",
+    imageAlt: "jinfern-2.JPEG"
   },
   {
     name: "Pei Yuan",
