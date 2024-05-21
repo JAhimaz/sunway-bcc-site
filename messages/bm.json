@@ -77,6 +77,7 @@
     "upcoming": "AKAN DATANG",
     "pastEvents": "PERISTIWA LEPAS",
     "loading": "MEMMUAT...",
-    "eventDetails": "Butiran Acara"
+    "eventDetails": "Butiran Acara",
+    "eventDisabled": "Akan datang"
   }
 }

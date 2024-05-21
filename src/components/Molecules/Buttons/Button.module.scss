@@ -14,6 +14,20 @@
   }
 }
 
+.disabled {
+  cursor: default;
+  display: flex;
+  width: fit-content;
+  border: 1px solid var(--foreground);
+  background-color: var(--background);
+  padding: 1rem 1rem;
+  border-radius: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
 @media screen and (max-width: 768px) {
   .button {
     width: 100%;

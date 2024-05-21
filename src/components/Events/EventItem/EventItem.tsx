@@ -11,7 +11,9 @@ import Button from "@/components/Molecules/Buttons/Button";
 
 const EventItem: FC<EventItemProps & {
   past?: boolean
-}> = ({ title, description, location, startDate, image, url, pinned, past = false }) => {
+}> = ({ title, description, location, startDate, endDate, image, url, pinned, past = false }) => {
+
+  console.log(endDate)
 
   const t = useTranslations('Events');
 
@@ -35,12 +37,15 @@ const EventItem: FC<EventItemProps & {
       <div className={styles.rightSect}>
           <Texts fontSize="md" color="var(--text)" weight="bold">
           {new Date(startDate).toLocaleDateString("en-US", { day: "2-digit", month: "long", year: "numeric" })}
+          {endDate ? " - " + new Date(endDate).toLocaleDateString("en-US", { day: "2-digit", month: "long", year: "numeric" }) : ""}
         </Texts>
         <Texts fontSize="sm" color="var(--text-light)">
           {new Date(startDate).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true })}
         </Texts>
-       <Button href={url}>
-          {!past ? t("joinEvent") : t("eventDetails")}
+       <Button href={url} disabled={url ? false : true}>
+          {!past && url ? t("joinEvent") :
+          !url ? t("eventDisabled")
+          : t("eventDetails")}
        </Button>
       </div>
     </section>

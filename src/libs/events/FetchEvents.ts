@@ -19,6 +19,7 @@ const FetchEvents = async () => {
           description: row.description,
           location: row.location,
           startDate: row.startDate,
+          endDate: row?.endDate ?? undefined,
           image: row.image.length > 0 ? row.image[0].url : "",
           url: row.url,
           pinned: row.pinned

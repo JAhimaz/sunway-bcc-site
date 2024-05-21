@@ -77,6 +77,7 @@
     "upcoming": "UPCOMING",
     "pastEvents": "PAST EVENTS",
     "loading": "LOADING...",
-    "eventDetails": "Event Details"
+    "eventDetails": "Event Details",
+    "eventDisabled": "Coming Soon"
   }
 }

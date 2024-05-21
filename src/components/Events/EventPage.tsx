@@ -17,6 +17,7 @@ export type EventItem = {
   description: string;
   location: string;
   startDate: string;
+  endDate?: string;
   image: string;
   url: string;
   pinned?: boolean;

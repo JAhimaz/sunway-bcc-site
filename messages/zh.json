@@ -77,7 +77,8 @@
     "upcoming": "即将到来",
     "pastEvents": "过去的活动",
     "loading": "加载中。。。",
-    "eventDetails": "活动详情"
+    "eventDetails": "活动详情",
+    "eventDisabled": "即将推出"
   }
 
 }

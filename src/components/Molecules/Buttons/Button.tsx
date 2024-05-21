@@ -10,9 +10,17 @@ type ButtonProps = {
   href: string;
   children: ReactNode;
   css?: CSSProperties;
+  disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ href, children, css }) => {
+const Button: FC<ButtonProps> = ({ href, children, css, disabled }) => {
+
+  if(disabled) return (
+    <div className={styles.disabled}>
+      <Texts color="var(--text)" fontSize="sm">{children}</Texts>
+    </div>
+  )
+
   return (
     <Link href={href} target="_blank" className={styles.button} style={css}>
       <Texts color="var(--text)" fontSize="sm">{children}</Texts>
