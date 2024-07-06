@@ -21,6 +21,9 @@ export type EventItem = {
   image: string;
   url: string;
   pinned?: boolean;
+  discount_code?: string;
+  discount_amount?: string;
+  discount_offer?: string;
 }
 
 const EventPage = () => {

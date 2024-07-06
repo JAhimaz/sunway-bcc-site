@@ -78,6 +78,10 @@
     "pastEvents": "PAST EVENTS",
     "loading": "LOADING...",
     "eventDetails": "Event Details",
-    "eventDisabled": "Coming Soon"
+    "eventDisabled": "Coming Soon",
+    "useCode": "Use code ",
+    "for": " for ",
+    "off": " off ",
+    "on": " on "
   }
 }

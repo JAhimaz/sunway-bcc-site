@@ -22,7 +22,10 @@ const FetchEvents = async () => {
           endDate: row?.endDate ?? undefined,
           image: row.image.length > 0 ? row.image[0].url : "",
           url: row.url,
-          pinned: row.pinned
+          pinned: row.pinned,
+          discount_code: row.discount_code,
+          discount_amount: row.discount_amount,
+          discount_offer: row.discount_offer === "" ? undefined : row.discount_offer,
         })) as EventItem[]
       })
 

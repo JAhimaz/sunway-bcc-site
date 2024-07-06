@@ -78,6 +78,10 @@
     "pastEvents": "PERISTIWA LEPAS",
     "loading": "MEMMUAT...",
     "eventDetails": "Butiran Acara",
-    "eventDisabled": "Akan datang"
+    "eventDisabled": "Akan datang",
+    "useCode": "Gunakan kod ",
+    "for": " untuk ",
+    "off": " off ",
+    "on": " pada "
   }
 }

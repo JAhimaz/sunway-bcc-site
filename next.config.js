@@ -31,6 +31,10 @@ const nextConfig = {
         hostname: 'baserow-media.ams3.digitaloceanspaces.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**',
       }
     ]
   }

@@ -78,7 +78,11 @@
     "pastEvents": "过去的活动",
     "loading": "加载中。。。",
     "eventDetails": "活动详情",
-    "eventDisabled": "即将推出"
+    "eventDisabled": "即将推出",
+    "useCode": "使用代码",
+    "for": "为",
+    "off": "关闭",
+    "on": "在"
   }
 
 }
