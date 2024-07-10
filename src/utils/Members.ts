@@ -67,18 +67,6 @@ export const Members = [
     imageAlt: "giselle-2.jpg"
   },
   {
-    name: "Mohammed Moatasem Faisal",
-    role: "public-relations",
-    image: "mo-1.jpg",
-    imageAlt: "mo-2.jpg"
-  },
-  {
-    name: "Mathangi A/P S Chandran",
-    role: "gava",
-    image: "mathangi-1.jpg",
-    imageAlt: "mathangi-2.jpg"
-  },
-  {
     name: "Loh Kah Shun",
     role: "gava",
     image: "kahshun-1.jpg",
@@ -97,12 +85,6 @@ export const Members = [
     imageAlt: "daniel-2.JPEG"
   },
   {
-    name: "Budoor Mohammed",
-    role: "media-marketing",
-    image: "",
-    imageAlt: ""
-  },
-  {
     name: "Gan Ming Xian",
     role: "treasurer",
     image: "",
@@ -115,32 +97,14 @@ export const Members = [
     imageAlt: ""
   },
   {
-    name: "Joshua",
-    role: "gava",
-    image: "",
-    imageAlt: ""
-  },
-  {
     name: "Tee Jin Fern",
     role: "events",
     image: "jinfern-1.JPEG",
     imageAlt: "jinfern-2.JPEG"
   },
   {
-    name: "Pei Yuan",
-    role: "events",
-    image: "",
-    imageAlt: ""
-  },
-  {
     name: "Tan Jia Xun",
     role: "events",
-    image: "",
-    imageAlt: ""
-  },
-  {
-    name: "Alex",
-    role: "subcom",
     image: "",
     imageAlt: ""
   }

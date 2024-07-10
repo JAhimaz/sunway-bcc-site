@@ -76,6 +76,76 @@ const partners = [
     logo: "token2049.png",
     description: `TOKEN2049 brings together the global crypto industry, uniting entrepreneurs, investors, developers, industry enthusiasts and global media - and creates unparalleled networking opportunities. This is the community that will define what’s next in the space.`,
     url: "https://www.token2049.com/"
+  },
+  {
+    id: "coinw",
+    name: "CoinW",
+    logo: "coinw.png",
+    description: "Buy & Sell Crypto on CoinW, a Secure & Reliable Crypto Exchange, Low Fees, Wide Variety of Cryptocurrencies & Excellent Customer Support.",
+    url: "https://www.coinw.com/frontweb/en_US"
+  },
+  {
+    id: "coreum",
+    name: "Coreum",
+    logo: "coreum.png",
+    description: "The World’s First Superledger. Enterprise-Grade Blockchain Solutions with Smart Tokens",
+    url: "https://www.coreum.com/"
+  },
+  {
+    id: "haya",
+    name: "Haya Finance",
+    logo: "haya.png",
+    description: "In the long-term race against the market, few cross the finish line ahead. Even expert investors commonly lag behind market averages over prolonged periods. $H20 is Haya’s Zero-Fee on-chain ETF, giving you access to the top 20 Cryptocurrencies with just one token. Diversify your portfolio and invest with $H20.",
+    url: "https://haya.finance/"
+  },
+  {
+    id: "jupiter",
+    name: "Jupiter Exchange",
+    logo: "jupiterexchange.png",
+    description: "Jupiter: The best swap aggregator on Solana. Built for smart traders who like money.",
+    url: "https://jup.ag/"
+  },
+  {
+    id: "malaysiablockchainweek",
+    name: "Malaysia Blockchain Week",
+    logo: "malaysiablockchainweek.png",
+    description: "The HOTTEST premier blockchain event right in the hidden gem of Asia. Don't miss out on your opportunity to write the future of blockchain in Malaysia",
+    url: "https://myblockchainweek.com/"
+  },
+  {
+    id: "manta",
+    name: "Manta Network",
+    logo: "manta.png",
+    description: "Manta Pacific Mainnet is Live · Manta Pacific is the first EVM-equivalent ZK-application platform that is scalable and secure through Celestia DA and Polygon",
+    url: "https://manta.network/"
+  },
+  {
+    id: "mdec",
+    name: "MDEC",
+    logo: "mdec.png",
+    description: "Malaysia Digital Economy Corporation (MDEC), a government agency under the purview of the Ministry of Digital, was established in 1996",
+    url: "https://mdec.my/"
+  },
+  {
+    id: "metaschool",
+    name: "Metaschool",
+    logo: "metaschool.png",
+    description: "Metaschool is one of the few ed-tech startups that is aimed at making Web3 education accessible to everyone.",
+    url: "https://metaschool.so/"
+  },
+  {
+    id: "shardeum",
+    name: "Shardeum",
+    logo: "shardeum.png",
+    description: "Shardeum is an EVM-based, linearly scalable network offering low gas fees forever while maintaining true decentralization and solid security.",
+    url: "https://shardeum.org/"
+  },
+  {
+    id: "virtuals",
+    name: "Virtuals Protocol",
+    logo: "virtuals.png",
+    description: "Dive into infinite adventure with Never Ending Games, where AI crafts dynamic scenario RPGs. Powered by cutting-edge technology, each quest adapts in real-time",
+    url: "https://www.virtuals.io/"
   }
 ]
 

@@ -3,6 +3,7 @@ type NavigationItem = {
   id: string,
   link: string,
   icon?: string,
+  newTab?: boolean,
 }
 
 export const NavigationItems: NavigationItem[] = [
@@ -22,13 +23,15 @@ export const NavigationItems: NavigationItem[] = [
   },
   {
     id: "collaborate",
-    link: "/collaborate",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLScCZ0M7fZG-joi_pRDO-UAldNUxyR5fO_0bMcKLcummlf1FEg/viewform",
     icon: "collaborate",
+    newTab: true,
   },
   {
     id: "join",
-    link: "/register",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLScALDHl6vfTgpQWs0GaherrJZbIRfrZOFSzg93qSx9fGqnViQ/viewform",
     icon: "register",
+    newTab: true,
   },
 ]
 

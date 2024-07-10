@@ -27,7 +27,7 @@ const About = () => {
           </Texts>
         </Texts>
         <div className={styles.rightSect}>
-          <LinkButton href="register">JOIN THE CLUB</LinkButton>
+          <LinkButton href="https://docs.google.com/forms/d/e/1FAIpQLScALDHl6vfTgpQWs0GaherrJZbIRfrZOFSzg93qSx9fGqnViQ/viewform">JOIN THE CLUB</LinkButton>
         </div>
       </section>
     </section>

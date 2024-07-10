@@ -14,7 +14,7 @@ type LinkButtonProps = {
 
 const LinkButton: FC<LinkButtonProps> = ({ href, children, css }) => {
   return (
-    <Link href={href} className={styles.button} style={css}>
+    <Link href={href} className={styles.button} target="_blank" style={css}>
       <span className={styles.borderPseudo} />
       <Texts color="var(--text)" fontSize="sm" style={{
         padding: '1rem 0',
