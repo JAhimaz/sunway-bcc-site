@@ -7,6 +7,7 @@ import styles from "./EventItem.module.scss";
 import Image from "next/image";
 import LinkButton from "@/components/Molecules/LinkButton/LinkButton";
 import Button from "@/components/Molecules/Buttons/Button";
+import { CopyToClipBoard } from "@/libs/CopyToClipboard";
 
 
 const EventItem: FC<EventItemProps & {
@@ -35,7 +36,10 @@ const EventItem: FC<EventItemProps & {
         <Texts fontSize="sm" className={styles.description}>{description}</Texts>
         { discount_code &&
         <Texts fontSize="sm" color="var(--text)" className={styles.discount}>
-          {t("useCode")}<Texts fontSize="sm" color="var(--highlight)" weight="bold">{discount_code}</Texts>{t("for")}
+          {t("useCode")}<Texts fontSize="sm" color="var(--highlight)" weight="bold" style={{
+            cursor: "pointer",
+            userSelect: "all"
+          }} onClick={() => CopyToClipBoard(discount_code)}>{discount_code}</Texts>{t("for")}
           <Texts fontSize="sm" color="var(--highlight)" weight="bold">{discount_amount}</Texts>{discount_amount && t("off")}
           {discount_offer && (
             <Texts fontSize="sm" color="var(--text)">{t("on")}{discount_offer}</Texts>

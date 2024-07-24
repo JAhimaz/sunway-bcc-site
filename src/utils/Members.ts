@@ -25,6 +25,12 @@ export const Members = [
     imageAlt: "wilson-2.jpg"
   },
   {
+    name: "Tee Jin Fern",
+    role: "events",
+    image: "jinfern-1.JPEG",
+    imageAlt: "jinfern-2.JPEG"
+  },
+  {
     name: "Renald Rafliz",
     role: "vice-secretary",
     image: "renald-1.jpg",
@@ -35,6 +41,24 @@ export const Members = [
     role: "media",
     image: "junhao-1.jpg",
     imageAlt: "junhao-2.jpg"
+  },
+  {
+    name: "Dionne Teh Wooi Ying",
+    role: "media",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Emmanuel",
+    role: "media",
+    image: "em-1.JPEG",
+    imageAlt: "em-2.JPEG"
+  },
+  {
+    name: "Hassanal Daniel",
+    role: "media",
+    image: "daniel-1.JPEG",
+    imageAlt: "daniel-2.JPEG"
   },
   {
     name: "Manmeet Kaur",
@@ -66,23 +90,17 @@ export const Members = [
     image: "giselle-1.jpg",
     imageAlt: "giselle-2.jpg"
   },
+    {
+    name: "Karthikean Pathmanathan",
+    role: "public-relations",
+    image: "",
+    imageAlt: ""
+  },
   {
     name: "Loh Kah Shun",
     role: "gava",
     image: "kahshun-1.jpg",
     imageAlt: "kahshun-2.jpg"
-  },
-  {
-    name: "Emmanuel",
-    role: "media",
-    image: "em-1.JPEG",
-    imageAlt: "em-2.JPEG"
-  },
-  {
-    name: "Hassanal Daniel",
-    role: "media",
-    image: "daniel-1.JPEG",
-    imageAlt: "daniel-2.JPEG"
   },
   {
     name: "Gan Ming Xian",
@@ -91,21 +109,63 @@ export const Members = [
     imageAlt: ""
   },
   {
-    name: "Karthikean Pathmanathan",
-    role: "public-relations",
-    image: "",
-    imageAlt: ""
-  },
-  {
-    name: "Tee Jin Fern",
-    role: "events",
-    image: "jinfern-1.JPEG",
-    imageAlt: "jinfern-2.JPEG"
-  },
-  {
     name: "Tan Jia Xun",
     role: "events",
     image: "",
     imageAlt: ""
-  }
+  },
+  {
+    name: "Laetitia Valerina",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Darrance Beh Heng Shek",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Ian Lim Yi An",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Chow Ying Ying",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Khoo Jon Xun",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Muhammad Momin",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Law Chii Yuen",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Dashayne Lum Shen Li",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
+  {
+    name: "Nicholas Oswald",
+    role: "events",
+    image: "",
+    imageAlt: ""
+  },
 ]

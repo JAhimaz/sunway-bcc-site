@@ -1,7 +1,7 @@
 export const Stats = {
-  "members": 280,
-  "events": 30,
-  "cohost": 50,
+  "members": 310,
+  "events": 40,
+  "cohost": 60,
 }
 
 // Sunway Blockchain Club, a society in Sunway University, aims to onboard the next generation of students into the Blockchain / Cryptocurrency industry. With over 280+ members within 6 months, we have grown to be the second biggest blockchain university club in Malaysia. Hosting over 35 events and having both partnerships and collaborations with large scale Malaysia events such as ETHKL, Malaysia Blockchain Week and SOLANA. Are mission to educate has also brought on board major companies to our doorstep to teach our students, such as Coingecko, Etherscan, Solana foundation, Ethereum Foundation, Luno, Blackrock, Aleo, ZKSync, Aptos, NEAR and more.
