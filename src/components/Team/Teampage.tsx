@@ -6,11 +6,23 @@ import styles from "./Teampage.module.scss";
 import Seperator from "../Molecules/Seperator/Seperator";
 import { Members } from "@/utils/Members";
 import MemberImage from "./MemberImage/MemberImage";
+import { useEffect, useState } from "react";
+import FetchTeam, { TeamMember } from "@/libs/team/FetchTeam";
 
 const Teampage = () => {
 
   const t = useTranslations("Team")
   const headline = t("title");
+
+  const [team, setTeam] = useState<TeamMember[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    FetchTeam().then((team) => {
+      setLoading(false);
+      setTeam(team);
+    });
+  }, [])
 
   return (
     <section className={styles.main}>
@@ -30,13 +42,26 @@ const Teampage = () => {
         })}
       </span>
       <Seperator />
+      { loading ? 
+      (
+        <section style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: '2rem'
+        }}>
+          <div className={styles.loader}></div>
+        </section>
+      )
+      :  
       <section className={styles.memberGrid}>
-      { Members.map((member, index) => {
+      { team.map((member, index) => {
         return (
           <MemberImage key={index} {...member} />          
         )
       })}
       </section>
+      }
     </section>
   )
 }
