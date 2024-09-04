@@ -22,6 +22,11 @@ export const NavigationItems: NavigationItem[] = [
     icon: "calendar",
   },
   {
+    id: "store",
+    link: "/store",
+    icon: "shop",
+  },
+  {
     id: "collaborate",
     link: "https://docs.google.com/forms/d/e/1FAIpQLScCZ0M7fZG-joi_pRDO-UAldNUxyR5fO_0bMcKLcummlf1FEg/viewform",
     icon: "collaborate",

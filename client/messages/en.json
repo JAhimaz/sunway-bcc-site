@@ -2,6 +2,7 @@
   "Navigation": {
     "team": "The Team",
     "events": "Events",
+    "store": "Store",
     "join": "Join the Club",
     "collaborate": "Collaborate"
   },
@@ -83,5 +84,12 @@
     "for": " for ",
     "off": " off ",
     "on": " on "
+  },
+  "Store": {
+    "title": "Merch / Swag Store",
+    "headline-1": "GET THE",
+    "headline-2": " LATEST SUNWAY BLOCKCHAIN MERCHANDISE",
+    "shopNow": "Shop Now",
+    "comingSoon": "COMING SOON"
   }
 }
