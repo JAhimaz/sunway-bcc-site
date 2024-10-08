@@ -91,5 +91,14 @@
     "headline-2": " LATEST SUNWAY BLOCKCHAIN MERCHANDISE",
     "shopNow": "Shop Now",
     "comingSoon": "COMING SOON"
+  },
+  "Profile": {
+    "title": "Account",
+    "headline-1": "WELCOME BACK",
+    "headline-2": " TO YOUR PROFILE",
+    "connect-1": "Connect your ",
+    "connect-2": "Polygon Wallet",
+    "connect-3": " to access your Profile",
+    "connect-button": "Connect Wallet"
   }
 }

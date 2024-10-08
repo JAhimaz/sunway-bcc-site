@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import './globals.css'
 import { ReactNode } from 'react';
 import { CookiesProvider } from 'next-client-cookies/server';
+import { Web3Provider } from '@/utils/providers/Web3Provider';
 
 type Props = {
   children: ReactNode;
@@ -73,9 +74,11 @@ export default async function PageLayout({
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <CookiesProvider>
-        {children}
-      </CookiesProvider>
+      <Web3Provider>
+        <CookiesProvider>
+          {children}
+        </CookiesProvider>
+      </Web3Provider>
     </NextIntlClientProvider>
   )
 }

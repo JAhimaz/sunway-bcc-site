@@ -1,0 +1,106 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media (min-width: 1440px) {
+  .main {
+    width: calc(1440px - 72px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .headline, .subheader {
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+}
+
+.header {
+  word-spacing: 3px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.headline {
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -4.8px;
+}
+
+.headlineChar {
+  opacity: 0;
+  background-color: transparent;
+  -webkit-animation: transitionIn 0.15s step-end forwards;
+  animation: transitionIn 0.15s step-end forwards;
+}
+
+@keyframes transitionIn {
+// the text will have an opacity of 0 at the start of the animation
+  0% {
+    background-color: var(--text);
+    opacity: 1;
+  }
+  90% {
+    background-color: transparent;
+  }
+// the text will have an opacity of 1 at the end of the animation
+  100% {
+    opacity: 1;
+  }
+}
+
+.underlineHover {
+  box-sizing: border-box;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.15s;
+}
+
+.underlineHover:hover {
+  border-bottom: 1px solid var(--text);
+}
+
+.mainSection {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  height: 100%;
+  gap: 1rem;
+}
+
+.connectSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.connectButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  background-color: var(--background);
+  border: 1px solid var(--foreground);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.connectButton:hover {
+  background-color: var(--foreground);
+}

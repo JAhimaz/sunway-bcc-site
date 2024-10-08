@@ -8,6 +8,7 @@ import { Members } from "@/utils/Members";
 import MemberImage from "./MemberImage/MemberImage";
 import { useEffect, useState } from "react";
 import FetchTeam, { TeamMember } from "@/libs/team/FetchTeam";
+import Loader from "../Loader/Loader";
 
 const Teampage = () => {
 
@@ -50,7 +51,7 @@ const Teampage = () => {
           alignItems: 'center',
           marginTop: '2rem'
         }}>
-          <div className={styles.loader}></div>
+          <Loader />
         </section>
       )
       :  
