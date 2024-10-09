@@ -13,6 +13,7 @@ import { useParams } from "next/navigation";
 import { useRouter } from '@/components/navigation';
 import { useCookies } from 'next-client-cookies';
 import { useLocale } from 'next-intl';
+import { ConnectKitButton } from "connectkit";
 
 const NavigationMobile = () => {
   
@@ -68,6 +69,26 @@ const NavigationMobile = () => {
             </Link>
           )
         })}
+        <ConnectKitButton.Custom>
+          {({ show, ensName, address, isConnected, truncatedAddress }) => {
+            return (
+              isConnected && address ? (
+                <>
+                  <Link href="/profile" className={styles.navMenuItem}>
+                      <Texts fontSize="sm" color="var(--text)">Profile ({isConnected && (ensName ?? truncatedAddress)})</Texts>
+                  </Link>
+                  <div onClick={show} className={styles.navMenuItem}>
+                    <Texts fontSize="sm" color="var(--text)">Disconnect</Texts>
+                  </div>
+                </> 
+              ) : (
+                <span onClick={show} className={styles.navMenuItem}>
+                  <Texts color="var(--text)" fontSize="sm">{t("connect-button")}</Texts>
+                </span>
+              )
+            );
+          }}
+        </ConnectKitButton.Custom>
       </div>
     </div>
   )

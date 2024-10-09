@@ -15,6 +15,7 @@ import MongoStore from 'connect-mongo'
 
 // Routes
 // import Route from "@routes/Route"; // Example Route
+import GetUserInfoRoute from "@routes/GetUser";
 
 const app = express();
 
@@ -42,9 +43,9 @@ app.use(
       httpOnly: false,
       secure: false,
       // sameSite: 'strict',
-      // domain: '.reachcard.app'
+      // domain: '.sunwayblockchain.com'
     },
-    name: "session-name", // You may rename this to any session name you would like
+    name: "sunwaybcc", // You may rename this to any session name you would like
   }),
 );
 app.use(bodyParser.json());
@@ -82,3 +83,4 @@ app.use('/api/', rateLimit({
 
 // Example Route Declaration
 // app.use("/path/to/route", Route);
+app.use("/api/user", GetUserInfoRoute);

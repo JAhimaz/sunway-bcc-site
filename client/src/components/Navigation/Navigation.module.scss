@@ -50,3 +50,22 @@
   transition: width 0.15s;
 }
 
+.connectButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  margin: 0 -2rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--foreground);
+  background-color: var(--background);
+  color: var(--background);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.connectButton:hover {
+  background-color: var(--foreground);
+  color: var(--text);
+}

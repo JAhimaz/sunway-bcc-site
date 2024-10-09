@@ -60,3 +60,23 @@
     position: relative;
   }
 }
+
+.connectButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--background);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.accountSelectSect {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+}
