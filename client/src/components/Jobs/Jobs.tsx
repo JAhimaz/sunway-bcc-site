@@ -2,13 +2,12 @@
 import { useTranslations } from "next-intl";
 import Texts from "../Atoms/Texts";
 import GridHoverBox from "../Home/GridHoverBox/GridHoverBox";
-import styles from "./Store.module.scss";
+import styles from "./Jobs.module.scss";
 import Seperator from "../Molecules/Seperator/Seperator";
-import StoreItem from "./StoreItem/StoreItem";
 
-const Store = () => {
+const Jobs = () => {
 
-  const t = useTranslations("Store")
+  const t = useTranslations("Jobs")
   const headline = t("title");
 
   // const [team, setTeam] = useState<TeamMember[]>([]);
@@ -32,9 +31,8 @@ const Store = () => {
         })}
       </span>
       <Seperator />
-      
-      {/* Items */}
-      <section className={styles.storeItemGrid}>
+
+      <section className={styles.jobItemGrid}>
         <Texts color="var(--foreground)" fontSize="md" className={styles.subheader}>
           Currently in development. Thank you for your patience.
         </Texts>
@@ -44,4 +42,4 @@ const Store = () => {
   )
 }
 
-export default Store;
+export default Jobs;

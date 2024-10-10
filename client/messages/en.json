@@ -4,6 +4,7 @@
     "events": "Events",
     "store": "Store",
     "join": "Join the Club",
+    "jobs": "Jobs",
     "collaborate": "Collaborate"
   },
   "Main": {
@@ -90,6 +91,13 @@
     "headline-1": "GET THE",
     "headline-2": " LATEST SUNWAY BLOCKCHAIN MERCHANDISE",
     "shopNow": "Shop Now",
+    "comingSoon": "COMING SOON"
+  },
+  "Jobs": {
+    "title": "Jobs",
+    "headline-1": "EXPLORE",
+    "headline-2": " JOB OPPORTUNITIES IN THE INDUSTRY",
+    "exploreJobs": "Explore Jobs",
     "comingSoon": "COMING SOON"
   }
 }

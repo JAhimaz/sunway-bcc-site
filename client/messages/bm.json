@@ -4,6 +4,7 @@
     "events": "Peristiwa",
     "store": "Kedai",
     "join": "Sertai Kelab",
+    "jobs": "Pekerjaan",
     "collaborate": "Bekerjasama"
   },
   "Main": {
@@ -84,5 +85,19 @@
     "for": " untuk ",
     "off": " off ",
     "on": " pada "
+  },
+  "Store": {
+    "title": "Kedai Merch / Swag",
+    "headline-1": "DAPATKAN",
+    "headline-2": " BARANGAN TERKINI SUNWAY BLOCKCHAIN",
+    "shopNow": "Membeli sekarang",
+    "comingSoon": "AKAN DATANG"
+  },
+  "Jobs": {
+    "title": "Pekerjaan",
+    "headline-1": "TEROKAI",
+    "headline-2": " PELUANG PEKERJAAN DALAM BLOCKCHAIN",
+    "exploreJobs": "Terokai Pekerjaan",
+    "comingSoon": "AKAN DATANG"
   }
 }
