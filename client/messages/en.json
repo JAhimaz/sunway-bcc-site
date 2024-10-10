@@ -4,8 +4,9 @@
     "events": "Events",
     "store": "Store",
     "join": "Join the Club",
-    "collaborate": "Collaborate",
-    "connect-button":"Connect Wallet"
+    "connect-button":"Connect Wallet",
+    "jobs": "Jobs",
+    "collaborate": "Collaborate"
   },
   "Main": {
     "title": "Sunway Blockchain Club _",
@@ -104,5 +105,12 @@
     "connect-5": " to access your Profile",
     "connect-button": "Connect Wallet",
     "disconnect": "Disconnect / Logout"
+  },
+  "Jobs": {
+    "title": "Jobs",
+    "headline-1": "EXPLORE",
+    "headline-2": " JOB OPPORTUNITIES IN THE INDUSTRY",
+    "exploreJobs": "Explore Jobs",
+    "comingSoon": "COMING SOON"
   }
 }

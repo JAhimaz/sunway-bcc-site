@@ -4,6 +4,7 @@
     "events": "大事",
     "store": "商店",
     "join": "加入俱乐部",
+    "jobs": "职业机会",
     "collaborate": "合作"
   },
   "Main": {
@@ -84,6 +85,19 @@
     "for": "为",
     "off": "关闭",
     "on": "在"
+  },
+  "Store": {
+    "title": "商店",
+    "headline-1": "获得",
+    "headline-2": "最新的Sunway区块链商品",
+    "shopNow": "现在购买",
+    "comingSoon": "即将推出"
+  },
+  "Jobs": {
+    "title": "职业机会",
+    "headline-1": "探索",
+    "headline-2": "区块链中的工作机会",
+    "exploreJobs": "探索工作",
+    "comingSoon": "即将推出"
   }
-
 }
