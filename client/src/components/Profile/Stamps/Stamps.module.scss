@@ -1,0 +1,23 @@
+.stampFlexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.stamp {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 1px solid var(--foreground);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--foreground);
+  background-color: var(--background);
+  transition: background-color 0.15s;
+}

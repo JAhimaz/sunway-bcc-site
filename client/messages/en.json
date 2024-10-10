@@ -4,6 +4,7 @@
     "events": "Events",
     "store": "Store",
     "join": "Join the Club",
+    "connect-button":"Connect Wallet",
     "jobs": "Jobs",
     "collaborate": "Collaborate"
   },
@@ -92,6 +93,18 @@
     "headline-2": " LATEST SUNWAY BLOCKCHAIN MERCHANDISE",
     "shopNow": "Shop Now",
     "comingSoon": "COMING SOON"
+  },
+  "Profile": {
+    "title": "Profile",
+    "headline-1": "WELCOME BACK",
+    "headline-2": " TO YOUR PROFILE",
+    "connect-1": "Please",
+    "connect-2": " Connect",
+    "connect-3": " Your ",
+    "connect-4": "Polygon Wallet",
+    "connect-5": " to access your Profile",
+    "connect-button": "Connect Wallet",
+    "disconnect": "Disconnect / Logout"
   },
   "Jobs": {
     "title": "Jobs",

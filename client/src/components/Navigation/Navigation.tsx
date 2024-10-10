@@ -12,6 +12,7 @@ import { useParams } from "next/navigation";
 import { useRouter } from '@/components/navigation';
 import { useCookies } from 'next-client-cookies';
 import { useLocale } from 'next-intl';
+import { ConnectKitButton } from 'connectkit';
 
 const Navigation: FC = () => {
 
@@ -62,6 +63,25 @@ const Navigation: FC = () => {
         })}
 
         <Select options={locales} value={locale} onChange={(locale: string) => handleChange(locale)}/>
+
+        <ConnectKitButton.Custom>
+          {({ show, ensName, address, isConnected, truncatedAddress }) => {
+            return (
+              isConnected && address ? (
+                <Link href="/profile">
+                  <span className={styles.connectButton}>
+                    <Texts color="var(--text)">{ensName ?? truncatedAddress}</Texts>
+                  </span>
+                </Link>
+              ) : (
+                <span className={styles.connectButton} onClick={show}>
+                  <Texts color="var(--text)" fontSize="xs">{t("connect-button")}</Texts>
+                </span>
+              )
+
+            );
+          }}
+        </ConnectKitButton.Custom>
       </section>
     </section>
   )
