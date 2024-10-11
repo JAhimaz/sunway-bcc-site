@@ -4,15 +4,7 @@ import { FC } from "react";
 import styles from "./Stamps.module.scss";
 import Texts from "@/components/Atoms/Texts";
 import Image from "next/image";
-
-export type Stamp = {
-  id: number
-  date: string
-}
-
-type StampsType = {
-  stamps: Stamp[]
-}
+import { StampsType } from "./types";
 
 // maximum of 10 stamps
 

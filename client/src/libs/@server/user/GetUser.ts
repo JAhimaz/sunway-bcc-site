@@ -1,4 +1,4 @@
-import { Stamp } from "@/components/Profile/Stamps/Stamps";
+import { Stamp } from "@/components/Profile/Stamps/types";
 import { DATA_API } from "@/utils/APIs";
 
 export type User = {

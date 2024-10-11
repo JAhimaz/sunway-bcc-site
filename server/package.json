@@ -44,6 +44,6 @@
     "clean": "rm -rf dist",
     "build": "tsc && tsc-alias",
     "start": "node dist/index.js",
-    "dev": "nodemon --watch src/**/*.ts --exec tsx src/index.ts"
+    "dev": "nodemon --watch src/**/*.ts --exec 'tsx src/index.ts'"
   }
 }

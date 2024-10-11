@@ -3,13 +3,15 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { IoLogoDiscord, IoPerson } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { BsQrCode } from "react-icons/bs";
 
 import { CSSProperties, FC } from "react";
 
 const IconsIndex = {
   arrowRight: FaArrowRight,
   person: IoPerson,
-  menu: GiHamburgerMenu
+  menu: GiHamburgerMenu,
+  qrCode: BsQrCode 
 };
 
 const SocialsIndex = {
