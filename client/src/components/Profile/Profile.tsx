@@ -11,6 +11,12 @@ import QRCode from "react-qr-code"
 import { use, useEffect, useState } from "react"
 import { ExpToLevel } from "@/utils/ExpToLevel"
 import GetUser, { User } from "@/libs/@server/user/GetUser"
+import { Scanner } from "@yudiel/react-qr-scanner"
+
+type ScannedDetails = {
+  userAddress: string,
+  date: Date,
+}
 
 const Profile = () => {
 
@@ -30,6 +36,9 @@ const Profile = () => {
     version: 0,
   })
 
+  const [scanDetails, setScanDetails] = useState<ScannedDetails | undefined>(undefined);
+  const [scanner, setScanner] = useState(false);
+
   useEffect(() => {
     if(address && address.toString() !== userDetails.address) {
       // Fetch user details
@@ -37,10 +46,24 @@ const Profile = () => {
         setUserDetails(data)
       })
     }
+
+    if(!address) {
+      setUserDetails({
+        _id: "",
+        address: "",
+        createdAt: "",
+        exp: 0,
+        isAdmin: false,
+        stamps: [],
+        updatedAt: "",
+        version: 0,
+      })
+    }
   }, [address, userDetails.address])
 
   return (
     <section className={styles.main}>
+
       <section className={styles.header}>
         <GridHoverBox />
         <Texts color="var(--text-light)" fontSize="xs" className={styles.subheader}>
@@ -76,6 +99,36 @@ const Profile = () => {
             <progress className={styles.progressBar} value={ExpToLevel(userDetails.exp).remainingExpScaled} />
           </div>
         </section>
+        { userDetails.isAdmin && (
+        <section className={styles.adminSection}>
+          <div className={styles.scannerBox}>
+            <Scanner onScan={(data) => {
+              setScanDetails({
+                userAddress: data[0].rawValue,
+                date: new Date(),
+              })
+            }} styles={{
+              container: {
+                width: "400px",
+                height: "400px",
+                border: 'none !important',
+              },
+              video: {
+                width: "100%",
+                height: "100%",
+              }
+            }}
+            />
+          </div>
+          <section>
+            <input type="text" 
+              className={styles.scannerInput} 
+              placeholder={"0xF......."} 
+              value={scanDetails?.userAddress} />
+            <div>Submit</div>
+          </section>
+        </section>
+        ) }
         <section className={styles.mainSection}>
         { address && isConnected ? (
           <>
@@ -96,7 +149,7 @@ const Profile = () => {
                       </div>
                     )
                   }}
-                </ConnectKitButton.Custom>
+                  </ConnectKitButton.Custom>
                 </>
               ) : (
                 <Loader />
