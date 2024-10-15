@@ -16,6 +16,7 @@ import { StringToGradient } from "@/utils/GradientGenerator"
 import { TruncateAddress } from "@/utils/TruncateAddress"
 import { GenGradient } from "@/utils/RandomGradient"
 import { Icon } from "@/utils/Icons"
+import Seperator from "../Molecules/Seperator/Seperator"
 
 type ScannedDetails = {
   userAddress: string,
@@ -42,6 +43,7 @@ const Profile = () => {
 
   const [scanDetails, setScanDetails] = useState<ScannedDetails | undefined>(undefined);
   const [scanner, setScanner] = useState(false);
+  const [showQR, setShowQR] = useState(false);
 
   useEffect(() => {
       // Fetch user details
@@ -97,17 +99,29 @@ const Profile = () => {
           )}
 
         </span>
+
+        <Seperator text={"[ PROFILE ]"} />
         
         <section id="profile-sect-container" className={styles.container}>
           { (isConnected && address && userDetails.address) ? (
             <section id="profile-section" className={styles.profileContainer}>
               <section className={styles.profileLogoSection}>
                 {/* SVG Circle with gradient fill from GenGradient */}
-                <div id="profile-logo" className={styles.profileLogo} style={{
-                  background: GenGradient(userDetails.address.toString())
-                }}>
-                  <Icon icon="qrCode" />
+                <div id="profile-logo" className={styles.profileLogo} onClick={() => setShowQR(!showQR)} title={
+                  showQR ? "Hide QR Code" : "Show QR Code"
+                }>
+                  { showQR ? (
+                    <QRCode value={userDetails.address} size={200} />
+                  ) : (
+                    <>
+                      <div className={styles.logoBackground} id="logo-background" style={{
+                        background: GenGradient(userDetails.address.toString())
+                      }} /> 
+                      <Icon icon="qrCode" className={styles.qrCode} />
+                    </>
+                  ) }        
                 </div>
+                
               </section>
             </section>
           ) : (

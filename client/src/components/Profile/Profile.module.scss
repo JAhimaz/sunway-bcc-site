@@ -66,13 +66,41 @@
 }
 
 .profileLogo {
-  border-radius: 50%;
-  height: 200px;
-  width: 200px;
-  border: 1px solid var(--text);
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border: 1px solid var(--foreground);
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.qrCode {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  z-index: -1;
+  fill: var(--background);
+  transition: all 0.15s ease-in-out;
+}
+
+.logoBackground {
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.profileLogo:hover {
+
+  box-shadow: inset 0 0 5em 1em rgba($color: #000000, $alpha: 0.25);
+
+  .qrCode {
+    height: 60%;
+    width: 60%;
+  }
 }
 
 .scannerBox {
