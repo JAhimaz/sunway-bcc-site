@@ -4,9 +4,29 @@ import styles from "./Numbers.module.scss";
 import Texts from "@/components/Atoms/Texts";
 import { Stats } from "@/utils/Stats";
 import CountUp from "react-countup";
+import { useEffect, useState } from "react";
+import FetchStats from "@/libs/stats/FetchStats";
 
 const Numbers = () => {
   const t = useTranslations("Numbers");
+
+  const [statistics, setStatistics] = useState({
+    members: 0,
+    events: 0,
+    partners: 0,
+  })
+
+  useEffect(() => {
+    if(statistics.members === 0) {
+      FetchStats().then((data) => {
+        setStatistics({
+          members: data[0].value,
+          events: data[1].value,
+          partners: data[2].value,
+        })
+      })
+    }
+  }, [statistics.members])
 
   return (
     <section className={styles.numbers}>
@@ -14,7 +34,7 @@ const Numbers = () => {
         <Texts color="var(--highlight)" fontSize="xl" weight="bold" className={styles.text}>
           <CountUp
             start={0}
-            end={Stats.members}
+            end={statistics.members}
             duration={2.75}
             separator=","
             suffix="+"
@@ -29,7 +49,7 @@ const Numbers = () => {
         <Texts color="var(--highlight)" fontSize="xl" weight="bold" className={styles.text}>
           <CountUp
             start={0}
-            end={Stats.events}
+            end={statistics.events}
             duration={2.75}
             separator=","
             suffix="+"
@@ -44,7 +64,7 @@ const Numbers = () => {
         <Texts color="var(--highlight)" fontSize="xl" weight="bold" className={styles.text}>
           <CountUp
             start={0}
-            end={Stats.cohost}
+            end={statistics.partners}
             duration={2.75}
             separator=","
             suffix="+"

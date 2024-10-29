@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl"
 import styles from "./Profile.module.scss"
 import GridHoverBox from "../Home/GridHoverBox/GridHoverBox"
 import Texts from "../Atoms/Texts"
-import { ConnectKitButton } from "connectkit";
+import { ConnectKitButton, useModal } from "connectkit";
 import { useAccount } from "wagmi"
 import Loader from "../Loader/Loader"
 import Stamps from "./Stamps/Stamps"
@@ -22,6 +22,14 @@ type ScannedDetails = {
   userAddress: string,
   date: Date,
 }
+
+const tiltEffectSettings = {
+  max: 5, // max tilt rotation (degrees (deg))
+  perspective: 1000, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
+  scale: 1, // transform scale - 2 = 200%, 1.5 = 150%, etc..
+  speed: 500, // speed (transition-duration) of the enter/exit transition (milliseconds (ms))
+  easing: "cubic-bezier(.03,.98,.52,.99)" // easing (transition-timing-function) of the enter/exit transition
+};
 
 const Profile = () => {
 
@@ -44,6 +52,8 @@ const Profile = () => {
   const [scanDetails, setScanDetails] = useState<ScannedDetails | undefined>(undefined);
   const [scanner, setScanner] = useState(false);
   const [showQR, setShowQR] = useState(false);
+
+
 
   useEffect(() => {
       // Fetch user details
@@ -105,30 +115,12 @@ const Profile = () => {
         <section id="profile-sect-container" className={styles.container}>
           { (isConnected && address && userDetails.address) ? (
             <section id="profile-section" className={styles.profileContainer}>
-              <section className={styles.profileLogoSection}>
-                {/* SVG Circle with gradient fill from GenGradient */}
-                <div id="profile-logo" className={styles.profileLogo} onClick={() => setShowQR(!showQR)} title={
-                  showQR ? "Hide QR Code" : "Show QR Code"
-                }>
-                  { showQR ? (
-                    <QRCode value={userDetails.address} size={200} />
-                  ) : (
-                    <>
-                      <div className={styles.logoBackground} id="logo-background" style={{
-                        background: GenGradient(userDetails.address.toString())
-                      }} /> 
-                      <Icon icon="qrCode" className={styles.qrCode} />
-                    </>
-                  ) }        
-                </div>
-                
-              </section>
+            
             </section>
           ) : (
             <div>Please Connect your wallet</div>
           )}
         </section>
-
       </section>
     </section>
   )

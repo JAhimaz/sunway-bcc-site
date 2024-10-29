@@ -13,6 +13,7 @@ import { useRouter } from '@/components/navigation';
 import { useCookies } from 'next-client-cookies';
 import { useLocale } from 'next-intl';
 import { ConnectKitButton } from 'connectkit';
+import { Avatar } from 'connectkit';
 
 const Navigation: FC = () => {
 
@@ -68,11 +69,12 @@ const Navigation: FC = () => {
           {({ show, ensName, address, isConnected, truncatedAddress }) => {
             return (
               isConnected && address ? (
-                <Link href="/profile">
-                  <span className={styles.connectButton}>
+                // <Link href="/profile">
+                  <span className={styles.connectButton} onClick={show}>
+                    <Avatar address={address} size={15} />
                     <Texts color="var(--text)">{ensName ?? truncatedAddress}</Texts>
                   </span>
-                </Link>
+                // </Link>
               ) : (
                 <span className={styles.connectButton} onClick={show}>
                   <Texts color="var(--text)" fontSize="xs">{t("connect-button")}</Texts>

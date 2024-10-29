@@ -4,14 +4,16 @@ import Texts from "../Atoms/Texts";
 import GridHoverBox from "../Home/GridHoverBox/GridHoverBox";
 import styles from "./Jobs.module.scss";
 import Seperator from "../Molecules/Seperator/Seperator";
+import JobItem, { JobItemProps } from "./JobItem/JobItem";
+import { TempFakeJobs } from "@/utils/TempFakeJobs";
+import { useState } from "react";
 
 const Jobs = () => {
 
   const t = useTranslations("Jobs")
   const headline = t("title");
 
-  // const [team, setTeam] = useState<TeamMember[]>([]);
-  // const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState<string>("");
 
   return (
     <section className={styles.main}>
@@ -32,10 +34,22 @@ const Jobs = () => {
       </span>
       <Seperator />
 
-      <section className={styles.jobItemGrid}>
-        <Texts color="var(--foreground)" fontSize="md" className={styles.subheader}>
-          Currently in development. Thank you for your patience.
-        </Texts>
+      <section className={styles.layout}>
+        {/* Filter / Search Bar */}
+        <input className={styles.searchInput} placeholder={"Search..."} onChange={e => setSearch(e.target.value)}  />
+
+        {/* Side Scrolling for Mobile */}
+        <section className={styles.jobListings}>
+          {TempFakeJobs.filter(
+            job => job.jobTitle.toLowerCase().includes(search.toLowerCase()) || job.companyName.toLowerCase().includes(search.toLowerCase())
+          ).map((job: JobItemProps, index: number) => {
+            return (
+              <JobItem key={index} {...job} />
+            )
+          })}
+        </section>
+
+        {/* Main Panel */}
       </section>
 
     </section>  

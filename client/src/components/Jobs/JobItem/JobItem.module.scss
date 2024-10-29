@@ -1,0 +1,92 @@
+.jobItem {
+  position: relative;
+  flex-shrink: 0;
+  border: 1px solid var(--foreground);
+  width: 400px;
+  height: 300px;
+  transition: all 0.15s ease-in-out;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.logoComponent {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--foreground);
+  border-radius: 50%;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.jobMajorDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.fakeBorderLeft, .fakeBorderRight, .fakeBorderTop, .fakeBorderBottom {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.fakeBorderLeft {
+  top: 0;
+  left: 0;
+  border-left: 1px solid var(--text)
+}
+
+.fakeBorderRight {
+  bottom: 0;
+  right: 0;
+  border-right: 1px solid var(--text)
+}
+
+.fakeBorderTop {
+  top: 0;
+  left: 0;
+  border-top: 1px solid var(--text)
+}
+
+.fakeBorderBottom {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid var(--text)
+}
+
+.jobItem:hover .fakeBorderTop, .jobItem:hover .fakeBorderBottom {
+  width: 100%;
+}
+
+.jobItem:hover .fakeBorderRight, .jobItem:hover .fakeBorderLeft  {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .jobItem:hover {
+    cursor: pointer;
+    transform: rotate(0.8deg) scale(1.05);
+
+    .logoComponent {
+      border: 1px solid var(--text);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .jobItem {
+    flex-shrink: 0;
+    border: 1px solid var(--foreground);
+    width: 100%;
+    height: 300px;
+  }
+}
