@@ -5,8 +5,8 @@ import GridHoverBox from "../Home/GridHoverBox/GridHoverBox";
 import styles from "./Jobs.module.scss";
 import Seperator from "../Molecules/Seperator/Seperator";
 import JobItem, { JobItemProps } from "./JobItem/JobItem";
-import { TempFakeJobs } from "@/utils/TempFakeJobs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import FetchJobs from "@/libs/jobs/FetchJobs";
 
 const Jobs = () => {
 
@@ -14,6 +14,15 @@ const Jobs = () => {
   const headline = t("title");
 
   const [search, setSearch] = useState<string>("");
+  const [jobs, setJobs] = useState<JobItemProps[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    FetchJobs().then((jobs) => {
+      setLoading(false);
+      setJobs(jobs);
+    });
+  }, [])
 
   return (
     <section className={styles.main}>
@@ -37,10 +46,10 @@ const Jobs = () => {
       <section className={styles.layout}>
         {/* Filter / Search Bar */}
         <input className={styles.searchInput} placeholder={"Search..."} onChange={e => setSearch(e.target.value)}  />
-
+        
         {/* Side Scrolling for Mobile */}
         <section className={styles.jobListings}>
-          {TempFakeJobs.filter(
+          {jobs.filter(
             job => job.jobTitle.toLowerCase().includes(search.toLowerCase()) || job.companyName.toLowerCase().includes(search.toLowerCase())
           ).map((job: JobItemProps, index: number) => {
             return (

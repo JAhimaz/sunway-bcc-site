@@ -8,6 +8,9 @@ primary_region = 'sin'
 
 [build]
 
+[env]
+  NEXT_PUBLIC_ALCHEMY_ID = 'dAHkvd7xaS9CwYbMF_5DD8gF3IzjFRtt'
+
 [http_service]
   internal_port = 3000
   force_https = true

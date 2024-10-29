@@ -4,6 +4,7 @@ import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { IoLogoDiscord, IoPerson } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsQrCode } from "react-icons/bs";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 
 import { CSSProperties, FC } from "react";
 
@@ -11,7 +12,9 @@ const IconsIndex = {
   arrowRight: FaArrowRight,
   person: IoPerson,
   menu: GiHamburgerMenu,
-  qrCode: BsQrCode 
+  qrCode: BsQrCode,
+  bookmarked: FaBookmark,
+  bookmark: FaRegBookmark
 };
 
 const SocialsIndex = {

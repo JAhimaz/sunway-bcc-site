@@ -1,20 +1,57 @@
 "use client";
-import Image from "next/image";
 import styles from "./JobItem.module.scss";
 import { useTranslations } from "next-intl";
 import { FC } from "react";
 import Texts from "@/components/Atoms/Texts";
+import Image from "next/image";
 
 export type JobItemProps = {
   jobTitle: string;
   companyName: string;
-  jobDescription: string;
+  jobDescription?: string;
   url: string;
   logo?: string;
   minPay?: number;
   maxPay?: number;
-  payCurrency?: string;
+  payCurrency?: "EUR" | "MYR" | "USD" | "SGD" | "INR" | "RMB";
   isSuffix?: boolean;
+  tags?: string[];
+  isRemote?: boolean;
+  paymentMode?: "Hourly" | "Monthly" | "Yearly";
+  type: "Full-Time" | "Part-Time" | "Contract" | "Internship" | "Freelance";
+}
+
+const CurrencyChoices = {
+  "EUR": {
+    symbol: "€",
+    name: "Euro"
+  },
+  "MYR": {
+    symbol: "RM",
+    name: "Malaysian Ringgit"
+  },
+  "USD": {
+    symbol: "$",
+    name: "United States Dollar"
+  },
+  "SGD": {
+    symbol: "S$",
+    name: "Singapore Dollar"
+  },
+  "INR": {
+    symbol: "₹",
+    name: "Indian Rupee"
+  },
+  "RMB": {
+    symbol: "¥",
+    name: "Chinese Yuan"
+  }
+}
+
+const PaymentMode = {
+  "Hourly": "/hr",
+  "Monthly": "/mo",
+  "Yearly": "/yr"
 }
 
 const JobItem: FC<JobItemProps> = ({
@@ -27,45 +64,52 @@ const JobItem: FC<JobItemProps> = ({
   maxPay,
   payCurrency,
   isSuffix = false,
+  tags,
+  isRemote = false,
+  type,
+  paymentMode
 }) => {
   return (
-    <div className={styles.jobItem}>
-
-      {/* Company Icon / Company Name Letter */}
-      {/* Job Title */}
-      {/* Company Name */}
-      <section className={styles.jobMajorDetails}>
+    <div className={styles.jobItem} onClick={() => window.open(url, "_blank")}>
+      <section className={styles.innerJobRect}>
+        <div className={styles.typeRow}>
           <div className={styles.logoComponent}>
             { logo ? <Image src={logo} alt="Logo" fill /> : 
-              <Texts color="var(--text)" fontSize="lg" weight="bold" className={styles.logoLetter}>
+              <Texts color="var(--text)" fontSize="sm" weight="bold" className={styles.logoLetter}>
                 {companyName.charAt(0)}
               </Texts>
             }
           </div>
-          <div style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "0.35rem",
-          }}>
-            <Texts color="var(--text)" fontSize="md" className={styles.companyName}>
-              {jobTitle}
-            </Texts>
-            <Texts color="var(--text-light)" fontSize="xs" className={styles.jobCompany}>  
-              {companyName}
-            </Texts>
-          </div>
-        <section>
-        </section>
+        </div>
+        <div className={styles.jobCompanyRow} style={{ marginTop: "2rem" }}>
+          <Texts color="var(--text-light)" fontSize="xs" >
+            {companyName}
+          </Texts>
+        </div>
+        <div className={styles.jobTitleRow} style={{ marginTop: "0.25rem" }}>
+          <Texts color="var(--text)" fontSize="lg" >
+            {jobTitle}
+          </Texts>
+        </div>
+      </section>
+      <section className={styles.innerBottomJobRect}>
+        {minPay && !maxPay && payCurrency && (
+          <Texts color="var(--text)"  fontSize="sm"  className={styles.jobPay}>
+            {CurrencyChoices[payCurrency].symbol}{minPay} {paymentMode && PaymentMode[paymentMode]}
+          </Texts>
+        )}
+
+        {minPay && maxPay && payCurrency && (
+          <Texts color="var(--text)"  fontSize="sm" className={styles.jobPay}>
+            {CurrencyChoices[payCurrency].symbol}{minPay} - {CurrencyChoices[payCurrency].symbol}{maxPay} {paymentMode && PaymentMode[paymentMode]}
+          </Texts>
+        )}
+
+        <Texts color="var(--text-light)" fontSize="xs" >
+          {type} {isRemote && "• Remote"}
+        </Texts>
       </section>
 
-      {/* Quick Job Description */}
-      <Texts color="var(--text)" fontSize="sm" className={styles.jobDescription}>
-        {jobDescription}
-      </Texts>
-
-      {/* Pay if Included */}
-      
 
       {/* Fake Borders for On Hover */}
       <div className={styles.fakeBorderLeft} />

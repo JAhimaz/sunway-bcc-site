@@ -1,7 +1,7 @@
 {
   "name": "nfc-server-hosting",
   "version": "1.0.0",
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@4.5.1",
   "main": "dist/index.js",
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -44,6 +44,6 @@
     "clean": "rm -rf dist",
     "build": "tsc && tsc-alias",
     "start": "node dist/index.js",
-    "dev": "nodemon --watch src/**/*.ts --exec 'tsx src/index.ts'"
+    "dev": "nodemon --watch src/**/*.ts --exec tsx src/index.ts"
   }
 }
