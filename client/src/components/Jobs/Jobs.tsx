@@ -7,6 +7,7 @@ import Seperator from "../Molecules/Seperator/Seperator";
 import JobItem, { JobItemProps } from "./JobItem/JobItem";
 import { useEffect, useState } from "react";
 import FetchJobs from "@/libs/jobs/FetchJobs";
+import Loader from "../Loader/Loader";
 
 const Jobs = () => {
 
@@ -42,10 +43,10 @@ const Jobs = () => {
         })}
       </span>
       <Seperator />
-
       <section className={styles.layout}>
         {/* Filter / Search Bar */}
         <input className={styles.searchInput} placeholder={"Search..."} onChange={e => setSearch(e.target.value)}  />
+        { loading && <Loader /> }
         
         {/* Side Scrolling for Mobile */}
         <section className={styles.jobListings}>

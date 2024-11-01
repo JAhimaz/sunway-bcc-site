@@ -4,7 +4,7 @@ import Texts from "../Atoms/Texts";
 import GridHoverBox from "../Home/GridHoverBox/GridHoverBox";
 import styles from "./Store.module.scss";
 import Seperator from "../Molecules/Seperator/Seperator";
-import StoreItem from "./StoreItem/StoreItem";
+// import StoreItem from "./StoreItem/StoreItem";
 
 const Store = () => {
 

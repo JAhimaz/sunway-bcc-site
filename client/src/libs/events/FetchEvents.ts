@@ -29,8 +29,6 @@ const FetchEvents = async () => {
         })) as EventItem[]
       })
 
-      console.log(events)
-
       return events;
 
     } catch (error) {

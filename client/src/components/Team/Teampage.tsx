@@ -4,7 +4,6 @@ import Texts from "../Atoms/Texts";
 import GridHoverBox from "../Home/GridHoverBox/GridHoverBox";
 import styles from "./Teampage.module.scss";
 import Seperator from "../Molecules/Seperator/Seperator";
-import { Members } from "@/utils/Members";
 import MemberImage from "./MemberImage/MemberImage";
 import { useEffect, useState } from "react";
 import FetchTeam, { TeamMember } from "@/libs/team/FetchTeam";

@@ -24,8 +24,6 @@ const FetchStats = async () => {
         })) as Statistic[]
       })
 
-      console.log(team)
-
       return team;
 
     } catch (error) {

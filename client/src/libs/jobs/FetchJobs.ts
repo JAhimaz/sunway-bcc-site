@@ -13,8 +13,6 @@ const FetchJobs = async () => {
       const JobList: JobItemProps[] = await response.json()
       .then((data) => data?.results)
       .then((rows) => {
-        console.log(rows[0].payCurrency.value)
-
         return rows.map((row: any) => ({
           jobTitle: row.jobTitle,
           companyName: row.companyName,
@@ -23,16 +21,14 @@ const FetchJobs = async () => {
           logo: row.logo[0].url,
           minPay: row.minPay,
           maxPay: row.maxPay,
-          payCurrency: row.payCurrency.value,
+          payCurrency: row.payCurrency.value ?? undefined,
           isSuffix: row.isSuffix,
           tags: row.tags,
           isRemote: row.isRemote,
           type: row.type.value,
-          paymentMode: row.paymentMode.value
+          paymentMode: row.paymentMode.value ?? undefined,
         })) as JobItemProps[]
       })
-
-      console.log(JobList)
 
       return JobList;
 

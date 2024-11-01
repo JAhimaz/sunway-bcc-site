@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { CSSProperties, FC, ReactNode } from "react";
 import Texts from "../../Atoms/Texts";
-import { Icon } from "@/utils/Icons";
 import styles from "./Button.module.scss";
 
 type ButtonProps = {

@@ -30,9 +30,6 @@ const FetchTeam = async () => {
           imageAlt: row.imageAlt.length > 0 ? row.imageAlt[0].url : "",
         })) as TeamMember[]
       })
-
-      console.log(team)
-
       return team;
 
     } catch (error) {

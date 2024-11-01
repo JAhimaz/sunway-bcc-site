@@ -3,7 +3,7 @@ import styles from "./Ethos.module.scss";
 import Texts from "@/components/Atoms/Texts";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { EthosItemProps, EthosItems } from "@/utils/Ethos";
+import { EthosItems } from "@/utils/Ethos";
 
 const Ethos = () => {
   const [ selectedEthos, setSelectedEthos ] = useState<string>(EthosItems[0].title);

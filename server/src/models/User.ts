@@ -12,6 +12,31 @@ const userSchema = new Schema({
     type: String,
     required: false,
   },
+  bio: {
+    type: String,
+    required: false,
+    default: "",
+  },
+  twitter: {
+    type: String,
+    required: false,
+    default: "",
+  },
+  github: {
+    type: String,
+    required: false,
+    default: "",
+  },
+  linkedin: {
+    type: String,
+    required: false,
+    default: "",
+  },
+  instagram: {
+    type: String,
+    required: false,
+    default: "",
+  },
   address: {
     type: String,
     required: false,

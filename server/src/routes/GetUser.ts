@@ -2,7 +2,7 @@ import express from "express";
 import User from "@models/User";
 import Error from "@libs/error";
 import Success from "@libs/success";
-import { Env } from "@utils/Env";
+import GenerateUsername from "@/libs/NameGenerator/NameGenerator";
 
 const GetUserInfoRoute = express.Router();
 
@@ -14,6 +14,7 @@ GetUserInfoRoute.get("/:address", async (req, res) => {
     // If the user is not found, create a new user
     if (!user) {
       User.create({
+        name: GenerateUsername(),
         address: address,
         exp: 0,
         stamps: [],

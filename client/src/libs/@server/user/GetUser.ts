@@ -3,7 +3,13 @@ import { DATA_API } from "@/utils/APIs";
 
 export type User = {
   _id: string;
+  name: string;
   address: string;
+  bio?: string;
+  twitter?: string;
+  github?: string;
+  linkedin?: string;
+  instagram?: string;
   createdAt: string;
   exp: number;
   isAdmin: boolean;

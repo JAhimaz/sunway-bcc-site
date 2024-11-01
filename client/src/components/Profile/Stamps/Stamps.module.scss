@@ -1,23 +1,38 @@
 .stampFlexGrid {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+  height: 100%;
+
+  // arrange in a 3x3 grid
 }
 
-.stamp {
+.stampSuccess, .stamp {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
   border: 1px solid var(--foreground);
-  border-radius: 50%;
+  border-radius: 0.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
   font-weight: bold;
-  color: var(--foreground);
   background-color: var(--background);
   transition: background-color 0.15s;
 }
+
+.stamp {
+  border: 1px solid var(--foreground);
+  font-size: 1.5rem;
+  color: var(--foreground);
+}
+
+.stampSuccess {
+  border: 1px solid var(--text);
+  color: var(--text);
+}
+

@@ -1,6 +1,5 @@
 "use client";
 import styles from "./JobItem.module.scss";
-import { useTranslations } from "next-intl";
 import { FC } from "react";
 import Texts from "@/components/Atoms/Texts";
 import Image from "next/image";

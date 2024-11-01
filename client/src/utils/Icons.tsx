@@ -1,10 +1,12 @@
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaPowerOff, FaCheck } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { IoLogoDiscord, IoPerson } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsQrCode } from "react-icons/bs";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
+import { ImExit } from "react-icons/im";
+import { PiCalendarCheckBold } from "react-icons/pi";
 
 import { CSSProperties, FC } from "react";
 
@@ -14,7 +16,11 @@ const IconsIndex = {
   menu: GiHamburgerMenu,
   qrCode: BsQrCode,
   bookmarked: FaBookmark,
-  bookmark: FaRegBookmark
+  bookmark: FaRegBookmark,
+  power: FaPowerOff,
+  exit: ImExit,
+  check: FaCheck,
+  calendar: PiCalendarCheckBold,
 };
 
 const SocialsIndex = {

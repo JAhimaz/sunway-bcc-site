@@ -3,33 +3,17 @@ import { useTranslations } from "next-intl"
 import styles from "./Profile.module.scss"
 import GridHoverBox from "../Home/GridHoverBox/GridHoverBox"
 import Texts from "../Atoms/Texts"
-import { ConnectKitButton, useModal } from "connectkit";
 import { useAccount } from "wagmi"
+import { useEffect, useState } from "react"
+import GetUser, { User } from "@/libs/@server/user/GetUser"
+import { Avatar } from 'connectkit';
 import Loader from "../Loader/Loader"
 import Stamps from "./Stamps/Stamps"
-import QRCode from "react-qr-code"
-import { use, useEffect, useState } from "react"
-import { ExpToLevel } from "@/utils/ExpToLevel"
-import GetUser, { User } from "@/libs/@server/user/GetUser"
-import { Scanner } from "@yudiel/react-qr-scanner"
-import { StringToGradient } from "@/utils/GradientGenerator"
-import { TruncateAddress } from "@/utils/TruncateAddress"
-import { GenGradient } from "@/utils/RandomGradient"
-import { Icon } from "@/utils/Icons"
-import Seperator from "../Molecules/Seperator/Seperator"
 
 type ScannedDetails = {
   userAddress: string,
   date: Date,
 }
-
-const tiltEffectSettings = {
-  max: 5, // max tilt rotation (degrees (deg))
-  perspective: 1000, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
-  scale: 1, // transform scale - 2 = 200%, 1.5 = 150%, etc..
-  speed: 500, // speed (transition-duration) of the enter/exit transition (milliseconds (ms))
-  easing: "cubic-bezier(.03,.98,.52,.99)" // easing (transition-timing-function) of the enter/exit transition
-};
 
 const Profile = () => {
 
@@ -40,6 +24,7 @@ const Profile = () => {
 
   const [userDetails, setUserDetails] = useState<User>({
     _id: "",
+    name: "",
     address: "",
     createdAt: "",
     exp: 0,
@@ -48,25 +33,26 @@ const Profile = () => {
     updatedAt: "",
     version: 0,
   })
-
-  const [scanDetails, setScanDetails] = useState<ScannedDetails | undefined>(undefined);
-  const [scanner, setScanner] = useState(false);
-  const [showQR, setShowQR] = useState(false);
-
-
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
       // Fetch user details
-    if(address){
+    setLoading(true)
+    if(address && isConnected) {
       GetUser(address).then((data) => {
-        console.log("HEy")
         setUserDetails(data)
+        setLoading(false)
       })
+    }
+
+    if(!address && !isConnected) {
+      setLoading(false)
     }
 
     if(!address) {
       setUserDetails({
         _id: "",
+        name: "",
         address: "",
         createdAt: "",
         exp: 0,
@@ -76,52 +62,53 @@ const Profile = () => {
         version: 0,
       })
     }
-  }, [address])
+  }, [address, isConnected])
 
   return (
     <section className={styles.main}>
       <section className={styles.header}>
         <GridHoverBox />
-        <Texts color="var(--text-light)" fontSize="xs" className={styles.subheader}>
-          &#47;&#47;&nbsp;&nbsp;<Texts color="var(--text)" fontSize="xs" className={styles.underlineHover}>{t("headline-1")}</Texts>{t("headline-2")}
-        </Texts>
-        <span className={styles.headline}>
-          { (isConnected && address && userDetails.address) ? (
-            (TruncateAddress(userDetails.address)).split("").map((char, index) => {
-              return (
-                <Texts key={index} color="var(--text)" fontSize="headline" className={styles.headlineChar} style={{
-                  animationDelay: `${index * 0.075}s`
-                }}>
-                  {char}
-                </Texts>
-              )
-            })
-          ) : (
-            headline.split("").map((char, index) => {
-              return (
-                <Texts key={index} color="var(--text)" fontSize="headline" className={styles.headlineChar} style={{
-                  animationDelay: `${index * 0.075}s`
-                }}>
-                  {char}
-                </Texts>
-              )
-            })
-          )}
+      </section> 
 
-        </span>
+      <section style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+      }}>
+        { loading && <Loader /> }
+        { !loading && !isConnected && (
+          <section>
+            Please Connect Your Wallet
+          </section>
+        )}
+      </section>
 
-        <Seperator text={"[ PROFILE ]"} />
-        
-        <section id="profile-sect-container" className={styles.container}>
-          { (isConnected && address && userDetails.address) ? (
-            <section id="profile-section" className={styles.profileContainer}>
-            
+      { isConnected && address && userDetails._id && (
+        <section className={styles.container}>
+          <section className={styles.profile}>
+
+            <div id="profile_logo_outer"className={styles.profileLogoOuter}>
+              <Avatar address={address} size={100}/>
+            </div>
+            <section className={styles.profileInner}>
+              <section className={styles.details}>
+                <Texts fontSize="lg" color="var(--text)">{userDetails.name}</Texts>
+                <Stamps stamps={userDetails.stamps} />
+              </section>
+              <section className={styles.subDetails}>
+                <Texts fontSize="xs" color="var(--foreground)">{address}</Texts>
+              </section>
             </section>
-          ) : (
-            <div>Please Connect your wallet</div>
+          </section>
+          { userDetails.stamps.length === 6 && (
+            <button id="claim_cert" className={styles.button} disabled={userDetails.stamps.length < 6}>
+              Claim Certificate
+            </button>
           )}
         </section>
-      </section>
+      )}
     </section>
   )
 }

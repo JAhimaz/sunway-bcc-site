@@ -5,7 +5,6 @@ import Texts from "../../Atoms/Texts";
 import { EventItem as EventItemProps } from "../EventPage";
 import styles from "./EventItem.module.scss";
 import Image from "next/image";
-import LinkButton from "@/components/Molecules/LinkButton/LinkButton";
 import Button from "@/components/Molecules/Buttons/Button";
 import { CopyToClipBoard } from "@/libs/CopyToClipboard";
 
@@ -14,13 +13,11 @@ const EventItem: FC<EventItemProps & {
   past?: boolean
 }> = ({ title, description, location, startDate, endDate, image, url, pinned, past = false, discount_code, discount_amount, discount_offer }) => {
 
-  console.log(discount_code, discount_amount, discount_offer)
-
   const t = useTranslations('Events');
 
   return (
     <section className={pinned ? styles.eventItemPinned : styles.eventItem } style={{
-      opacity: past ? '0.5' : 1
+      opacity: past ? '0.5' : 1,
     }}>
       <div className={styles.imageContainer}>
         <Image src={image} alt={title}

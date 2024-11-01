@@ -16,6 +16,8 @@ import MongoStore from 'connect-mongo'
 // Routes
 // import Route from "@routes/Route"; // Example Route
 import GetUserInfoRoute from "@routes/GetUser";
+import HealthRoute from "@routes/Health";
+import GenerateUsername from "./libs/NameGenerator/NameGenerator";
 
 const app = express();
 
@@ -26,6 +28,12 @@ mongoose.connect(Env.MONGODB_URI).then(() => {
 });
 
 app.use(cookieParser());
+app.use(cors({
+  origin: Env.CLIENT_URL,
+  allowedHeaders: ['Content-Type', 'Authorization', 'Set-Cookie', 'Cache-Control', 'Cookie'],
+  exposedHeaders: ['Content-Type', 'Authorization', 'Set-Cookie', 'Cache-Control', 'Cookie'],
+  credentials: true
+}))
 app.use(
   session({
     secret: Env.SESSION_SECRET,
@@ -42,19 +50,13 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24 * 5,
       httpOnly: false,
       secure: false,
-      // sameSite: 'strict',
-      // domain: '.sunwayblockchain.com'
+      sameSite: 'strict',
+      domain: Env.NODE_ENV === 'production' ? '.sunwayblockchain.com' : 'localhost'
     },
     name: "sunwaybcc", // You may rename this to any session name you would like
   }),
 );
 app.use(bodyParser.json());
-app.use(cors({
-  origin: Env.CLIENT_URL,
-  allowedHeaders: ['Content-Type', 'Authorization', 'Set-Cookie', 'Cache-Control', 'Cookie'],
-  exposedHeaders: ['Content-Type', 'Authorization', 'Set-Cookie', 'Cache-Control', 'Cookie'],
-  credentials: true
-}))
 app.use(helmet());
 app.use(json());
 
@@ -62,6 +64,8 @@ const port = Env.SERVER_PORT || 8080
 
 app.listen(port, () => {
   console.log(`Server has started successfully on port ${port}`);
+
+  console.log(`Server is running in ${Env.NODE_ENV} mode on ${Env.CLIENT_URL}:${port}`);
 }).on("error", (err) => {
   console.log(`An error has occured: ${err}`);
 });
@@ -79,8 +83,10 @@ app.use('/api/', rateLimit({
   }
 }));
 
+
 // Declaration of Routes
 
 // Example Route Declaration
 // app.use("/path/to/route", Route);
 app.use("/api/user", GetUserInfoRoute);
+app.use("/api/health", HealthRoute);

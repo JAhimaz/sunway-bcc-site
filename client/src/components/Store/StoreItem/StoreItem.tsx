@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./StoreItem.module.scss";
 
 const StoreItem = () => {

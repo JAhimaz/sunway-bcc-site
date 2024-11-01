@@ -1,5 +1,4 @@
 "use client";
-import { MemberProp } from "@/utils/Members";
 import styles from "./MemberImage.module.scss";
 import { useTranslations } from "next-intl";
 import { FC, useEffect, useState } from "react";

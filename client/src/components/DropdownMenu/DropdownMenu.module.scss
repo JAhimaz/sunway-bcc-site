@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  background-color: var(--background);
+  border: 1px solid var(--foreground);
+  border-top: none;
+  border-radius: 0.25rem;
+}

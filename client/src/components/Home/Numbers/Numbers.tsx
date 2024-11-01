@@ -2,7 +2,6 @@
 import { useTranslations } from "next-intl";
 import styles from "./Numbers.module.scss";
 import Texts from "@/components/Atoms/Texts";
-import { Stats } from "@/utils/Stats";
 import CountUp from "react-countup";
 import { useEffect, useState } from "react";
 import FetchStats from "@/libs/stats/FetchStats";
