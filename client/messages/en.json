@@ -112,5 +112,10 @@
     "headline-2": " JOB OPPORTUNITIES IN THE INDUSTRY",
     "exploreJobs": "Explore Jobs",
     "comingSoon": "COMING SOON"
+  },
+  "Admin": {
+    "title": "Admin",
+    "headline-1": "ACCESS",
+    "headline-2": " TO ADMINISTRATIVE TOOLS"
   }
 }

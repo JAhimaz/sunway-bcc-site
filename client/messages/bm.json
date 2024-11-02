@@ -93,11 +93,28 @@
     "shopNow": "Membeli sekarang",
     "comingSoon": "AKAN DATANG"
   },
+  "Profile": {
+    "title": "Profile",
+    "headline-1": "WELCOME BACK",
+    "headline-2": " TO YOUR PROFILE",
+    "connect-1": "Please",
+    "connect-2": " Connect",
+    "connect-3": " Your ",
+    "connect-4": "Polygon Wallet",
+    "connect-5": " to access your Profile",
+    "connect-button": "Connect Wallet",
+    "disconnect": "Disconnect / Logout"
+  },
   "Jobs": {
     "title": "Pekerjaan",
     "headline-1": "TEROKAI",
     "headline-2": " PELUANG PEKERJAAN DALAM BLOCKCHAIN",
     "exploreJobs": "Terokai Pekerjaan",
     "comingSoon": "AKAN DATANG"
+  },
+  "Admin": {
+    "title": "Admin",
+    "headline-1": "ACCESS",
+    "headline-2": " TO ADMINISTRATIVE TOOLS"
   }
 }

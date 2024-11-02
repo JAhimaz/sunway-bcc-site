@@ -93,11 +93,28 @@
     "shopNow": "现在购买",
     "comingSoon": "即将推出"
   },
+  "Profile": {
+    "title": "Profile",
+    "headline-1": "WELCOME BACK",
+    "headline-2": " TO YOUR PROFILE",
+    "connect-1": "Please",
+    "connect-2": " Connect",
+    "connect-3": " Your ",
+    "connect-4": "Polygon Wallet",
+    "connect-5": " to access your Profile",
+    "connect-button": "Connect Wallet",
+    "disconnect": "Disconnect / Logout"
+  },
   "Jobs": {
     "title": "职业机会",
     "headline-1": "探索",
     "headline-2": "区块链中的工作机会",
     "exploreJobs": "探索工作",
     "comingSoon": "即将推出"
+  },
+  "Admin": {
+    "title": "Admin",
+    "headline-1": "ACCESS",
+    "headline-2": " TO ADMINISTRATIVE TOOLS"
   }
 }

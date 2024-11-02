@@ -10,6 +10,7 @@ primary_region = 'sin'
 
 [env]
   NEXT_PUBLIC_ALCHEMY_ID = 'dAHkvd7xaS9CwYbMF_5DD8gF3IzjFRtt'
+  NEXT_PUBLIC_WALLET_CONNECT_ID = '3c3603d344309a20b2c97809ba5ece2f'
 
 [http_service]
   internal_port = 3000

@@ -7,6 +7,7 @@ import { BsQrCode } from "react-icons/bs";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 import { ImExit } from "react-icons/im";
 import { PiCalendarCheckBold } from "react-icons/pi";
+import { MdDelete } from "react-icons/md";
 
 import { CSSProperties, FC } from "react";
 
@@ -21,6 +22,7 @@ const IconsIndex = {
   exit: ImExit,
   check: FaCheck,
   calendar: PiCalendarCheckBold,
+  delete: MdDelete
 };
 
 const SocialsIndex = {

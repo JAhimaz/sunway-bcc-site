@@ -1,0 +1,35 @@
+.title {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid var(--foreground);
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.text {
+  transition: all 0.15s ease-in-out;
+}
+
+.title:hover {
+    border: 1px solid var(--text) !important;
+}
+
+.arrow {
+  transition: all 0.15s ease-in-out;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--foreground);
+  border-top: none;
+  border-radius: 0 0 0.25rem 0.25rem;
+  height: fit-content;
+}
