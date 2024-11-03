@@ -4,10 +4,14 @@ import Texts from '@/components/Atoms/Texts';
 import styles from './Administrators.module.scss';
 import { Avatar } from 'connectkit';
 import { Icon } from '@/utils/Icons';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import GetAdministrators from '@/libs/@server/admin/GetAdministrators';
 import { useAccount } from 'wagmi';
 import Loader from '@/components/Loader/Loader';
+import { useSignMessage } from 'wagmi'
+import { config } from '@/utils/providers/Web3Provider';
+import { User } from '@/libs/@server/user/GetUser';
+import SetAdministrator from '@/libs/@server/admin/SetAdministrator';
 
 type Admin = {
   _id: string;
@@ -15,10 +19,22 @@ type Admin = {
   address: `0x${string}`;
 }
 
-const Administrators = () => {
+type AdminProps = {
+  userDetails: User;
+}
+
+const Administrators: FC<AdminProps> = ({ userDetails }) => {
 
   const [ loading, setLoading ] = useState(true);
   const [ admins, setAdmins ] = useState<Admin[]>([]);
+
+  const [ newAddress, setNewAddress ] = useState<string>('');
+    const [ success, setSuccess ] = useState({
+    visible: false,
+    message: '',
+    isError: false
+  });
+
 
   const { address } = useAccount();
 
@@ -28,20 +44,64 @@ const Administrators = () => {
 
     setLoading(true)
 
-    GetAdministrators(address).then((data) => {
+    GetAdministrators(address, userDetails.key!).then((data) => {
       setAdmins(data)
       setLoading(false)
     })
 
-  }, [address])
+  }, [address, userDetails.key])
+
+  const GiveAdministrator = async () => {
+    if(!address) return;
+
+    await SetAdministrator(address, userDetails.key!, newAddress).then(async (result) => {
+      if(result.error) {
+        setSuccess({
+          visible: true,
+          message: result.error.message,
+          isError: true
+        })
+      } else {
+        setSuccess({
+          visible: true,
+          message: `Success! ${newAddress} is now an Administrator`,
+          isError: false
+        })
+  
+        await GetAdministrators(address, userDetails.key!).then((data) => {
+          setAdmins(data)
+        })
+      }
+    }).catch((err) => {
+      setSuccess({
+        visible: true,
+        message: err,
+        isError: true
+      })
+
+    }).finally(async () => {
+      setNewAddress('');
+
+      setTimeout(() => {
+        setSuccess({
+          visible: false,
+          message: '',
+          isError: false
+        })
+      }, 5000)
+    })
+    return;
+  }
+
 
   return (
     <section className={styles.container}>
       <Texts fontSize='sm' color='var(--text-light)'>Add Administrator</Texts>
       <section className={styles.inputSection}>
-        <input className={styles.input} />
-        <button className={styles.addButton}>Give Administrator</button>
+        <input className={styles.input} onChange={(e) => setNewAddress(e.target.value)} value={newAddress} />
+        <button className={styles.addButton} onClick={() => GiveAdministrator()}>Give Administrator</button>
       </section>
+      { success.visible && <Texts fontSize='xs' color={success.isError ? 'var(--error)' : 'var(--highlight)'}>{success.message}</Texts> }
       <Texts fontSize='sm' color='var(--text-light)'>List of Current Administrators</Texts>
       <section id="admin_list" className={styles.adminList}>
         { loading && <div style={{

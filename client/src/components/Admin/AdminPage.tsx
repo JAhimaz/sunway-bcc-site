@@ -48,7 +48,7 @@ const AdminPage = () => {
     return <Loader />
   }
 
-  if (userDetails?.isAdmin) {
+  if (userDetails && userDetails?.isAdmin  && userDetails?.key) {
     return (
       <section className={styles.main}>
         <GridHoverBox />
@@ -73,7 +73,7 @@ const AdminPage = () => {
         <Seperator text="[ADMIN PANEL]" />
         <section className={styles.adminDashboard}>
           <Accordian title="Administrators">
-            <Administrators />
+            <Administrators userDetails={userDetails}/>
           </Accordian>
           <Accordian title="Event Badges">
             <Texts color="var(--text-light)">Work in Progress</Texts>

@@ -13,6 +13,7 @@ export type User = {
   createdAt: string;
   exp: number;
   isAdmin: boolean;
+  key?: string;
   stamps: Stamp[];
   updatedAt: string;
   version: number;

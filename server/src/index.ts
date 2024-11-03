@@ -21,6 +21,7 @@ import GenerateUsername from "./libs/NameGenerator/NameGenerator";
 
 // Admin Routes
 import GetAdministratorsRoute from "@routes/Admin/GetAdministrators";
+import SetAdministratorsRoute from "./routes/Admin/SetAdministrator";
 import isAdministrator from "./middlewares/isAdmin";
 
 const app = express();
@@ -34,7 +35,7 @@ mongoose.connect(Env.MONGODB_URI).then(() => {
 app.use(cookieParser());
 app.use(cors({
   origin: Env.CLIENT_URL,
-  allowedHeaders: ['Content-Type', 'Authorization', 'Set-Cookie', 'Cache-Control', 'Cookie', 'address'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Set-Cookie', 'Cache-Control', 'Cookie', 'address', 'key'],
   exposedHeaders: ['Content-Type', 'Authorization', 'Set-Cookie', 'Cache-Control', 'Cookie'],
   credentials: true
 }))
@@ -97,3 +98,4 @@ app.use("/api/health", HealthRoute);
 
 // Admin Routes
 app.use("/api/admin/admins", isAdministrator, GetAdministratorsRoute);
+app.use("/api/admin/setadmin", isAdministrator, SetAdministratorsRoute);

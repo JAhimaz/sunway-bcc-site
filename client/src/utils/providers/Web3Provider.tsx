@@ -1,11 +1,12 @@
 "use client"
 
 import { WagmiProvider, createConfig, http } from "wagmi";
-import { polygon } from "wagmi/chains";
+import { polygon, polygonAmoy } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
+import { createClient } from "viem";
 
-const config = createConfig(
+export const config = createConfig(
   getDefaultConfig({
     // Your dApps chains
     chains: [polygon],
@@ -28,6 +29,7 @@ const config = createConfig(
     appIcon: "https://sunwayblockchain.com/favicon.ico",
   }),
 );
+
 
 const queryClient = new QueryClient();
 
