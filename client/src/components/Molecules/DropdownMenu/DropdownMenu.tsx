@@ -18,10 +18,6 @@ const DropdownMenu: FC<DropdownMenuProps> = ({ items, children }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen]);
-
   return (
     <section className={styles.container} onMouseLeave={() => setIsOpen(false)} onMouseEnter={() => setIsOpen(true)}>
       { children }
