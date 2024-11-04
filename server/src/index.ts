@@ -22,7 +22,11 @@ import GenerateUsername from "./libs/NameGenerator/NameGenerator";
 // Admin Routes
 import GetAdministratorsRoute from "@routes/Admin/GetAdministrators";
 import SetAdministratorsRoute from "./routes/Admin/SetAdministrator";
+import DeleteAdministratorsRoute from "./routes/Admin/DeleteAdministrator";
 import isAdministrator from "./middlewares/isAdmin";
+
+// Stamp Routes
+import SetUserStampsRoute from "./routes/Stamps/SetUserStamps";
 
 const app = express();
 
@@ -99,3 +103,7 @@ app.use("/api/health", HealthRoute);
 // Admin Routes
 app.use("/api/admin/admins", isAdministrator, GetAdministratorsRoute);
 app.use("/api/admin/setadmin", isAdministrator, SetAdministratorsRoute);
+app.use("/api/admin/remove", isAdministrator, DeleteAdministratorsRoute);
+
+// Stamp Routes
+app.use("/api/stamps/setbulk", SetUserStampsRoute);

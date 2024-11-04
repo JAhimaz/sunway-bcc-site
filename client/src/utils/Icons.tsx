@@ -1,13 +1,13 @@
-import { FaArrowRight, FaPowerOff, FaCheck } from "react-icons/fa";
+import { FaArrowRight, FaPowerOff, FaCheck, FaGlobeAsia, FaChalkboardTeacher } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { IoLogoDiscord, IoPerson } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { BsQrCode } from "react-icons/bs";
+import { BsQrCode, BsFillMegaphoneFill } from "react-icons/bs";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 import { ImExit } from "react-icons/im";
 import { PiCalendarCheckBold } from "react-icons/pi";
-import { MdDelete } from "react-icons/md";
+import { MdDelete, MdGroups } from "react-icons/md";
 
 import { CSSProperties, FC } from "react";
 
@@ -25,6 +25,13 @@ const IconsIndex = {
   delete: MdDelete
 };
 
+const EventIndex = {
+  external: FaGlobeAsia,
+  major: MdGroups,
+  talk: BsFillMegaphoneFill,
+  workshop: FaChalkboardTeacher
+}
+
 const SocialsIndex = {
   instagram: AiFillInstagram,
   twitter: FaTwitter,
@@ -33,6 +40,7 @@ const SocialsIndex = {
 }
 
 const Index = {
+  ...EventIndex,
   ...IconsIndex,
   ...SocialsIndex
 }

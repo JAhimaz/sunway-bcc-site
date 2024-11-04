@@ -12,6 +12,7 @@ import { useSignMessage } from 'wagmi'
 import { config } from '@/utils/providers/Web3Provider';
 import { User } from '@/libs/@server/user/GetUser';
 import SetAdministrator from '@/libs/@server/admin/SetAdministrator';
+import DeleteAdministrator from '@/libs/@server/admin/DeleteAdministrator';
 
 type Admin = {
   _id: string;
@@ -93,6 +94,23 @@ const Administrators: FC<AdminProps> = ({ userDetails }) => {
     return;
   }
 
+  const RemoveAdministrator = async (addressToDelete: string) => {
+    if(!address || !addressToDelete) return;
+    // Delete admin
+
+    await DeleteAdministrator(address, userDetails.key!, addressToDelete).then(async (result) => {
+      if(result.error) {
+        console.log(result.error.message);
+      } else {
+        await GetAdministrators(address, userDetails.key!).then((data) => {
+          setAdmins(data)
+        })
+      }
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
+
 
   return (
     <section className={styles.container}>
@@ -117,9 +135,11 @@ const Administrators: FC<AdminProps> = ({ userDetails }) => {
             <Avatar size={20} address={admin.address} />
             <Texts fontSize='sm' color='var(--text)'>{admin.name}</Texts>
             <Texts fontSize='xs' color='var(--text-light)'>{admin.address}</Texts>
+            { admin.address !== userDetails.address &&
             <Icon icon="delete" onClick={() => {
-              // Delete admin
+              RemoveAdministrator(admin.address)
             }} className={styles.deleteIcon} />
+            }
           </section>
         )) }
       </section>
