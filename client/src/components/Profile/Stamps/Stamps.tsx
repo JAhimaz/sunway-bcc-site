@@ -10,27 +10,23 @@ import { Icon, IconName } from "@/utils/Icons";
 // maximum of 10 stamps
 
 const Stamps: FC<StampsType> = ({ stamps }) => {
-  
   return (
     <section className={styles.stampFlexGrid}>
-      {stamps.map((stamp) => {
-        return (
-          <div key={stamp.id} className={styles.stampSuccess} title={stamp.eventName}>
+      {stamps.map((stamp, index) => 
+          <div key={stamp.eventName + "-" + index} className={styles.stampSuccess} title={stamp.eventName}>
             <Icon icon={GetStampType(stamp.eventType)} style={{
               height: "3rem",
               width: "3rem",
             }} />
           </div>
-        )
-      })}
+      )}
       {/* fill out the remaining areas */}
-      {Array(6 - stamps.length).fill(0).map((_, index) => {
-        return (
-          <div key={index} className={styles.stamp}>
+      {Array(6 - stamps.length).fill(0).map((_, index) => 
+          <div key={`placeholder-${stamps.length + index}`} className={styles.stamp}>
             <Texts fontSize="sm">{stamps.length + index + 1}</Texts>
           </div>
         )
-      })}
+      }
     </section>
   )
 }

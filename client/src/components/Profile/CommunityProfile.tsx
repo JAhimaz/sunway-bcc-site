@@ -4,7 +4,7 @@ import styles from "./Profile.module.scss"
 import GridHoverBox from "../Home/GridHoverBox/GridHoverBox"
 import Texts from "../Atoms/Texts"
 import { useAccount } from "wagmi"
-import { useEffect, useState } from "react"
+import { FC, useEffect, useState } from "react"
 import GetUser, { User } from "@/libs/@server/user/GetUser"
 import { Avatar } from 'connectkit';
 import Loader from "../Loader/Loader"
@@ -17,12 +17,14 @@ type ScannedDetails = {
   date: Date,
 }
 
-const Profile = () => {
+type CommunityProfileProps = {
+  accountId: string;
+}
+
+const CommunityProfile: FC<CommunityProfileProps> = ({ accountId }) => {
 
   const t = useTranslations("Profile")
   const headline = t("title");
-
-  const { address, isConnected } = useAccount();
 
   const [userDetails, setUserDetails] = useState<User>({
     _id: "",
@@ -40,18 +42,19 @@ const Profile = () => {
   useEffect(() => {
       // Fetch user details
     setLoading(true)
-    if(address && isConnected) {
-      GetUser(address).then((data) => {
-        setUserDetails(data)
-        setLoading(false)
-      })
+    if(accountId) {
+      // GetUser(accountId).then((data) => {
+      //   setUserDetails(data)
+      //   console.log(ExpToLevel(data.exp))
+      //   setLoading(false)
+      // })
     }
 
-    if(!address && !isConnected) {
+    if(!accountId) {
       setLoading(false)
     }
 
-    if(!address) {
+    if(!accountId) {
       setUserDetails({
         _id: "",
         name: "",
@@ -64,7 +67,7 @@ const Profile = () => {
         version: 0,
       })
     }
-  }, [address, isConnected])
+  }, [accountId])
 
   return (
     <section className={styles.main}>
@@ -80,14 +83,9 @@ const Profile = () => {
         width: "100%",
       }}>
         { loading && <Loader /> }
-        { !loading && !isConnected && (
-          <section>
-            Please Connect Your Wallet
-          </section>
-        )}
       </section>
 
-      { isConnected && address && userDetails._id && (
+      { accountId && (
         <section className={styles.container}>
           <section className={styles.profile}>
             <CircularProgress size={100} progress={ExpToLevel(userDetails.exp).remainingExpScaled} strokeWidth={4} style={{
@@ -106,7 +104,7 @@ const Profile = () => {
             }}>{`Lv. ${ExpToLevel(userDetails.exp).level}`}</Texts>
 
             <div id="profile_logo_outer"className={styles.profileLogoOuter}>
-              <Avatar address={address} size={85}/>
+              <Avatar address={accountId as `0x${string}`} size={85}/>
             </div>
             <section className={styles.profileInner}>
               <section className={styles.details}>
@@ -114,7 +112,7 @@ const Profile = () => {
                 <Stamps stamps={userDetails.stamps} />
               </section>
               <section className={styles.subDetails}>
-                <Texts fontSize="xs" color="var(--foreground)">{address}</Texts>
+                <Texts fontSize="xs" color="var(--foreground)">{accountId}</Texts>
               </section>
             </section>
           </section>
@@ -129,4 +127,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default CommunityProfile
