@@ -73,7 +73,8 @@
 
 .profileLogoOuter {
   position: absolute;
-  outline: 0.75rem solid var(--background);
+  background-color: var(--background);
+  outline: 0.3rem solid var(--background);
   
   // Positioning
   top: -75px;

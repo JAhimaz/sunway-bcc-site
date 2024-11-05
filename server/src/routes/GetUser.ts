@@ -14,7 +14,6 @@ GetUserInfoRoute.get("/:address", async (req, res) => {
     // If the user is not found, create a new user
     if (!user) {
       User.create({
-        name: GenerateUsername(),
         address: address,
         exp: 0,
         stamps: [],

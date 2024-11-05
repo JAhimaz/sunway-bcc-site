@@ -1,20 +1,26 @@
 export const ExpToLevel = (exp: number) => {
-  // scaling level, require total exp of 100 to level up to 1, total exp of 300 to level up to 2, total of 500 to level up to 3, etc.
   let level = 0;
   let remainingExp = exp;
   let expRequired = 0;
 
+  // Calculate the level and the required experience for the next level
   while (remainingExp >= expRequired) {
     level++;
     expRequired += 100 * level;
   }
 
-  remainingExp -= expRequired - 100 * level;
-  // remainingExpScaled from range of 0 to 1
-  const remainingExpScaled = remainingExp / (100 * level);
-
-  return { level, remainingExp, expRequired, remainingExpScaled };
+  // Calculate the remaining experience needed to reach the next level
+  const nextLevelExp = expRequired;
+  const currentLevelExp = expRequired - 100 * level;
+  const expToNextLevel = nextLevelExp - exp;
   
+  // Calculate the progress percentage within the current level and round it
+  const remainingExpScaled = Math.round(((exp - currentLevelExp) / (nextLevelExp - currentLevelExp)) * 100);
 
-  // return level, remaining exp, exp required to level up, current exp on level
-}
+  return { 
+    level, 
+    remainingExp: expToNextLevel, 
+    nextLevelExp, 
+    remainingExpScaled 
+  };
+};

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import GenerateUsername from "@/libs/NameGenerator/NameGenerator";
 const Schema = mongoose.Schema
 
 // This is an example Schema for a User model
@@ -10,7 +11,8 @@ const userSchema = new Schema({
   },
   name: {
     type: String,
-    required: false,
+    required: true,
+    default: () => GenerateUsername()
   },
   bio: {
     type: String,
@@ -39,7 +41,8 @@ const userSchema = new Schema({
   },
   address: {
     type: String,
-    required: false,
+    required: true,
+    unique: true,
   },
   exp: {
     type: Number,
@@ -59,6 +62,7 @@ const userSchema = new Schema({
   key: {
     type: String,
     required: false,
+    default: ""
   },
   version: {
     type: Number,
