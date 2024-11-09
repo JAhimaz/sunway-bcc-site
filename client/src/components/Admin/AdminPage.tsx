@@ -79,19 +79,19 @@ const AdminPage = () => {
           <Accordian title="Event Badges">
             <EventBadges userDetails={userDetails} />
           </Accordian>
-          <Accordian title="Users">
+          <Accordian title="Users" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
-          <Accordian title="Jobs Management">
+          <Accordian title="Jobs Management" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
-          <Accordian title="Event Listings">
+          <Accordian title="Event Listings" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
-          <Accordian title="Statistics Management">
+          <Accordian title="Statistics Management" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
-          <Accordian title="Images">
+          <Accordian title="Images" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
         </section>

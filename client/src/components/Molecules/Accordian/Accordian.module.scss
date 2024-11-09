@@ -1,14 +1,22 @@
-.title {
+.title, .disabled {
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    border: 1px solid var(--foreground);
     user-select: none;
-    cursor: pointer;
     transition: all 0.15s ease-in-out;
+}
+
+.title {
+  cursor: pointer;
+  border: 1px solid var(--foreground);
+}
+
+.disabled {
+  cursor: not-allowed;
+  border: 1px solid var(--dark-foreground);
 }
 
 .text {
