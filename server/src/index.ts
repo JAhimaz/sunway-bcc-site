@@ -17,7 +17,6 @@ import MongoStore from 'connect-mongo'
 // import Route from "@routes/Route"; // Example Route
 import GetUserInfoRoute from "@routes/GetUser";
 import HealthRoute from "@routes/Health";
-import GenerateUsername from "./libs/NameGenerator/NameGenerator";
 
 // Admin Routes
 import GetAdministratorsRoute from "@routes/Admin/GetAdministrators";
@@ -27,6 +26,7 @@ import isAdministrator from "./middlewares/isAdmin";
 
 // Stamp Routes
 import SetUserStampsRoute from "./routes/Stamps/SetUserStamps";
+import UpdateUserStampsRoute from "./routes/Stamps/UpdateStamps";
 
 const app = express();
 
@@ -73,8 +73,6 @@ const port = Env.SERVER_PORT || 8080
 
 app.listen(port, () => {
   console.log(`Server has started successfully on port ${port}`);
-
-  console.log(`Server is running in ${Env.NODE_ENV} mode on ${Env.CLIENT_URL}:${port}`);
 }).on("error", (err) => {
   console.log(`An error has occured: ${err}`);
 });
@@ -107,3 +105,4 @@ app.use("/api/admin/remove", isAdministrator, DeleteAdministratorsRoute);
 
 // Stamp Routes
 app.use("/api/stamps/setbulk", SetUserStampsRoute);
+app.use("/api/stamps/updatenames", UpdateUserStampsRoute);

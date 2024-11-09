@@ -1,6 +1,6 @@
 export type Stamp = {
   id: number;
-  eventName: string;
+  name: string;
   eventType: "workshop" | "talk" | "external" | "major";
   date: string;
 }

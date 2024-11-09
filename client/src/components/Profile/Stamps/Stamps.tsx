@@ -1,19 +1,52 @@
 "use client"
 
-import { FC } from "react";
+import { FC, useState } from "react";
 import styles from "./Stamps.module.scss";
 import Texts from "@/components/Atoms/Texts";
 // import Image from "next/image";
-import { StampsType } from "./types";
+import { StampsType, Stamp } from "./types";
 import { Icon, IconName } from "@/utils/Icons";
 
 // maximum of 10 stamps
 
 const Stamps: FC<StampsType> = ({ stamps }) => {
+
+  const [ showStampDetails, setShowStampDetails ] = useState<{
+    show: boolean,
+    stamp: Stamp | undefined,
+  }>({
+    show: false,
+    stamp: undefined,
+  });
+
   return (
     <section className={styles.stampFlexGrid}>
+      { (showStampDetails.show && showStampDetails.stamp) &&
+        <div className={styles.overlay}>
+          <div className={styles.stampDetails}>
+            <Texts fontSize="md" weight="bold">{showStampDetails.stamp.name}</Texts>
+            {/* capitalise the first letter of the eventType */}
+            <Texts fontSize="xs" style={{
+              marginTop: 'auto',
+            }}>{showStampDetails.stamp.eventType.charAt(0).toUpperCase() + showStampDetails.stamp.eventType.slice(1)}</Texts>
+            {/* date in format of DD/MM/YY */}
+            <Texts fontSize="xs" color="var(--text-light)">{
+              new Date(showStampDetails.stamp.date).toLocaleDateString()
+            }</Texts>
+          </div>
+          <div className={styles.close} onClick={() => setShowStampDetails({show: false, stamp: undefined})}>
+            <Icon icon="close" style={{
+              height: "2rem",
+              width: "2rem",
+              color: "var(--error)",
+            }}/>
+          </div>
+        </div>
+      }
       {stamps.map((stamp, index) => 
-          <div key={stamp.eventName + "-" + index} className={styles.stampSuccess} title={stamp.eventName}>
+          <div key={stamp.name + "-" + index} className={styles.stampSuccess} title={stamp.name}
+            onClick={() => setShowStampDetails({show: true, stamp: stamp})}
+          >
             <Icon icon={GetStampType(stamp.eventType)} style={{
               height: "3rem",
               width: "3rem",
