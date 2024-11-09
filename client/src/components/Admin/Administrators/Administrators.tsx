@@ -30,7 +30,7 @@ const Administrators: FC<AdminProps> = ({ userDetails }) => {
   const [ admins, setAdmins ] = useState<Admin[]>([]);
 
   const [ newAddress, setNewAddress ] = useState<string>('');
-    const [ success, setSuccess ] = useState({
+  const [ success, setSuccess ] = useState({
     visible: false,
     message: '',
     isError: false

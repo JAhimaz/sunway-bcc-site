@@ -11,6 +11,7 @@ import Seperator from "../Molecules/Seperator/Seperator"
 import { useRouter } from "next/navigation"
 import Accordian from "../Molecules/Accordian/Accordian"
 import Administrators from "./Administrators/Administrators"
+import EventBadges from "./Badges/EventBadges"
 
 const AdminPage = () => {
   const t = useTranslations("Admin")
@@ -73,10 +74,10 @@ const AdminPage = () => {
         <Seperator text="[ADMIN PANEL]" />
         <section className={styles.adminDashboard}>
           <Accordian title="Administrators">
-            <Administrators userDetails={userDetails}/>
+            <Administrators userDetails={userDetails} />
           </Accordian>
           <Accordian title="Event Badges">
-            <Texts color="var(--text-light)">Work in Progress</Texts>
+            <EventBadges userDetails={userDetails} />
           </Accordian>
           <Accordian title="Users">
             <Texts color="var(--text-light)">Work in Progress</Texts>
