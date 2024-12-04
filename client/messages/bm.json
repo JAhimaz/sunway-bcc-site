@@ -5,7 +5,8 @@
     "store": "Kedai",
     "join": "Sertai Kelab",
     "jobs": "Pekerjaan",
-    "collaborate": "Bekerjasama"
+    "collaborate": "Bekerjasama",
+    "community": "Komuniti"
   },
   "Main": {
     "title": "Sunway Blockchain Kelab _",
@@ -116,5 +117,8 @@
     "title": "Admin",
     "headline-1": "ACCESS",
     "headline-2": " TO ADMINISTRATIVE TOOLS"
+  },
+  "Community": {
+    "title": "[ Cari Ahli ]"
   }
 }

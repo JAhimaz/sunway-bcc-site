@@ -36,15 +36,9 @@ const Store = () => {
       
       {/* Items */}
       <section className={styles.layout}>
+        <Texts color="var(--foreground)" fontSize="md" className={styles.storeItemGridHeader}>Coming Real Soon...</Texts>
       <section className={styles.storeItemGrid}>
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
-        <StoreItem />
+
       </section>
       </section>
 

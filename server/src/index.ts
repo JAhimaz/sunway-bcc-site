@@ -16,6 +16,8 @@ import MongoStore from 'connect-mongo'
 // Routes
 // import Route from "@routes/Route"; // Example Route
 import GetUserInfoRoute from "@routes/GetUser";
+import FindUserRoute from "./routes/FindUser";
+import GetTopUsersRoute from "@routes/GetTopUsers";
 import HealthRoute from "@routes/Health";
 
 // Admin Routes
@@ -96,6 +98,8 @@ app.use('/api/', rateLimit({
 // Example Route Declaration
 // app.use("/path/to/route", Route);
 app.use("/api/user", GetUserInfoRoute);
+app.use("/api/findUser", FindUserRoute);
+app.use("/api/topusers", GetTopUsersRoute);
 app.use("/api/health", HealthRoute);
 
 // Admin Routes

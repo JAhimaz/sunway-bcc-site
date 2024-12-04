@@ -9,6 +9,7 @@ import { ImExit } from "react-icons/im";
 import { PiCalendarCheckBold } from "react-icons/pi";
 import { MdDelete, MdGroups } from "react-icons/md";
 import { CSSProperties, FC } from "react";
+import { BiSearchAlt2 } from "react-icons/bi";
 
 const IconsIndex = {
   arrowRight: FaArrowRight,
@@ -22,7 +23,8 @@ const IconsIndex = {
   check: FaCheck,
   calendar: PiCalendarCheckBold,
   delete: MdDelete,
-  close: AiFillCloseSquare
+  close: AiFillCloseSquare,
+  search: BiSearchAlt2
 };
 
 const EventIndex = {

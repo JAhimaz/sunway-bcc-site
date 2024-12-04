@@ -113,7 +113,9 @@ const Profile = () => {
                 <Texts fontSize="lg" color="var(--text)">{userDetails.name}</Texts>
                 <Stamps stamps={userDetails.stamps} />
               </section>
-              <section className={styles.subDetails}>
+              <section className={styles.subDetails} onClick={() => {
+                  navigator.clipboard.writeText(address)
+                }}>
                 <Texts fontSize="xs" color="var(--foreground)">{address}</Texts>
               </section>
             </section>

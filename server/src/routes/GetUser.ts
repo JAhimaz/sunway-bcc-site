@@ -2,7 +2,6 @@ import express from "express";
 import User from "@models/User";
 import Error from "@libs/error";
 import Success from "@libs/success";
-import GenerateUsername from "@/libs/NameGenerator/NameGenerator";
 
 const GetUserInfoRoute = express.Router();
 

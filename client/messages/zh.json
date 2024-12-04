@@ -5,7 +5,8 @@
     "store": "商店",
     "join": "加入俱乐部",
     "jobs": "职业机会",
-    "collaborate": "合作"
+    "collaborate": "合作",
+    "community": "社区"
   },
   "Main": {
     "title": "Sunway Blockchain 社 _",
@@ -116,5 +117,8 @@
     "title": "Admin",
     "headline-1": "ACCESS",
     "headline-2": " TO ADMINISTRATIVE TOOLS"
+  },
+  "Community": {
+    "title": "[ 搜索成员 ]"
   }
 }

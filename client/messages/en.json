@@ -6,7 +6,8 @@
     "join": "Join the Club",
     "connect-button":"Connect Wallet",
     "jobs": "Jobs",
-    "collaborate": "Collaborate"
+    "collaborate": "Collaborate",
+    "community": "Community"
   },
   "Main": {
     "title": "Sunway Blockchain Club _",
@@ -117,5 +118,8 @@
     "title": "Admin",
     "headline-1": "ACCESS",
     "headline-2": " TO ADMINISTRATIVE TOOLS"
+  },
+  "Community": {
+    "title": "[ Search for a Member ]"
   }
 }
