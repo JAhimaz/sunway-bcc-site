@@ -94,6 +94,9 @@ const AdminPage = () => {
           <Accordian title="Images" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
+          <Accordian title="Admin Commands (WARNING DO NOT TOUCH IF YOU'RE NOT SURE)" disabled>
+            <Texts color="var(--text-light)">Work in Progress</Texts>
+          </Accordian>
         </section>
       </section>
     )
