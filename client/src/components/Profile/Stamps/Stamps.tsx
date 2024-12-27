@@ -43,7 +43,7 @@ const Stamps: FC<StampsType> = ({ stamps }) => {
           </div>
         </div>
       }
-      {stamps.map((stamp, index) => 
+      {stamps.splice(0, 6).map((stamp, index) =>
           <div key={stamp.name + "-" + index} className={styles.stampSuccess} title={stamp.name}
             onClick={() => setShowStampDetails({show: true, stamp: stamp})}
           >

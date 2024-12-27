@@ -121,7 +121,9 @@ const Profile = () => {
             </section>
           </section>
           { userDetails.stamps.length === 6 && (
-            <button id="claim_cert" className={styles.button} disabled={userDetails.stamps.length < 6}>
+            <button id="claim_cert" className={styles.button} disabled
+            // ={userDetails.stamps.length < 6}
+            >
               Claim Certificate
             </button>
           )}
