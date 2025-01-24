@@ -93,6 +93,20 @@
   align-items: center;
 }
 
+.button {
+  padding: 1rem 2rem;
+  border: 1px solid var(--foreground);
+  border-radius: 0.5rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--highlight);
+  }
+}
+
 
 
 @media (max-width: 768px) {

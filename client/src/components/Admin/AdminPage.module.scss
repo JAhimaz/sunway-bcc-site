@@ -9,6 +9,10 @@
   user-select: none;
 }
 
+.subheaderRow {
+  padding: 0.5rem 0;
+}
+
 .header {
   word-spacing: 3px;
   display: flex;
@@ -76,4 +80,5 @@
   .subheader {
     box-sizing: border-box;
   }
+  
 }

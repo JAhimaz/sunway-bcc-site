@@ -29,6 +29,10 @@ import isAdministrator from "./middlewares/isAdmin";
 // Stamp Routes
 import SetUserStampsRoute from "./routes/Stamps/SetUserStamps";
 import UpdateUserStampsRoute from "./routes/Stamps/UpdateStamps";
+import CreateCompanyRoute from "./routes/Admin/Company/CreateCompany";
+import GetCompaniesRoute from "./routes/Admin/Company/GetCompanies";
+import UpdateCompanyRoute from "./routes/Admin/Company/UpdateCompany";
+import DeleteCompanyRoute from "./routes/Admin/Company/DeleteCompany";
 
 const app = express();
 
@@ -80,10 +84,11 @@ app.listen(port, () => {
 });
 
 // Limiters
+// TODO, Modify to fix admins no request rate.
 app.use('/api/', rateLimit({
   // 10 requests every minute
   windowMs: 60 * 1000,
-  max: 10,
+  max: 5000,
   message: {
     error: {
       status: 429,
@@ -110,3 +115,9 @@ app.use("/api/admin/remove", isAdministrator, DeleteAdministratorsRoute);
 // Stamp Routes
 app.use("/api/stamps/setbulk", SetUserStampsRoute);
 app.use("/api/stamps/updatenames", UpdateUserStampsRoute);
+
+// Company Routes
+app.use("/api/admin/company/createcompany", isAdministrator, CreateCompanyRoute);
+app.use("/api/admin/company/getcompanies", isAdministrator, GetCompaniesRoute);
+app.use("/api/admin/company/updatecompany", isAdministrator, UpdateCompanyRoute);
+app.use("/api/admin/company/deletecompany", isAdministrator, DeleteCompanyRoute);

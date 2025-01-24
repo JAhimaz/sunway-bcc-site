@@ -1,9 +1,9 @@
 import { JobItemProps } from "@/components/Jobs/JobItem/JobItem"
 
 
-const FetchJobs = async () => {
+const FetchJobs = async (page: number, size: number, search?: string) => {
     try {
-      const response = await fetch(`https://api.baserow.io/api/database/rows/table/380799/?user_field_names=true`, {
+      const response = await fetch(`https://api.baserow.io/api/database/rows/table/380799/?user_field_names=true&page=${page}&size=${size}&search=${search}`, {
         method: 'GET',
         headers: {
           Authorization: `Token rK3SVomxuHfqBl5mKMDONQhkA7wymwR6`,
@@ -29,6 +29,8 @@ const FetchJobs = async () => {
           paymentMode: row.paymentMode.value ?? undefined,
         })) as JobItemProps[]
       })
+
+      
 
       return JobList;
 

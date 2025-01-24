@@ -8,22 +8,14 @@ import JobItem, { JobItemProps } from "./JobItem/JobItem";
 import { useEffect, useState } from "react";
 import FetchJobs from "@/libs/jobs/FetchJobs";
 import Loader from "../Loader/Loader";
+import Button from "../Molecules/Buttons/Button";
 
 const Jobs = () => {
 
   const t = useTranslations("Jobs")
   const headline = t("title");
 
-  const [search, setSearch] = useState<string>("");
-  const [jobs, setJobs] = useState<JobItemProps[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    FetchJobs().then((jobs) => {
-      setLoading(false);
-      setJobs(jobs);
-    });
-  }, [])
+  // Reworking how Jobs work.
 
   return (
     <section className={styles.main}>
@@ -45,21 +37,26 @@ const Jobs = () => {
       <Seperator />
       <section className={styles.layout}>
         {/* Filter / Search Bar */}
-        <input className={styles.searchInput} placeholder={"Search..."} onChange={e => setSearch(e.target.value)}  />
-        { loading && <Loader /> }
+        {/* <div style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "1rem",
+          width: "100%",
+        }}>
+          <input className={styles.searchInput} placeholder={"Search..."} onChange={e => setSearch(e.target.value)}  />
+          <button className={styles.button} onClick={() => null}>Search</button>
+        </div> */}
         
-        {/* Side Scrolling for Mobile */}
-        <section className={styles.jobListings}>
-          {jobs.filter(
-            job => job.jobTitle.toLowerCase().includes(search.toLowerCase()) || job.companyName.toLowerCase().includes(search.toLowerCase())
-          ).map((job: JobItemProps, index: number) => {
+
+        {/* <section className={styles.jobListings}>
+          {jobs.map((job: JobItemProps, index: number) => {
             return (
               <JobItem key={index} {...job} />
             )
           })}
-        </section>
+        </section> */}
 
-        {/* Main Panel */}
+
       </section>
 
     </section>  

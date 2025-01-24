@@ -12,6 +12,8 @@ import { useRouter } from "next/navigation"
 import Accordian from "../Molecules/Accordian/Accordian"
 import Administrators from "./Administrators/Administrators"
 import EventBadges from "./Badges/EventBadges"
+import JobsAdmin from "./Jobs/Jobs"
+import CompanyAdmin from "./Company/Company"
 
 const AdminPage = () => {
   const t = useTranslations("Admin")
@@ -73,28 +75,35 @@ const AdminPage = () => {
         </span>
         <Seperator text="[ADMIN PANEL]" />
         <section className={styles.adminDashboard}>
+          <Texts color="var(--text-light)" fontSize="sm" className={styles.subheaderRow}>Adminstrator Management</Texts>
           <Accordian title="Administrators">
             <Administrators userDetails={userDetails} />
           </Accordian>
+          <Accordian title="Admin Commands (WARNING DO NOT TOUCH IF YOU'RE NOT SURE)" disabled>
+            <Texts color="var(--text-light)">Work in Progress</Texts>
+          </Accordian>
+          <Texts color="var(--text-light)" fontSize="sm" className={styles.subheaderRow}>Events Management</Texts>
           <Accordian title="Event Badges">
             <EventBadges userDetails={userDetails} />
-          </Accordian>
-          <Accordian title="Users" disabled>
-            <Texts color="var(--text-light)">Work in Progress</Texts>
-          </Accordian>
-          <Accordian title="Jobs Management" disabled>
-            <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
           <Accordian title="Event Listings" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
+          <Texts color="var(--text-light)" fontSize="sm" className={styles.subheaderRow}>Job Management</Texts>
+          <Accordian title="Company Management">
+            <CompanyAdmin userDetails={userDetails} />
+          </Accordian>
+          <Accordian title="Jobs Management">
+            <JobsAdmin userDetails={userDetails} />
+          </Accordian>
+          <Texts color="var(--text-light)" fontSize="sm" className={styles.subheaderRow}>Website Management</Texts>
           <Accordian title="Statistics Management" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
-          <Accordian title="Images" disabled>
+          <Accordian title="Users" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
-          <Accordian title="Admin Commands (WARNING DO NOT TOUCH IF YOU'RE NOT SURE)" disabled>
+          <Accordian title="Images" disabled>
             <Texts color="var(--text-light)">Work in Progress</Texts>
           </Accordian>
         </section>
