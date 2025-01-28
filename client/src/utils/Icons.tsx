@@ -5,7 +5,7 @@ import { IoLogoDiscord, IoPerson } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsQrCode, BsFillMegaphoneFill } from "react-icons/bs";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
-import { ImExit } from "react-icons/im";
+import { ImExit, ImCross } from "react-icons/im";
 import { PiCalendarCheckBold } from "react-icons/pi";
 import { MdDelete, MdGroups } from "react-icons/md";
 import { CSSProperties, FC } from "react";
@@ -24,7 +24,8 @@ const IconsIndex = {
   calendar: PiCalendarCheckBold,
   delete: MdDelete,
   close: AiFillCloseSquare,
-  search: BiSearchAlt2
+  search: BiSearchAlt2,
+  cross: ImCross
 };
 
 const EventIndex = {

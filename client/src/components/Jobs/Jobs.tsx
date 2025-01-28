@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import FetchJobs from "@/libs/jobs/FetchJobs";
 import Loader from "../Loader/Loader";
 import Button from "../Molecules/Buttons/Button";
+import InProgress from "../InProgress/InProgress";
 
 const Jobs = () => {
 
@@ -19,7 +20,8 @@ const Jobs = () => {
 
   return (
     <section className={styles.main}>
-      <GridHoverBox />
+      <InProgress />
+      {/* <GridHoverBox />
       <Texts color="var(--text-light)" fontSize="xs" className={styles.subheader}>
         &#47;&#47;&nbsp;&nbsp;<Texts color="var(--text)" fontSize="xs" className={styles.underlineHover}>{t("headline-1")}</Texts>{t("headline-2")}
       </Texts>
@@ -34,31 +36,7 @@ const Jobs = () => {
           )
         })}
       </span>
-      <Seperator />
-      <section className={styles.layout}>
-        {/* Filter / Search Bar */}
-        {/* <div style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "1rem",
-          width: "100%",
-        }}>
-          <input className={styles.searchInput} placeholder={"Search..."} onChange={e => setSearch(e.target.value)}  />
-          <button className={styles.button} onClick={() => null}>Search</button>
-        </div> */}
-        
-
-        {/* <section className={styles.jobListings}>
-          {jobs.map((job: JobItemProps, index: number) => {
-            return (
-              <JobItem key={index} {...job} />
-            )
-          })}
-        </section> */}
-
-
-      </section>
-
+      <Seperator /> */}
     </section>  
   )
 }

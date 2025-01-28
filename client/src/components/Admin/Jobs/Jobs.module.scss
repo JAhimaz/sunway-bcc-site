@@ -18,3 +18,84 @@
   // line spacing
   line-height: 1.75;
 }
+
+.input {
+  width: 100%;
+  display: flex;
+  padding: 0.75rem;
+  background-color: var(--background);
+  border: 1px solid var(--foreground);
+  outline: none;
+  color: var(--text);
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+}
+
+.input:focus {
+  border: 1px solid var(--text-light);
+}
+
+.companySearchSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fillCompany {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--foreground);
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.companySearchTile:hover .fillCompany {
+  width: 100%;
+}
+
+.companyText {
+  position: relative;
+  z-index: 1;
+  color: var(--text-light);
+  transition: all 0.5s ease;
+}
+
+.companySearchTile:hover .companyText {
+  color: var(--text) !important;
+}
+
+.companySearchTile {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--background);
+  border-left: 1px solid var(--foreground);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.addButton {
+  width: 100%;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--background);
+  border: 1px solid var(--highlight);
+  border-radius: 0.25rem;
+  outline: none;
+  color: var(--highlight);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.addButton:hover {
+  background-color: var(--highlight);
+  color: var(--background);
+}

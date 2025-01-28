@@ -43,23 +43,25 @@ const Stamps: FC<StampsType> = ({ stamps }) => {
           </div>
         </div>
       }
-      {stamps.splice(0, 6).map((stamp, index) =>
+      {stamps.slice(0, 6).map((stamp, index) =>
           <div key={stamp.name + "-" + index} className={styles.stampSuccess} title={stamp.name}
-            onClick={() => setShowStampDetails({show: true, stamp: stamp})}
+              onClick={() => setShowStampDetails({show: true, stamp: stamp})}
           >
-            <Icon icon={GetStampType(stamp.eventType)} style={{
-              height: "3rem",
-              width: "3rem",
-            }} />
+              <Icon icon={GetStampType(stamp.eventType)} style={{
+                  height: "3rem",
+                  width: "3rem",
+              }} />
           </div>
       )}
+
       {/* fill out the remaining areas */}
-      {Array(6 - stamps.length).fill(0).map((_, index) => 
+      
+      {(stamps.length < 6) && Array(6 - stamps.length).fill(0).map((_, index) => 
           <div key={`placeholder-${stamps.length + index}`} className={styles.stamp}>
-            <Texts fontSize="sm">{stamps.length + index + 1}</Texts>
+              <Texts fontSize="sm">{stamps.length + index + 1}</Texts>
           </div>
-        )
-      }
+      )}
+
     </section>
   )
 }

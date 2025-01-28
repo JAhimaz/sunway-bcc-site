@@ -6,12 +6,14 @@ import { default as NextImage } from 'next/image';
 import { CompanyAdminProps, CompanyDetails } from '../Company';
 import { FC, useEffect, useState } from 'react';
 import { default as CreateCompanyAPI } from '@/libs/@server/admin/Company/CreateCompany';
+import Required from '@/utils/Required';
 
 const CreateCompany: FC<CompanyAdminProps> = ({
   userDetails
 }) => {
     const [ companyDetails, setCompanyDetails ] = useState<CompanyDetails>({
       name: '',
+      logo: '',
       website: '',
       description: '',
       twitter: '',
@@ -76,6 +78,7 @@ const CreateCompany: FC<CompanyAdminProps> = ({
       // Reset form
       setCompanyDetails({
         name: '',
+        logo: '',
         website: '',
         description: '',
         headquarters: '',
@@ -96,13 +99,16 @@ const CreateCompany: FC<CompanyAdminProps> = ({
 
     return (
         <section className={styles.container}>
-          <Texts fontSize='sm' color='var(--text-light)'>Company Name</Texts>
+          <Texts fontSize='sm' color='var(--text-light)'>Company Name<Required /></Texts>
           <input className={styles.input} onChange={(e) => handleChange(e)} name="name" placeholder='e.g Sunway Blockchain' value={companyDetails.name} />
 
-          <Texts fontSize='sm' color='var(--text-light)'>Description</Texts>
+          <Texts fontSize='sm' color='var(--text-light)'>Company Logo</Texts>
+          <input className={styles.input} onChange={(e) => handleChange(e)} name="logo" placeholder='e.g https://sunwayblockchain.com/logo.png' value={companyDetails.logo} />
+
+          <Texts fontSize='sm' color='var(--text-light)'>Description<Required /></Texts>
           <textarea className={styles.textarea} placeholder={"Enter a description of your company"} onChange={(e) => handleChange(e)} name="description" value={companyDetails.description} />
       
-          <Texts fontSize='sm' color='var(--text-light)'>Company Website</Texts>
+          <Texts fontSize='sm' color='var(--text-light)'>Company Website<Required /></Texts>
           <input className={styles.input} onChange={(e) => handleChange(e)} name="website" placeholder='e.g https://sunwayblockchain.com' value={companyDetails.website} />
           <Texts fontSize='sm' color='var(--text-light)'>Headquarters</Texts>
           <input className={styles.input} onChange={(e) => handleChange(e)} name="headquarters" placeholder='e.g Sunway University, Malaysia' value={companyDetails.headquarters} />
