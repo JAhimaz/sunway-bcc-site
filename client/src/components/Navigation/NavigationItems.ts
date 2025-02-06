@@ -4,6 +4,7 @@ type NavigationItem = {
   link: string,
   icon?: string,
   newTab?: boolean,
+  highlight?: boolean,
 }
 
 export const NavigationItems: NavigationItem[] = [
@@ -41,6 +42,13 @@ export const NavigationItems: NavigationItem[] = [
     link: "https://docs.google.com/forms/d/e/1FAIpQLScCZ0M7fZG-joi_pRDO-UAldNUxyR5fO_0bMcKLcummlf1FEg/viewform",
     icon: "collaborate",
     newTab: true,
+  },
+  {
+    id: "committee",
+    link: "https://forms.gle/iZnZXsHUYZYypJqv5",
+    icon: "committee",
+    newTab: true,
+    highlight: true,
   },
   {
     id: "join",

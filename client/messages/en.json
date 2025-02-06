@@ -4,10 +4,11 @@
     "events": "Events",
     "store": "Store",
     "join": "Join the Club",
-    "connect-button":"Connect Wallet",
+    "connect-button": "Connect Wallet",
     "jobs": "Jobs",
     "collaborate": "Collaborate",
-    "community": "Community"
+    "community": "Community",
+    "committee": "Join Committee"
   },
   "Main": {
     "title": "Sunway Blockchain Club _",

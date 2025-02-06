@@ -57,8 +57,8 @@ const Navigation: FC = () => {
           return (
             <Link key={item.id} href={item.link} target={item.newTab ? "_blank" : "_self"} className={styles.navItem}>
               <div className={styles.pseudoNavItem} />
-              <Texts color={"var(--text-light)"} fontSize="sm" className={styles.navItemText}>
-                <Texts color="var(--foreground)" fontSize="sm" className={styles.navItemText}>&#47;&#47;&nbsp;&nbsp;</Texts>{t(item.id)}
+              <Texts color={item.highlight ? "var(--highlight)": "var(--text-light)"} fontSize="sm" className={styles.navItemText}>
+                <Texts color="var(--foreground)" fontSize="sm" className={styles.navItemText}>&#47;&#47;&nbsp;&nbsp;</Texts>{t(item.id)} {item.highlight ? "✨" : ""}
               </Texts>
             </Link>
           )

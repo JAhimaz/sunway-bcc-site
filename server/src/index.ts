@@ -33,6 +33,7 @@ import CreateCompanyRoute from "./routes/Admin/Company/CreateCompany";
 import GetCompaniesRoute from "./routes/Admin/Company/GetCompanies";
 import UpdateCompanyRoute from "./routes/Admin/Company/UpdateCompany";
 import DeleteCompanyRoute from "./routes/Admin/Company/DeleteCompany";
+import CreateJobRoute from "./routes/Admin/Jobs/CreateJob";
 
 const app = express();
 
@@ -121,3 +122,6 @@ app.use("/api/admin/company/createcompany", isAdministrator, CreateCompanyRoute)
 app.use("/api/admin/company/getcompanies", isAdministrator, GetCompaniesRoute);
 app.use("/api/admin/company/updatecompany", isAdministrator, UpdateCompanyRoute);
 app.use("/api/admin/company/deletecompany", isAdministrator, DeleteCompanyRoute);
+
+// Job Routes
+app.use("/api/admin/job/createjob", isAdministrator, CreateJobRoute);

@@ -8,7 +8,7 @@ const jobSchema = new Schema({
   },
   jobTitle: {
     type: String,
-    required: false,
+    required: true,
   },
   jobDescription: {
     type: String,
@@ -17,7 +17,7 @@ const jobSchema = new Schema({
   // Make sure to check on the frontend if user is email / link to site / pdf
   jobUrl: {
     type: String,
-    required: false,
+    required: true,
   },
   minPay: {
     type: Number,
@@ -30,12 +30,12 @@ const jobSchema = new Schema({
   // Monthly, Yearly, Hourly, One-Time, Project-Based
   paymentSchedule: {
     type: String,
-    required: true,
+    required: false,
   },
   // USD, EUR, MYR, SGD, INR, RMB
   payCurrency: {
     type: String,
-    required: true,
+    required: false,
   },
   location: {
     type: String,
@@ -46,7 +46,7 @@ const jobSchema = new Schema({
     required: false,
   },
   isRemote: {
-    type: Boolean,
+    type: String,
     required: true,
     default: false,
   },
@@ -57,7 +57,7 @@ const jobSchema = new Schema({
   },
   skill: {
     type: String,
-    required: false,
+    required: true,
   },
   tags: {
     type: Array,
