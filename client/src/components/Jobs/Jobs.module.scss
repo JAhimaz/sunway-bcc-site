@@ -47,66 +47,54 @@
   }
 }
 
+// Code
+
+.jobsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0rem;
+}
+
+.jobsSectionListings {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  // split into two columns 50/50
+  justify-content: space-between;
+}
+
+.jobsSectionListingsLeft {
+  width: 50%;
+  height: 1000px;
+  background-color: blue;
+}
+
+.jobItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+}
+
+.jobsSectionListingsRight {
+  width: 50%;
+  background-color: red;
+}
+
+// Code End
+
 @media (min-width: 1440px) {
   .main {
     width: calc(1440px - 72px);
     margin: 0 auto;
   }
 }
-
-.searchInput {
-  width: 100%;
-  height: 4rem;
-  border: 1px solid var(--foreground);
-  border-radius: 0.5rem;
-  padding: 0 1.5rem;
-  box-sizing: border-box;
-  font-size: 1.5rem;
-  outline: none;
-  color: var(--text);
-  background: transparent;
-  // placeholder colour
-  &::placeholder {
-    color: var(--text-light);
-  }
-}
-
-
-.layout {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  box-sizing: border-box;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.jobListings {
-  display: flex;
-  width: 100%;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.button {
-  padding: 1rem 2rem;
-  border: 1px solid var(--foreground);
-  border-radius: 0.5rem;
-  background-color: var(--background);
-  color: var(--foreground);
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  &:hover {
-    background-color: var(--highlight);
-  }
-}
-
 
 
 @media (max-width: 768px) {
@@ -116,8 +104,19 @@
     box-sizing: border-box;
   }
 
-  .memberGrid {
-    padding: 2rem 2rem;
+  .jobsSectionListings {
+    flex-direction: column;
+    width: 100%;
+    // split into two columns 50/50
+    justify-content: space-between;
+  }
+
+  .jobsSectionListingsLeft {
+    width: 100%;
+  }
+
+  .jobsSectionListingsRight {
+    width: 100%;
   }
 }
 

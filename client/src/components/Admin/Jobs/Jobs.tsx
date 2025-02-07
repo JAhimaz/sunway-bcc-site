@@ -112,6 +112,24 @@ const JobsAdmin: FC<JobsAdminProps> = ({ userDetails }) => {
         message: data.message,
         isError: data._code !== 200 ? true : false
       });
+
+      // Reset the form
+      setJobDetails({
+        companyId: '',
+        jobTitle: '',
+        jobDescription: '',
+        jobUrl: '',
+        minPay: 0,
+        maxPay: 0,
+        paymentSchedule: '',
+        payCurrency: '',
+        location: '',
+        timezone: '',
+        isRemote: '',
+        jobType: '',
+        skill: '',
+        tags: []
+      });
     })
   }
 
