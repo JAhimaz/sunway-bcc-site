@@ -106,7 +106,9 @@ const Jobs = () => {
             <section id="jobs_section_listings_left" className={styles.jobsSectionListingsLeft}>
               { jobs.length > 0 ? jobs.map((job: Job, index: number) => {
                 return (
-                  <div key={job._id} onClick={() => setSelectedJob(job)} className={styles.jobItem}>
+                  <div key={job._id} onClick={() => setSelectedJob(job)} className={styles.jobItem} style={{
+                    backgroundColor: selectedJob?._id === job._id ? "var(--dark-foreground)" : "transparent",
+                  }}>
                     {job.jobTitle}
                   </div>
                 )
@@ -114,7 +116,12 @@ const Jobs = () => {
             </section>
           {/* Right side for Job information */}
             <section id="jobs_section_listings_right" className={styles.jobsSectionListingsRight}>
-
+              { selectedJob ? 
+              <section id="jobs_section_description" className={styles.jobDetails}>
+                <Texts color="var(--text)" fontSize="lg" weight="bold" className={styles.jobTitle}>{selectedJob.jobTitle}</Texts>
+                <Texts color="var(--text-light)" fontSize="sm" className={styles.jobCompany}>{selectedJob.company.name}</Texts>
+              </section>
+              : <Texts color="var(--text-light)" fontSize="xs" className={styles.noJobs}>{t("no-jobs")}</Texts> }
             </section>
           </section>
 

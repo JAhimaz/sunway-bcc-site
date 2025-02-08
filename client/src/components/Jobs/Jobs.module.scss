@@ -55,36 +55,59 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 2rem 0rem;
+  padding: 2rem;
 }
 
 .jobsSectionListings {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 600px;
   // split into two columns 50/50
   justify-content: space-between;
+  border: 1px solid var(--foreground);
+  border-radius: 0.75rem;
+  overflow: hidden;
 }
 
 .jobsSectionListingsLeft {
   width: 50%;
-  height: 1000px;
-  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
 }
 
 .jobItem {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100px;
   padding: 1rem;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--foreground);
+}
+
+.jobItem:hover {
+  background-color: var(--dark-foreground);
 }
 
 .jobsSectionListingsRight {
   width: 50%;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-left: 1px solid var(--foreground);
+  background-color: var(--dark-foreground);
+}
+
+.jobDetails {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 // Code End
