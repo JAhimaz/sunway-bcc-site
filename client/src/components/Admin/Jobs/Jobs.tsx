@@ -148,6 +148,7 @@ const JobsAdmin: FC<JobsAdminProps> = ({ userDetails }) => {
 
   return (
     <section className={styles.container}>
+      { message.visible && <Texts fontSize='xs' color={message.isError ? 'var(--error)' : 'var(--highlight)'}>{message.message}</Texts> }
       <Texts fontSize='sm' color='var(--text-light)'>Select Company (Please Choose from the List)<Required /></Texts>
       <section style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1rem'}}> 
       <input
@@ -320,6 +321,7 @@ const JobsAdmin: FC<JobsAdminProps> = ({ userDetails }) => {
               { id: "front-end", name: "FrontEnd Developer" },
               { id: "back-end", name: "BackEnd Developer" },
               { id: "blockchain", name: "Blockchain Developer" },
+              { id: "business-developer", name: "Business Developer" },
               { id: "cloud", name: "Cloud Engineer" },
               { id: "c-plus-plus", name: "C / C++" },
               { id: "dot-net", name: "C# / .NET" },
@@ -361,12 +363,12 @@ const JobsAdmin: FC<JobsAdminProps> = ({ userDetails }) => {
               { id: "seo", name: "SEO" },
               { id: "sales", name: "Sales" },
               { id: "social-media", name: "Social Media" },
+              { id: "others", name: "Others" },
               ]}
             onChange={(value) => setJobDetails({ ...jobDetails, skill: value })}
             value={jobDetails.skill}
           />
           <button className={styles.addButton} onClick={Submit}>Create Job Listing</button>
-          { message.visible && <Texts fontSize='xs' color={message.isError ? 'var(--error)' : 'var(--highlight)'}>{message.message}</Texts> }
         </>
       )}
     </section>

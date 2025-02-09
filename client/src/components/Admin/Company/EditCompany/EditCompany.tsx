@@ -18,6 +18,7 @@ const EditCompany: FC<CompanyAdminProps> = ({
     const [ companyDetails, setCompanyDetails ] = useState<CompanyDetails>({
       _id: '',
       name: '',
+      logo: '',
       website: '',
       description: '',
       twitter: '',
@@ -65,6 +66,19 @@ const EditCompany: FC<CompanyAdminProps> = ({
           message: data.message,
           isError: data._code !== 200 ? true : false
         });
+      })
+
+      setCompanyDetails({
+        _id: '',
+        name: '',
+        logo: '',
+        website: '',
+        description: '',
+        twitter: '',
+        linkedin: '',
+        instagram: '',
+        github: '',
+        discord: ''
       });
 
       const data = await GetCompanies(userDetails.address, userDetails.key!);
@@ -85,6 +99,7 @@ const EditCompany: FC<CompanyAdminProps> = ({
       setCompanyDetails({
         _id: '',
         name: '',
+        logo: '',
         website: '',
         description: '',
         twitter: '',
@@ -122,6 +137,10 @@ const EditCompany: FC<CompanyAdminProps> = ({
           <>
             <Texts fontSize='sm' color='var(--text-light)'>Company Name</Texts>
             <input className={styles.input} onChange={(e) => handleChange(e)} name="name" placeholder='e.g Sunway Blockchain' value={companyDetails.name} />
+
+            <Texts fontSize='sm' color='var(--text-light)'>Company Logo</Texts>
+            <input className={styles.input} onChange={(e) => handleChange(e)} name="logo" placeholder='e.g https://sunwayblockchain.com/logo.png' value={companyDetails.logo} />
+
 
             <Texts fontSize='sm' color='var(--text-light)'>Description</Texts>
             <textarea className={styles.textarea} placeholder={"Enter a description of your company"} onChange={(e) => handleChange(e)} name="description" value={companyDetails.description} />
