@@ -77,17 +77,13 @@ const Jobs = () => {
     })
   }, [page])
 
-  useEffect(() => {
-    console.log(jobs, metadata)
-  }, [jobs, metadata])
-
   return (
     <section className={styles.main}>      
       <GridHoverBox />
       <Texts color="var(--text-light)" fontSize="xs" className={styles.subheader}>
         &#47;&#47;&nbsp;&nbsp;
-        { jobs.length > 0 ? 
-        <><Texts color="var(--text)" fontSize="xs">{jobs.length}</Texts>{t("jobsAvailable")}</>
+        { metadata?.totalCount ? 
+        <><Texts color="var(--text)" fontSize="xs">{metadata?.totalCount}</Texts>{t("jobsAvailable")}</>
         : <><Texts color="var(--text)" fontSize="xs" className={styles.underlineHover}>{t("headline-1")}</Texts>{t("headline-2")}</>
         }
         </Texts>
@@ -104,7 +100,16 @@ const Jobs = () => {
       </span>
       <Seperator />
 
-      {loading && <Loader />}
+      {loading && 
+        <section style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: '2rem',
+        }}>
+          <Loader />
+        </section>
+      }
 
       { jobs && !loading && (
         <section id="jobs_section" className={styles.jobsSection}>
@@ -176,7 +181,10 @@ const Jobs = () => {
                   </div>
                 </div>
                 <div className={styles.jobDetailsBody}>
-                <Texts color="var(--text-light)" fontSize="sm" align="justify">{selectedJob.jobDescription}</Texts>
+                <Texts color="var(--text-light)" fontSize="sm" align="justify" style={{
+                  whiteSpace: 'pre-line'
+                }}>{selectedJob.jobDescription}</Texts>
+                 <button className={styles.addButton} style={{marginTop: '3rem'}}>Apply</button>
                 </div>
               </section>
               : <Texts color="var(--text-light)" fontSize="xs" className={styles.noJobs}>{t("no-jobs")}</Texts> }

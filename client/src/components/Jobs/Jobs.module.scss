@@ -242,16 +242,23 @@
   .jobsSectionListings {
     flex-direction: column;
     width: 100%;
+    gap: 1rem;
     // split into two columns 50/50
     justify-content: space-between;
   }
 
   .jobsSectionListingsLeft {
     width: 100%;
+    height: 50%;
+  }
+
+  .jobTitle {
+    font-size: 1.5rem !important;
   }
 
   .jobsSectionListingsRight {
     width: 100%;
+        height: 50%;
   }
 }
 

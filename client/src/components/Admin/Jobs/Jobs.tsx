@@ -201,7 +201,14 @@ const JobsAdmin: FC<JobsAdminProps> = ({ userDetails }) => {
           <Texts fontSize='sm' color='var(--text-light)'>Job Title<Required /></Texts>
           <input className={styles.input} onChange={(e) => setJobDetails({ ...jobDetails, jobTitle: e.target.value })} placeholder='e.g Blockchain Developer' value={jobDetails.jobTitle} />
           <Texts fontSize='sm' color='var(--text-light)'>Job Description<Required /></Texts>
-          <textarea className={styles.textarea} placeholder={"Enter a description of the job"} onChange={(e) => setJobDetails({ ...jobDetails, jobDescription: e.target.value })} value={jobDetails.jobDescription} />
+          <textarea className={styles.textarea}
+
+          // keep white space
+          style={{
+            whiteSpace: 'pre-wrap'
+          }}
+          
+          placeholder={"Enter a description of the job"} onChange={(e) => setJobDetails({ ...jobDetails, jobDescription: e.target.value })} value={jobDetails.jobDescription} />
           
           <Texts fontSize='sm' color='var(--text-light)'>Contact Via<Required /></Texts>
           <Select

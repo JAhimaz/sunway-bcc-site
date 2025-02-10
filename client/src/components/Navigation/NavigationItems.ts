@@ -27,11 +27,11 @@ export const NavigationItems: NavigationItem[] = [
     link: "/jobs",
     icon: "job",
   },
-  {
-    id: "store",
-    link: "/store",
-    icon: "shop",
-  },
+  // {
+  //   id: "store",
+  //   link: "/store",
+  //   icon: "shop",
+  // },
   {
     id: "community",
     link: "/community",
