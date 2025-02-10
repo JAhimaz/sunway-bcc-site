@@ -126,7 +126,7 @@ const Jobs = () => {
                       border: job.company?.logo ? `1px solid transparent`: `1px solid var(--foreground)`,
                     }}>
                         { job.company?.logo ? 
-                        <Image src={job.company.logo} alt={job.company.name} className={styles.companyLogo} fill /> :
+                        <Image src={job.company?.logo} alt={job.company.name} className={styles.companyLogo} fill /> :
                         <Texts color="var(--text)" fontSize="lg">{job.company.name.charAt(0)}</Texts>
                         }
                       </div>
@@ -166,7 +166,9 @@ const Jobs = () => {
                     }
                     </div>
                     <Texts color="var(--text)" fontSize="lg" weight="bold" className={styles.jobTitle}>{selectedJob.jobTitle}</Texts>
-                    <button className={styles.addButton} style={{
+                    <button onClick={() => {
+                  window.open(selectedJob.jobUrl, "_blank")
+                }} className={styles.addButton} style={{
                       marginLeft: 'auto'
                     }}>Apply</button>
                   </div>
@@ -184,7 +186,21 @@ const Jobs = () => {
                 <Texts color="var(--text-light)" fontSize="sm" align="justify" style={{
                   whiteSpace: 'pre-line'
                 }}>{selectedJob.jobDescription}</Texts>
-                 <button className={styles.addButton} style={{marginTop: '3rem'}}>Apply</button>
+                </div>
+                <div style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: '100%',
+                  padding: '2rem',
+                  boxSizing: 'border-box',
+                  marginTop: '1rem'
+                }}>
+                <button onClick={() => {
+                  window.open(selectedJob.jobUrl, "_blank")
+                }} style={{
+                  width: '100%',
+                }} className={styles.addButton}>Apply</button>
                 </div>
               </section>
               : <Texts color="var(--text-light)" fontSize="xs" className={styles.noJobs}>{t("no-jobs")}</Texts> }
