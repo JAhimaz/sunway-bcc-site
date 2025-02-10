@@ -141,11 +141,14 @@ const Jobs = () => {
                     {/* First letter capital for is Remote */}
                     <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                       <Texts color="var(--text-light)" fontSize="xs">{job.location} ({job.isRemote.charAt(0).toUpperCase() + job.isRemote.slice(1)})</Texts>
+                      <div>
                       { job.minPay > 0 &&
                       <Texts color="var(--text-light)" fontSize="xs">{job.payCurrency} {job.minPay} {job.maxPay > 0 && <>
-                        - {job.payCurrency} {job.maxPay}
+                        - {job.payCurrency} {job.maxPay}&nbsp;
                       </>}</Texts>
                       }
+                      <Texts color="var(--text-light)" fontSize="xs">{ job.paymentSchedule && `/ ${job.paymentSchedule}` }</Texts>
+                      </div>
                     </div>
                   </div>
                 )
@@ -175,11 +178,14 @@ const Jobs = () => {
                   <Texts color="var(--text-light)" fontSize="sm" className={styles.jobCompany}>{selectedJob.company.name}</Texts>
                   <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                     <Texts color="var(--text-light)" fontSize="xs">{selectedJob.location} ({selectedJob.isRemote.charAt(0).toUpperCase() + selectedJob.isRemote.slice(1)})</Texts>
+                    <div>
                     { selectedJob.minPay > 0 &&
                     <Texts color="var(--text-light)" fontSize="xs">{selectedJob.payCurrency} {selectedJob.minPay} {selectedJob.maxPay > 0 && <>
                       - {selectedJob.payCurrency} {selectedJob.maxPay}
                     </>}</Texts>
                     }
+                    <Texts color="var(--text-light)" fontSize="xs">{ selectedJob.paymentSchedule && selectedJob.paymentSchedule }</Texts>
+                    </div>
                   </div>
                 </div>
                 <div className={styles.jobDetailsBody}>
