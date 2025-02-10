@@ -120,6 +120,7 @@ const Jobs = () => {
                 return (
                   <div key={job._id} onClick={() => setSelectedJob(job)} className={styles.jobItem} style={{
                     backgroundColor: selectedJob?._id === job._id ? "var(--dark-foreground)" : "transparent",
+                    animationDelay: `${index * 0.1}s`
                   }}>
                     <div className={styles.jobItemMainInfo}>
                       <div className={styles.companyLogoContainer} style={{

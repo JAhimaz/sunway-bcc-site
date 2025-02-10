@@ -76,6 +76,7 @@
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .jobItem {
@@ -88,6 +89,23 @@
   cursor: pointer;
   border-bottom: 1px solid var(--foreground);
   background-color: var(--background);
+  animation: slideIn 0.75s ease-in-out forwards;
+  opacity: 0;
+}
+
+// Slide in from the right
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  80%{
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .jobItemMainInfo {
