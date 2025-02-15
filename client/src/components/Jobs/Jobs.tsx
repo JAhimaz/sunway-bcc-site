@@ -57,7 +57,6 @@ type Metadata = {
 }
 
 const Jobs = () => {
-
   const t = useTranslations("Jobs")
   const headline = t("title");
 
@@ -66,154 +65,167 @@ const Jobs = () => {
   const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [search, setSearch] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>(""); // Store input value separately
 
   useEffect(() => {
     setLoading(true);
-    GetAllJobs(page).then((data) => {
-      setJobs(data.jobs)
-      setSelectedJob(data.jobs[0])
-      setMetadata(data.metadata)
+    GetAllJobs(page, search).then((data) => {
+      setJobs(data.jobs);
+      setSelectedJob(data.jobs[0] || null);
+      setMetadata(data.metadata);
       setLoading(false);
-    })
-  }, [page])
+    });
+  }, [page, search]); // Now refetches when either page or search changes
 
   return (
-    <section className={styles.main}>      
+    <section className={styles.main}>
       <GridHoverBox />
       <Texts color="var(--text-light)" fontSize="xs" className={styles.subheader}>
         &#47;&#47;&nbsp;&nbsp;
-        { metadata?.totalCount ? 
-        <><Texts color="var(--text)" fontSize="xs">{metadata?.totalCount}</Texts>{t("jobsAvailable")}</>
-        : <><Texts color="var(--text)" fontSize="xs" className={styles.underlineHover}>{t("headline-1")}</Texts>{t("headline-2")}</>
-        }
-        </Texts>
+        {metadata?.totalCount ? (
+          <>
+            <Texts color="var(--text)" fontSize="xs">{metadata?.totalCount}</Texts>
+            {t("jobsAvailable")}
+          </>
+        ) : (
+          <>
+            <Texts color="var(--text)" fontSize="xs" className={styles.underlineHover}>{t("headline-1")}</Texts>
+            {t("headline-2")}
+          </>
+        )}
+      </Texts>
+
       <span className={styles.headline}>
-        {headline.split("").map((char, index) => {
-          return (
-            <Texts key={index} color="var(--text)" fontSize="headline" className={styles.headlineChar} style={{
-              animationDelay: `${index * 0.075}s`
-            }}>
-              {char}
-            </Texts>
-          )
-        })}
+        {headline.split("").map((char, index) => (
+          <Texts key={index} color="var(--text)" fontSize="headline" className={styles.headlineChar} style={{ animationDelay: `${index * 0.075}s` }}>
+            {char}
+          </Texts>
+        ))}
       </span>
       <Seperator />
 
-      {loading && 
-        <section style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: '2rem',
-        }}>
+      {loading && (
+        <section style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: '2rem' }}>
           <Loader />
         </section>
-      }
+      )}
 
-      { jobs && !loading && (
+      {jobs && !loading && (
         <section id="jobs_section" className={styles.jobsSection}>
-          <section id="jobs_section_listings" className={styles.jobsSectionListings}>
-          {/* Left side for Listing Jobs */}
-            <section id="jobs_section_listings_left" className={styles.jobsSectionListingsLeft}>
-              { jobs.length > 0 ? jobs.map((job: Job, index: number) => {
-                return (
-                  <div key={job._id} onClick={() => setSelectedJob(job)} className={styles.jobItem} style={{
-                    backgroundColor: selectedJob?._id === job._id ? "var(--dark-foreground)" : "transparent",
-                    animationDelay: `${index * 0.1}s`
-                  }}>
-                    <div className={styles.jobItemMainInfo}>
-                      <div className={styles.companyLogoContainer} style={{
-                      border: job.company?.logo ? `1px solid transparent`: `1px solid var(--foreground)`,
-                    }}>
-                        { job.company?.logo ? 
-                        <Image src={job.company?.logo} alt={job.company.name} className={styles.companyLogo} fill /> :
-                        <Texts color="var(--text)" fontSize="lg">{job.company.name.charAt(0)}</Texts>
-                        }
-                      </div>
-                      <div className={styles.jobInfo}>
-                        <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: '100%' }}>
-                          <Texts color="var(--text)" fontSize="md">{job.jobTitle}</Texts>
-                          <Texts color="var(--text-light)" fontSize="xs">{TimeCalculator(job.createdAt)}</Texts>
-                        </div>
-                        <Texts color="var(--text-light)" fontSize="xs">{job.company.name}</Texts>
-                      </div>
-                    </div>
-                    {/* First letter capital for is Remote */}
-                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                      <Texts color="var(--text-light)" fontSize="xs">{job.location} ({job.isRemote.charAt(0).toUpperCase() + job.isRemote.slice(1)})</Texts>
-                      <div>
-                      { job.minPay > 0 &&
-                      <Texts color="var(--text-light)" fontSize="xs">{job.payCurrency} {job.minPay} {job.maxPay > 0 && <>
-                        - {job.payCurrency} {job.maxPay}&nbsp;
-                      </>}</Texts>
-                      }
-                      <Texts color="var(--text-light)" fontSize="xs">{ job.paymentSchedule && `/ ${job.paymentSchedule}` }</Texts>
-                      </div>
-                    </div>
-                  </div>
-                )
-              }) : <Texts color="var(--text-light)" fontSize="xs" className={styles.noJobs}>{t("no-jobs")}</Texts> }
-            </section>
-          {/* Right side for Job information */}
-            <section id="jobs_section_listings_right" className={styles.jobsSectionListingsRight}>
-              { selectedJob ? 
-              <section id="jobs_section_description" className={styles.jobDetails}>
-                <div className={styles.jobDetailsHeader}>
-                  <div style={{ display: "flex", flexDirection: "row", gap: '1rem' }}>
-                    <div className={styles.companyLogoContainerHeader} style={{
-                      backgroundColor: selectedJob.company?.logo ? 'transparent' : "var(--dark-foreground)",
-                    }}>
-                    { selectedJob.company?.logo ? 
-                      <Image src={selectedJob.company.logo} alt={selectedJob.company.name} className={styles.companyLogo} fill /> :
-                      <Texts color="var(--text)" fontSize="lg">{selectedJob.company.name.charAt(0)}</Texts>
-                    }
-                    </div>
-                    <Texts color="var(--text)" fontSize="lg" weight="bold" className={styles.jobTitle}>{selectedJob.jobTitle}</Texts>
-                    <button onClick={() => {
-                  window.open(selectedJob.jobUrl, "_blank")
-                }} className={styles.addButton} style={{
-                      marginLeft: 'auto'
-                    }}>Apply</button>
-                  </div>
-                  <Texts color="var(--text-light)" fontSize="sm" className={styles.jobCompany}>{selectedJob.company.name}</Texts>
-                  <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                    <Texts color="var(--text-light)" fontSize="xs">{selectedJob.location} ({selectedJob.isRemote.charAt(0).toUpperCase() + selectedJob.isRemote.slice(1)})</Texts>
-                    <div>
-                    { selectedJob.minPay > 0 &&
-                    <Texts color="var(--text-light)" fontSize="xs">{selectedJob.payCurrency} {selectedJob.minPay} {selectedJob.maxPay > 0 && <>
-                      - {selectedJob.payCurrency} {selectedJob.maxPay}
-                    </>}</Texts>
-                    }
-                    <Texts color="var(--text-light)" fontSize="xs">{ selectedJob.paymentSchedule && selectedJob.paymentSchedule }</Texts>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.jobDetailsBody}>
-                <Texts color="var(--text-light)" fontSize="sm" align="justify" style={{
-                  whiteSpace: 'pre-line'
-                }}>{selectedJob.jobDescription}</Texts>
-                </div>
-                <div style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: '100%',
-                  padding: '2rem',
-                  boxSizing: 'border-box',
-                  marginTop: '1rem'
-                }}>
-                <button onClick={() => {
-                  window.open(selectedJob.jobUrl, "_blank")
-                }} style={{
-                  width: '100%',
-                }} className={styles.addButton}>Apply</button>
-                </div>
-              </section>
-              : <Texts color="var(--text-light)" fontSize="xs" className={styles.noJobs}>{t("no-jobs")}</Texts> }
-            </section>
+          <section id="jobs_filters" className={styles.jobsFiltersSection}>
+            <input 
+              className={styles.input} 
+              value={searchTerm} 
+              onChange={(e) => setSearchTerm(e.target.value)} 
+              placeholder={t("searchPlaceholder")} 
+            />
+            <button className={styles.button} onClick={() => {
+              setPage(1); // Reset to first page
+              setSearch(searchTerm); // Update search term to trigger useEffect
+            }}>
+              {t("search")}
+            </button>
           </section>
 
+          <section id="jobs_section_listings" className={styles.jobsSectionListings}>
+            {/* Left side for Listing Jobs */}
+            <section id="jobs_section_listings_left" className={styles.jobsSectionListingsLeft}>
+              {jobs.length > 0 ? jobs.map((job: Job, index: number) => (
+                <div 
+                  key={job._id} 
+                  onClick={() => setSelectedJob(job)} 
+                  className={styles.jobItem} 
+                  style={{
+                    backgroundColor: selectedJob?._id === job._id ? "var(--dark-foreground)" : "transparent",
+                    animationDelay: `${index * 0.1}s`
+                  }}
+                >
+                  <div className={styles.jobItemMainInfo}>
+                    <div className={styles.companyLogoContainer} style={{ border: job.company?.logo ? `1px solid transparent` : `1px solid var(--foreground)` }}>
+                      {job.company?.logo ? (
+                        <Image src={job.company?.logo} alt={job.company.name} className={styles.companyLogo} fill />
+                      ) : (
+                        <Texts color="var(--text)" fontSize="lg">{job.company.name.charAt(0)}</Texts>
+                      )}
+                    </div>
+                    <div className={styles.jobInfo}>
+                      <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: '100%' }}>
+                        <Texts color="var(--text)" fontSize="md">{job.jobTitle}</Texts>
+                        <Texts color="var(--text-light)" fontSize="xs">{TimeCalculator(job.createdAt)}</Texts>
+                      </div>
+                      <Texts color="var(--text-light)" fontSize="xs">{job.company.name}</Texts>
+                    </div>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                    <Texts color="var(--text-light)" fontSize="xs">{job.location} ({job.isRemote.charAt(0).toUpperCase() + job.isRemote.slice(1)})</Texts>
+                    <div>
+                      {job.minPay > 0 && (
+                        <Texts color="var(--text-light)" fontSize="xs">{job.payCurrency} {job.minPay} {job.maxPay > 0 && `- ${job.payCurrency} ${job.maxPay}`}</Texts>
+                      )}
+                      <Texts color="var(--text-light)" fontSize="xs">{job.paymentSchedule && `/ ${job.paymentSchedule}`}</Texts>
+                    </div>
+                  </div>
+                </div>
+              )) : (
+                <Texts color="var(--text-light)" fontSize="xs" className={styles.noJobs}>{t("noJobs")}</Texts>
+              )}
+            </section>
+
+            {/* Right side for Job information */}
+            <section id="jobs_section_listings_right" className={styles.jobsSectionListingsRight}>
+              {selectedJob ? (
+                <section id="jobs_section_description" className={styles.jobDetails}>
+                  <div className={styles.jobDetailsHeader}>
+                    <div style={{ display: "flex", flexDirection: "row", gap: '1rem' }}>
+                      <div className={styles.companyLogoContainerHeader} style={{ backgroundColor: selectedJob.company?.logo ? 'transparent' : "var(--dark-foreground)" }}>
+                        {selectedJob.company?.logo ? (
+                          <Image src={selectedJob.company.logo} alt={selectedJob.company.name} className={styles.companyLogo} fill />
+                        ) : (
+                          <Texts color="var(--text)" fontSize="lg">{selectedJob.company.name.charAt(0)}</Texts>
+                        )}
+                      </div>
+                      <Texts color="var(--text)" fontSize="lg" weight="bold" className={styles.jobTitle}>{selectedJob.jobTitle}</Texts>
+                      <button onClick={() => window.open(selectedJob.jobUrl, "_blank")} className={styles.addButton} style={{ marginLeft: 'auto' }}>Apply</button>
+                    </div>
+                    <Texts color="var(--text-light)" fontSize="sm" className={styles.jobCompany}>{selectedJob.company.name}</Texts>
+                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                      <Texts color="var(--text-light)" fontSize="xs">{selectedJob.location} ({selectedJob.isRemote.charAt(0).toUpperCase() + selectedJob.isRemote.slice(1)})</Texts>
+                      <div>
+                        {selectedJob.minPay > 0 && (
+                          <Texts color="var(--text-light)" fontSize="xs">{selectedJob.payCurrency} {selectedJob.minPay} {selectedJob.maxPay > 0 && `- ${selectedJob.payCurrency} ${selectedJob.maxPay}`}</Texts>
+                        )}
+                        <Texts color="var(--text-light)" fontSize="xs">{selectedJob.paymentSchedule}</Texts>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.jobDetailsBody}>
+                  <Texts color="var(--text-light)" fontSize="sm" align="justify" style={{
+                    whiteSpace: 'pre-line'
+                  }}>{selectedJob.jobDescription}</Texts>
+                  </div>
+                  <div style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: '100%',
+                    padding: '2rem',
+                    boxSizing: 'border-box',
+                    marginTop: '1rem'
+                  }}>
+                  <button onClick={() => {
+                    window.open(selectedJob.jobUrl, "_blank")
+                  }} style={{
+                    width: '100%',
+                  }} className={styles.addButton}>Apply</button>
+                  </div>
+                </section>
+              ) : (
+                <Texts color="var(--text-light)" fontSize="xs" className={styles.noJobs}>{t("noJobs")}</Texts>
+              )}
+            </section>
+          </section>
+          
           {/* Navigation Buttons / Page Number */}
           <section id="jobs_section_navigation" style={{
             width: '100%',
@@ -232,12 +244,12 @@ const Jobs = () => {
                 color: metadata?.page === 1 ? `var(--foreground)` : `var(--text)`,
                 cursor: metadata?.page === 1 ? 'default' : 'pointer'
               }} onClick={() => setPage(metadata?.page - 1)} disabled={metadata?.page === 1}>{`<`}</button>
-              <Texts color="var(--text)" fontSize="sm" className={styles.pageNumber}>{metadata?.page} / {metadata?.pageCount}</Texts>
+              <Texts color="var(--text)" fontSize="sm" className={styles.pageNumber}>{metadata?.page} / {metadata?.pageCount != 0 ? metadata?.pageCount : 1}</Texts>
               <button className={styles.navigationButton} style={{
                 border: `1px solid var(--foreground)`,
-                color: metadata?.page === metadata?.pageCount ? `var(--foreground)` : `var(--text)`,
+                color: metadata?.page >= metadata?.pageCount ? `var(--foreground)` : `var(--text)`,
                 cursor: metadata?.page === metadata?.pageCount ? 'default' : 'pointer'
-              }} onClick={() => setPage(metadata?.page + 1)} disabled={metadata?.page === metadata?.pageCount}>{`>`}</button>
+              }} onClick={() => setPage(metadata?.page + 1)} disabled={metadata?.page >= metadata?.pageCount}>{`>`}</button>
             </div>
             }
             

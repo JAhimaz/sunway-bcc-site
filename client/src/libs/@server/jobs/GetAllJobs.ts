@@ -1,7 +1,9 @@
 import { DATA_API } from "@/utils/APIs";
 
-const GetAllJobs = async (page: number) => {
-  const data = await fetch(`${DATA_API}/api/jobs?page=${page}`, {
+const GetAllJobs = async (page: number, search?: string) => {
+  const data = await fetch(`${DATA_API}/api/jobs?page=${page}${
+    search ? `&search=${search}` : ""
+  }`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

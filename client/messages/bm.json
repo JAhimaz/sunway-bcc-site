@@ -113,7 +113,10 @@
     "headline-2": " PELUANG PEKERJAAN DALAM BLOCKCHAIN",
     "exploreJobs": "Terokai Pekerjaan",
     "comingSoon": "AKAN DATANG",
-    "jobsAvailable": " PEKERJAAN TESEDIA"
+    "jobsAvailable": " PEKERJAAN TESEDIA",
+    "noJobs": "TIADA PEKERJAAN",
+    "search": "Cari",
+    "searchPlaceholder": "Cari Pekerjaan 🔎 contoh: Pembangun Blockchain"
   },
   "Admin": {
     "title": "Admin",

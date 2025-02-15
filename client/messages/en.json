@@ -114,7 +114,10 @@
     "headline-2": " JOB OPPORTUNITIES IN THE INDUSTRY",
     "exploreJobs": "Explore Jobs",
     "comingSoon": "COMING SOON",
-    "jobsAvailable": " JOBS AVAILABLE"
+    "jobsAvailable": " JOBS AVAILABLE",
+    "noJobs": "No Jobs Available",
+    "search": "Search",
+    "searchPlaceholder": "Search for a Job 🔎 e.g: Blockchain Developer"
   },
   "Admin": {
     "title": "Admin",
