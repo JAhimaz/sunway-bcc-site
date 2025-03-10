@@ -1,11 +1,10 @@
-
 type NavigationItem = {
-  id: string,
-  link: string,
-  icon?: string,
-  newTab?: boolean,
-  highlight?: boolean,
-}
+  id: string;
+  link: string;
+  icon?: string;
+  newTab?: boolean;
+  highlight?: boolean;
+};
 
 export const NavigationItems: NavigationItem[] = [
   {
@@ -43,32 +42,32 @@ export const NavigationItems: NavigationItem[] = [
     icon: "collaborate",
     newTab: true,
   },
-  {
-    id: "committee",
-    link: "https://forms.gle/iZnZXsHUYZYypJqv5",
-    icon: "committee",
-    newTab: true,
-    highlight: true,
-  },
+  // {
+  //   id: "committee",
+  //   link: "https://forms.gle/iZnZXsHUYZYypJqv5",
+  //   icon: "committee",
+  //   newTab: true,
+  //   highlight: true,
+  // },
   {
     id: "join",
     link: "https://docs.google.com/forms/d/e/1FAIpQLScALDHl6vfTgpQWs0GaherrJZbIRfrZOFSzg93qSx9fGqnViQ/viewform",
     icon: "register",
     newTab: true,
   },
-]
+];
 
 export const locales = [
   {
     id: "en",
-    name: "EN"
+    name: "EN",
   },
   {
     id: "zh",
-    name: "中文"
+    name: "中文",
   },
   {
     id: "bm",
-    name: "BM"
-  }
-]
+    name: "BM",
+  },
+];

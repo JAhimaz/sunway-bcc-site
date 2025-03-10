@@ -82,7 +82,11 @@ const EventPage = () => {
           </Texts>
           {
             // filter events that are after the current date
-            filteredEvents.filter(event => new Date(event.startDate) > new Date()).map(event => {
+            filteredEvents.filter(event => 
+              // check if the event has an end date, if it does, check if the end date is after the current date
+              event.endDate ? new Date(event.endDate) > new Date() :
+              new Date(event.startDate) > new Date()
+            ).map(event => {
               return (
                 <EventItem key={event.id} {...event} />
               )
@@ -96,7 +100,11 @@ const EventPage = () => {
           </Texts>
           {
             // filter events that are before the current date
-            filteredEvents.filter(event => new Date(event.startDate) < new Date()).reverse().map(event => {
+            filteredEvents.filter(event => 
+              // check if the event has an end date, if it does, check if the end date is before the current date
+              event.endDate ? new Date(event.endDate) < new Date() :
+              new Date(event.startDate) < new Date()
+            ).reverse().map(event => {
               return (
                 <EventItem key={event.id} {...event} past />
               )
