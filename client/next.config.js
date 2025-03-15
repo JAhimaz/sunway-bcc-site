@@ -10,6 +10,9 @@ const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
   output: 'standalone',
+  generateEtags: false,
+  basePath: '',
+  assetPrefix: '',
   compress: true,
   webpack: (config) => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
