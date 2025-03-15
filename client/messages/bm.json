@@ -17,7 +17,8 @@
     "numbers-sep": "[ STATISTIK ]",
     "ethos-sep": "[ ETHOS KAMI ]",
     "workwith-sep": "[ KAMI BEKERJA DENGAN ]",
-    "socials-sep": "[ SOSIAL KITA ]"
+    "socials-sep": "[ SOSIAL KITA ]",
+    "events-sep": "[ PERISTIWA AKAN DATANG ]"
   },
   "About": {
     "about-1": "Sunway Blockchain Club ialah pintu masuk anda untuk menerokai dunia teknologi blockchain. Daripada bengkel dan seminar kepada hackathon dan acara sosial, kami menawarkan pelbagai peluang untuk ahli belajar, rangkaian dan berinovasi dalam ruang crypto.",
@@ -86,7 +87,8 @@
     "useCode": "Gunakan kod ",
     "for": " untuk ",
     "off": " off ",
-    "on": " pada "
+    "on": " pada ",
+    "more-events": "Lebih banyak acara"
   },
   "Store": {
     "title": "Kedai Merch / Swag",

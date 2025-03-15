@@ -21,7 +21,7 @@ const Select: FC<SelectProps> = ({ options, value, onChange, width }) => {
     }}>
       { options.map((option) => (
         <option key={option.id} value={option.id} className={styles.option}>
-          <Texts fontSize="lg">{option.name}</Texts>
+          {option.name}
         </option>
       )) }
     </select>

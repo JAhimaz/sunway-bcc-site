@@ -11,6 +11,7 @@ import HomeGalleryMobile from '@/components/Home/HomeGallery/HomeGalleryMobile/H
 import SocialBox from '@/components/Home/SocialBox/SocialBox';
 import Numbers from './Numbers/Numbers';
 import Ethos from './Ethos/Ethos';
+import EventGrid from './EventGrid/EventGrid';
 
 const Homepage = () => {
 
@@ -40,6 +41,8 @@ const Homepage = () => {
         <About />
         <Seperator text={t("numbers-sep")} />
         <Numbers />
+        <Seperator text={t("events-sep")} />
+        <EventGrid />
         <Seperator text={t("ethos-sep")} />
         <Ethos />
         <Seperator text={t("workwith-sep")} />

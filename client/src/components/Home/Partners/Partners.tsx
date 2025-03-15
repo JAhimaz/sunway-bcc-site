@@ -18,7 +18,7 @@ const Partners = () => {
                   }     
                 }
               }>
-                <Image src={`/images/partners/${partner.logo}`} fill alt={`${partner.name}_logo`} loading="eager" />
+                <Image src={`/images/partners/${partner.logo}`} fill alt={`${partner.name}_logo`} loading="eager"/>
               </div>
             )
           })}

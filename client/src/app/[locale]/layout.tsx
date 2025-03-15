@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import './globals.css'
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { CookiesProvider } from 'next-client-cookies/server';
 import { Web3Provider } from '@/utils/providers/Web3Provider';
 
@@ -73,12 +73,14 @@ export default async function PageLayout({
   const messages = await getMessages(locale);
 
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
-      <Web3Provider>
-        <CookiesProvider>
-          {children}
-        </CookiesProvider>
-      </Web3Provider>
-    </NextIntlClientProvider>
+    <Suspense fallback="Reading on-chain...">
+      <NextIntlClientProvider messages={messages} locale={locale}>
+        <Web3Provider>
+          <CookiesProvider>
+            {children}
+          </CookiesProvider>
+        </Web3Provider>
+      </NextIntlClientProvider>
+    </Suspense>
   )
 }

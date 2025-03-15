@@ -18,7 +18,8 @@
     "numbers-sep": "[ NUMBERS ]",
     "ethos-sep": "[ OUR ETHOS ]",
     "workwith-sep": "[ WE WORKED WITH ]",
-    "socials-sep": "[ OUR SOCIALS ]"
+    "socials-sep": "[ OUR SOCIALS ]",
+    "events-sep": "[ UPCOMING EVENTS ]"
   },
   "About": {
     "about-1": "The Sunway Blockchain Club is your gateway to exploring the world of blockchain technology. From workshops and seminars to hackathons and social events, we offer a range of opportunities for members to learn, network, and innovate in the crypto space.",
@@ -87,7 +88,8 @@
     "useCode": "Use code ",
     "for": " for ",
     "off": " off ",
-    "on": " on "
+    "on": " on ",
+    "more-events": "More Events"
   },
   "Store": {
     "title": "Merch / Swag Store",
