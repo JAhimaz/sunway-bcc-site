@@ -47,10 +47,12 @@ const EventItem: FC<EventItemProps & {
       <div className={styles.rightSect}>
           <Texts fontSize="md" color="var(--text)" weight="bold" >
           {new Date(startDate).toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" })}
-          {endDate ? " - " + new Date(endDate).toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" }) : ""}
+          {(endDate && new Date(startDate).toLocaleDateString() !== new Date(endDate).toLocaleDateString()) ? " - " + new Date(endDate).toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" }) : ""}
           </Texts>
         <Texts fontSize="sm" color="var(--text-light)">
           {new Date(startDate).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true })}
+          {/* if there is an end date, and the end date is the same as the start date, include only the time */}
+          {endDate && new Date(startDate).toLocaleDateString() === new Date(endDate).toLocaleDateString() ? " - " + new Date(endDate).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true }) : ""}
         </Texts>
         <Button href={url} disabled={url ? false : true} css={{}}>
             {!past && url ? t("joinEvent") :
