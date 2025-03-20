@@ -7,6 +7,7 @@ import styles from "./EventItem.module.scss";
 import Image from "next/image";
 import Button from "@/components/Molecules/Buttons/Button";
 import { CopyToClipBoard } from "@/libs/CopyToClipboard";
+import { sendGAEvent } from '@next/third-parties/google'
 
 
 const EventItem: FC<EventItemProps & {
@@ -54,7 +55,14 @@ const EventItem: FC<EventItemProps & {
           {/* if there is an end date, and the end date is the same as the start date, include only the time */}
           {endDate && new Date(startDate).toLocaleDateString() === new Date(endDate).toLocaleDateString() ? " - " + new Date(endDate).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true }) : ""}
         </Texts>
-        <Button href={url} disabled={url ? false : true} css={{}}>
+        <Button href={url} disabled={url ? false : true} css={{}} onClick={() => {
+          // send a sendGAEvent for OutboundEventClick
+          sendGAEvent({
+            eventCategory: "Event_Outbound",
+            eventAction: "click",
+            eventLabel: title
+          });
+        }}>
             {!past && url ? t("joinEvent") :
             !url ? t("eventDisabled")
             : t("eventDetails")}
