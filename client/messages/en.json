@@ -8,7 +8,8 @@
     "jobs": "Jobs",
     "collaborate": "Collaborate",
     "community": "Community",
-    "committee": "Join Committee"
+    "committee": "Join Committee",
+    "partners": "Partners"
   },
   "Main": {
     "title": "Sunway Blockchain Club _",
@@ -128,5 +129,10 @@
   },
   "Community": {
     "title": "[ Search for a Member ]"
+  },
+  "Partners": {
+    "title": "Partners",
+    "headline-1": "AMAZING PARTNERS",
+    "headline-2": " WHO BROUGHT US TOGETHER"
   }
 }

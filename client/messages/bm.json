@@ -7,7 +7,8 @@
     "jobs": "Pekerjaan",
     "collaborate": "Bekerjasama",
     "community": "Komuniti",
-    "committee": "Sertai Jawatankuasa"
+    "committee": "Sertai Jawatankuasa",
+    "partners": "Rakan Kongsi"
   },
   "Main": {
     "title": "Sunway Blockchain Kelab _",
@@ -127,5 +128,11 @@
   },
   "Community": {
     "title": "[ Cari Ahli ]"
+  },
+  "Partners": {
+    "title": "Rakan Kongsi",
+    "headline-1": "RAKAN KONGSI MENAKJUBKAN",
+    "headline-2": " YANG MEMBAWA KITA BERSAMA"
   }
 }
+

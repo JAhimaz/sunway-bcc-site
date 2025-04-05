@@ -16,6 +16,8 @@ export type User = {
   key?: string;
   stamps: Stamp[];
   updatedAt: string;
+  certificateClaimed?: boolean;
+  certificateNFTAddress?: string;
   version: number;
 }
 

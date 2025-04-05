@@ -12,11 +12,6 @@ import Stamps from "./Stamps/Stamps"
 import CircularProgress from "../Molecules/CircularProgress/CircularProgress"
 import { ExpToLevel } from "@/utils/ExpToLevel"
 
-type ScannedDetails = {
-  userAddress: string,
-  date: Date,
-}
-
 const Profile = () => {
 
   const t = useTranslations("Profile")
@@ -120,10 +115,11 @@ const Profile = () => {
               </section>
             </section>
           </section>
-          {/* { userDetails.stamps.length === 6 && (
-            <button id="claim_cert" className={styles.button} disabled
-            // ={userDetails.stamps.length < 6}
-            >
+          {/* userDetails.certificate is either undefined or false */}
+          {/* { userDetails.stamps.length === 6 && (userDetails.certificateClaimed === undefined || userDetails.certificateClaimed === false) && (
+            <button id="claim_cert" className={styles.button} onClick={() => {
+              console.log("Claim Certificate")
+            }}>
               Claim Certificate
             </button>
           )} */}

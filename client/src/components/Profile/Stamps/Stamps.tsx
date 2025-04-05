@@ -43,7 +43,15 @@ const Stamps: FC<StampsType> = ({ stamps }) => {
           </div>
         </div>
       }
-      {stamps.slice(0, 6).map((stamp, index) =>
+      {stamps.filter(
+        // sort by date with the latest date first 
+        (stamp) => stamp.date !== undefined && stamp.date !== null
+      ).sort((a, b) => {
+        if (a.date === undefined || a.date === null) return -1;
+        if (b.date === undefined || b.date === null) return 1;
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      }
+      ).slice(0, 6).map((stamp, index) =>
           <div key={stamp.name + "-" + index} className={styles.stampSuccess} title={stamp.name}
               onClick={() => setShowStampDetails({show: true, stamp: stamp})}
           >

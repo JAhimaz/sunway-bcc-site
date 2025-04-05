@@ -36,6 +36,9 @@ import DeleteCompanyRoute from "./routes/Admin/Company/DeleteCompany";
 import CreateJobRoute from "./routes/Admin/Jobs/CreateJob";
 import GetAllJobsRoute from "./routes/Jobs/GetAllJobs";
 
+// Approve Certificate
+
+
 const app = express();
 
 mongoose.connect(Env.MONGODB_URI).then(() => {

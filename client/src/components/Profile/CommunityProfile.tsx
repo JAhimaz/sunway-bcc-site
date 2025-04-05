@@ -14,11 +14,6 @@ import { ExpToLevel } from "@/utils/ExpToLevel"
 import { useRouter } from "next/navigation"
 import FindUser from "@/libs/@server/user/FindUser"
 
-type ScannedDetails = {
-  userAddress: string,
-  date: Date,
-}
-
 type CommunityProfileProps = {
   accountId: string;
 }

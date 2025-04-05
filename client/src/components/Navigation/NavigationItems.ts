@@ -17,6 +17,11 @@ export const NavigationItems: NavigationItem[] = [
     icon: "people",
   },
   {
+    id: "partners",
+    link: "/partners",
+    icon: "partners",
+  },
+  {
     id: "events",
     link: "/events",
     icon: "calendar",

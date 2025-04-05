@@ -1,0 +1,133 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.subheader {
+  user-select: none;
+}
+
+.header {
+  word-spacing: 3px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.headline {
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -4.8px;
+  user-select: none;
+}
+
+.headlineChar {
+  opacity: 0;
+  animation: transitionIn 0.15s step-end forwards;
+}
+
+@keyframes transitionIn {
+
+  // the text will have an opacity of 0 at the start of the animation
+  0% {
+    background-color: var(--text);
+    opacity: 1;
+  }
+
+  90% {
+    background-color: transparent;
+  }
+
+  // the text will have an opacity of 1 at the end of the animation
+  100% {
+    opacity: 1;
+  }
+}
+
+.underlineHover {
+  box-sizing: border-box;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.15s;
+}
+
+.underlineHover:hover {
+  border-bottom: 1px solid var(--text);
+}
+
+// Rest of the code
+
+.partnerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.partnerItem {
+  display: flex;
+  border: 1px solid var(--foreground);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  background-color: var(--background);
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  padding: 4rem;
+  gap: 1rem;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.partnerItem:hover {
+  border: 1px solid var(--text);
+  transform: scale(1.03);
+}
+
+.partnerItem:hover .partnerItemText {
+  opacity: 1;
+}
+
+.partnerItemImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.partnerItemText {
+  opacity: 0;
+  transition: opacity 0.15s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  // gradient transparent to var(--foreground)
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--foreground) 100%
+  );
+}
+
+// End of the code
+
+@media (min-width: 1440px) {
+  .main {
+    width: calc(1440px - 72px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .headline,
+  .subheader {
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+}

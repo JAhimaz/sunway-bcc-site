@@ -7,7 +7,8 @@
     "jobs": "职业机会",
     "collaborate": "合作",
     "community": "社区",
-    "committee": "加入委员会"
+    "committee": "加入委员会",
+    "partners": "合作伙伴"
   },
   "Main": {
     "title": "Sunway Blockchain 社 _",
@@ -127,5 +128,10 @@
   },
   "Community": {
     "title": "[ 搜索成员 ]"
+  },
+  "Partners": {
+    "title": "合作伙伴",
+    "headline-1": "令人惊叹的合作伙伴",
+    "headline-2": "让我们团结在一起"
   }
 }

@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-  overflow: hidden;
   // user-select: none;
   padding-top: 2rem;
 }
@@ -16,7 +15,7 @@
 
 .partner {
   display: flex;
-  animation: swipe 15s linear infinite;
+  animation: swipe 60s linear infinite;
   gap: 6rem;
   padding-left: 6rem;
 }
@@ -24,13 +23,13 @@
 .item {
   position: relative;
   display: flex;
-  width: 105px;
-  height: 45px;
+  width: 135px;
+  height: 65px;
   justify-content: center;
   align-items: center;
   object-fit: contain;
   transition: transform 0.5s;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .item:hover {

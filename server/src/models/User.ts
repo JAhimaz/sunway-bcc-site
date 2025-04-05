@@ -64,6 +64,16 @@ const userSchema = new Schema({
     required: false,
     default: ""
   },
+  certificateClaimed: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+  certificateNFTAddress: {
+    type: String,
+    required: false,
+    default: ""
+  },
   version: {
     type: Number,
     required: true,
