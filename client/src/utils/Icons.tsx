@@ -1,10 +1,10 @@
 import { FaArrowRight, FaPowerOff, FaCheck, FaGlobeAsia, FaChalkboardTeacher } from "react-icons/fa";
 import { AiFillInstagram, AiFillCloseSquare } from "react-icons/ai";
-import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { IoLogoDiscord, IoPerson } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsQrCode, BsFillMegaphoneFill } from "react-icons/bs";
-import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
+import { FaBookmark, FaRegBookmark, FaXTwitter } from "react-icons/fa6";
 import { ImExit, ImCross } from "react-icons/im";
 import { PiCalendarCheckBold } from "react-icons/pi";
 import { MdDelete, MdGroups } from "react-icons/md";
@@ -37,7 +37,7 @@ const EventIndex = {
 
 const SocialsIndex = {
   instagram: AiFillInstagram,
-  twitter: FaTwitter,
+  twitter: FaXTwitter,
   linkedin: FaLinkedin,
   discord: IoLogoDiscord
 }

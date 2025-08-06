@@ -15,16 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9
     },
     {
-      url: 'https://sunwayblockchain.com/team',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8
-    },
-    {
       url: 'https://sunwayblockchain.com/jobs',
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8
+      priority: 0.9
     },
     {
       url: 'https://sunwayblockchain.com/store',
@@ -32,11 +26,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8
     },
-    {
-      url: 'https://sunwayblockchain.com/profile',
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8
-    }
   ]
 }

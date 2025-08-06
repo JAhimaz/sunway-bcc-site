@@ -28,15 +28,15 @@ const AbstractMainnet = defineChain({
 export const config = createConfig(
   getDefaultConfig({
     // Your dApps chains
-    chains: [AbstractMainnet, polygon],
+    chains: [polygon],
     transports: {
       // RPC URL for each chain
       [polygon.id]: http(
         `https://polygon-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`
       ),
-      [AbstractMainnet.id]: http(
-        `https://abstract-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`,
-      ),
+      // [AbstractMainnet.id]: http(
+      //   `https://abstract-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`,
+      // ),
     },
 
     // Required API Keys

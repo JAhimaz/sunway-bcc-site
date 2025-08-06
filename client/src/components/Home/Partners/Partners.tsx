@@ -32,7 +32,6 @@ const Partners = () => {
                 <Image src={partner.logo} style={{
                   objectFit: "contain",
                   // white shadow
-                  filter: "drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3))",
                 }} fill alt={`${partner.name}_logo`} loading="eager"/>
               </div>
             )

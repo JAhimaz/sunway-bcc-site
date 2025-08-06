@@ -16,7 +16,7 @@ export const Socials: SocialProp[] = [
   {
     id: "twitter",
     link: "https://twitter.com/SunwayBCC",
-    socialName: "Twitter",
+    socialName: "X / Twitter",
   },
   {
     id: "discord",
