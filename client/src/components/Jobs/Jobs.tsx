@@ -4,12 +4,14 @@ import Texts from "../Atoms/Texts";
 import GridHoverBox from "../Home/GridHoverBox/GridHoverBox";
 import styles from "./Jobs.module.scss";
 import Seperator from "../Molecules/Seperator/Seperator";
-import JobItem, { JobItemProps } from "./JobItem/JobItem";
 import { useEffect, useState } from "react";
 import GetAllJobs from "@/libs/@server/jobs/GetAllJobs";
 import Loader from "../Loader/Loader";
 import Image from "next/image";
 import TimeCalculator from "@/utils/TimeCalculator";
+import GetUser, { User } from "@/libs/@server/user/GetUser";
+import { useAccount } from "wagmi";
+import { Icon } from "@/utils/Icons";
 
 // Replace any with Job Type 
 type Job = {
@@ -30,6 +32,7 @@ type Job = {
   tags: string[],
   createdAt: string,
   updatedAt: string,
+  expired: boolean,
   __v: number,
   company: {
     _id: string,
@@ -60,6 +63,8 @@ const Jobs = () => {
   const t = useTranslations("Jobs")
   const headline = t("title");
 
+    const { address   } = useAccount()
+
   const [jobs, setJobs] = useState<Job[]>([]);
   const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [page, setPage] = useState<number>(1);
@@ -67,7 +72,30 @@ const Jobs = () => {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [search, setSearch] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>(""); // Store input value separately
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
+  useEffect(() => {
+    // Fetch user details if needed, e.g., for authentication or personalization
+    // This is just a placeholder; replace with actual user fetching logic
+    const fetchUserDetails = async () => {
+
+      console.log("Fetching user details for address:", address);
+      // Simulate fetching user details
+      if (!address) {
+        setIsAdmin(false);
+        return;
+      }; // If no address, skip fetching user details
+
+      const user = await GetUser(address)
+
+      if (user?.isAdmin) {
+        setIsAdmin(true);
+      } 
+    };
+
+    fetchUserDetails();
+  }, [address]);
+  
   useEffect(() => {
     setLoading(true);
     GetAllJobs(page, search).then((data) => {
@@ -86,7 +114,7 @@ const Jobs = () => {
         {metadata?.totalCount ? (
           <>
             <Texts color="var(--text)" fontSize="xs">{metadata?.totalCount}</Texts>
-            {t("jobsAvailable")}
+            {t("jobsAvailable")} { isAdmin && " (ADMIN MODE)" }
           </>
         ) : (
           <>
@@ -198,6 +226,29 @@ const Jobs = () => {
                         <Texts color="var(--text-light)" fontSize="xs">{selectedJob.paymentSchedule}</Texts>
                       </div>
                     </div>
+                    { isAdmin && (
+                      <section style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        gap: '1rem',
+                        width: '100%',
+                      }}>
+                        <div id="job_id_container" className={styles.jobIdContainer}>
+                          <Texts color="var(--text-light)" fontSize="xs" className={styles.jobId}>ID: {selectedJob._id}</Texts>
+                        </div>
+                        <div id="job_admin_buttons" className={styles.jobAdminButtons}>
+                          <button className={styles.adminButton} onClick={() => {
+                            // Handle job Set as Expired logic here
+                            console.log("Set as Expired job:", selectedJob._id);
+                          }}>Set as Expired <Icon icon="expire"/></button>
+                          <button className={styles.adminButton} onClick={() => {
+                            // Handle job Set as Expired logic here
+                            console.log("Set as Expired job:", selectedJob._id);
+                          }}>Delete <Icon icon="trash"/></button>
+                        </div>
+                      </section>
+                    )}
                   </div>
                   <div className={styles.jobDetailsBody}>
                   <Texts color="var(--text-light)" fontSize="sm" align="justify" style={{

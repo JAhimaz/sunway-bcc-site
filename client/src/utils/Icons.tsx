@@ -1,6 +1,6 @@
 import { FaArrowRight, FaPowerOff, FaCheck, FaGlobeAsia, FaChalkboardTeacher } from "react-icons/fa";
 import { AiFillInstagram, AiFillCloseSquare } from "react-icons/ai";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaTrashAlt, FaCalendarTimes, FaPencilAlt } from "react-icons/fa";
 import { IoLogoDiscord, IoPerson } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsQrCode, BsFillMegaphoneFill } from "react-icons/bs";
@@ -25,7 +25,10 @@ const IconsIndex = {
   delete: MdDelete,
   close: AiFillCloseSquare,
   search: BiSearchAlt2,
-  cross: ImCross
+  cross: ImCross,
+  trash: FaTrashAlt,
+  expire: FaCalendarTimes,
+  edit: FaPencilAlt,
 };
 
 const EventIndex = {
