@@ -63,6 +63,11 @@ const jobSchema = new Schema({
     type: Array,
     required: false,
   },
+  expired: {
+    type: Boolean,
+    required: true,
+    default: false,
+  }
 }, { timestamps: true });
 
 const Job = mongoose.model("jobs", jobSchema)
